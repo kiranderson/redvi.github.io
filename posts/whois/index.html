@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Whois-Client | Заметки на полях</title>
+    <meta name="description" content="Небольшая программа на python, работающая в качестве whois-клиента">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/70.11072557.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Whois-Client</h1> <div class="content__default"><p>WHOIS представляет собой сетевой протокол прикладного уровня, базирующийся на
+протоколе TCP (и использующий порт <em>43</em>). По бо́льшей части применяется для получения
+регистрационных данных о доменных именах: дате регистрации домена, информации о
+владельце, регистраторе и прочем.</p> <p>В unix-like системах есть одноимённая утилита, позволяющая быстро получить
+искомые сведения. В частности для пользователей gentoo linux процесс её
+установки будет выглядеть следующим образом:</p> <div class="language- extra-class"><pre class="language-text"><code>$ eix whois
+* net-misc/whois
+     Available versions:  5.0.11^t {iconv idn nls}
+     Homepage:            http://www.linux.it/~md/software/
+     Description:         improved Whois Client
+# emerge -pav net-misc/whois
+</code></pre></div><p>Тем, кому любопытно сделать свой вариант клиента whois, посвящается этот пост. Для
+написания подобной вещи предлагается использовать python3.</p> <p>Для начала нужно импортировать необходимые модули и сделать проверку установленной
+версии python, поскольку во второй и третьей версии различаются некоторые типы данных:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token comment">#!/usr/bin/env python</span>
+<span class="token comment"># -*- coding: utf-8 -*-</span>
+
+<span class="token keyword">import</span> socket<span class="token punctuation">,</span> sys
+
+<span class="token comment"># если версия python ниже 3</span>
+<span class="token comment"># вывести сообщение и закрыть программу</span>
+<span class="token keyword">if</span> sys<span class="token punctuation">.</span>version <span class="token operator">&lt;</span> <span class="token string">'3.0'</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;You need install python3&quot;</span><span class="token punctuation">)</span>
+                sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>Дальше следует функция, которая будет отправлять запрос на сервер и принимать
+ответ. Здесь используется модуль <em>socket</em>. Он предоставляет доступ к
+стандартному интерфейсу сокетов BSD (изначально разрабатывался для UNIX).</p> <blockquote><p>Модуль <em>socket</em> является низкоуровневым и в ряде случаев проще использовать
+функции из пакета <em>urllib</em>.</p></blockquote> <p>При работе с <em>socket</em> часто требуется указать семейство адресов и тип
+сокета. Для нашей небольшой программы важен протокол IPv4 (AF_INET). Типы
+сокетов представлены в таблице:</p> <table><thead><tr><th>константа</th> <th>описание</th></tr></thead> <tbody><tr><td>SOCK_STREAM</td> <td>поток байтов, обеспечивающий надёжность передачи данных (TCP)</td></tr> <tr><td>SOCK_DGRAM</td> <td>дейтаграммы (UDP)</td></tr> <tr><td>SOCK_RAW</td> <td>простой сокет</td></tr> <tr><td>SOCK_RDM</td> <td>дейтаграммы с надёжной доставкой</td></tr></tbody></table> <p>Для интернет-приложений, использующих IPv4, адреса определяются в виде кортежа
+<em>(host, port)</em>:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token punctuation">(</span><span class="token string">'www.yandex.ru'</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">)</span>
+</code></pre></div><p>В блоке кода, представленном ниже, мы воспользуемся этим, чтобы соединиться с
+сервером. Для создания нового сокета понадобится употребить одну из функций
+модуля <em>socket</em> с таким же названием: <em>socket</em>.</p> <div class="language-python extra-class"><pre class="language-python"><code>socket<span class="token punctuation">(</span>family<span class="token punctuation">,</span> <span class="token builtin">type</span> <span class="token punctuation">[</span><span class="token punctuation">,</span> proto<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><p>где</p> <ul><li><em>family</em> — определяет семейство адресов;</li> <li><em>type</em> — тип сокета;</li> <li><em>proto</em> — аргумент с именем протокола (обычно не передаётся).</li></ul> <p>Сокеты представлены экземплярами класса <em>SocketType</em> и обладают следующими
+методами:</p> <table><thead><tr><th>метод</th> <th>описание</th></tr></thead> <tbody><tr><td>connect</td> <td>устанавливает соединение с удалённым узлом</td></tr> <tr><td>recv</td> <td>принимает данные из сокета (макс. объём данных определяется аргументом bufsize)</td></tr> <tr><td>send</td> <td>посылает данные через сетевое соединение, возвращает кол-во отправленных данных</td></tr> <tr><td>close</td> <td>закрывает соединение</td></tr></tbody></table> <p>Исходя из сказанного выше, читателю должен быть понятен следующий блок кода:</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">run_whois</span><span class="token punctuation">(</span>server<span class="token punctuation">,</span> query<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># создать TCP-socket (IPv4)</span>
+    s <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+    <span class="token comment"># соединиться с сервером ('host', port)</span>
+    s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span>server <span class="token punctuation">,</span> <span class="token number">43</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># отправить запрос на сервер</span>
+    <span class="token comment"># s.send(query + '\r\n') # для python2</span>
+    s<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">bytes</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">b'\r\n'</span><span class="token punctuation">)</span>
+    msg <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token keyword">while</span> <span class="token builtin">len</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">:</span>
+        <span class="token comment"># получить данные от сервера</span>
+        <span class="token comment"># receive_data = s.recv(100) # для python2</span>
+        receive_data <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>receive_data <span class="token operator">==</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        msg <span class="token operator">=</span> msg <span class="token operator">+</span> receive_data
+    <span class="token keyword">return</span> msg
+</code></pre></div><p>Следующая функция позволит получить данные от сервера whois-регистратора и
+обработать их.</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">def</span> <span class="token function">get_data</span><span class="token punctuation">(</span>domain<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token comment"># получить объект(имя домена)</span>
+    <span class="token comment"># если введено http или www</span>
+    <span class="token comment"># перед именем домена, убрать их</span>
+    domain <span class="token operator">=</span> domain<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'http://'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+    domain <span class="token operator">=</span> domain<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'www.'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># получить доменную зону</span>
+    ext <span class="token operator">=</span> domain<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+    <span class="token comment"># обращаться к соответствующему whois-серверу зоны</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>ext <span class="token operator">==</span> <span class="token string">'org'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        whois <span class="token operator">=</span> <span class="token string">'whois.pir.org'</span>
+    <span class="token keyword">elif</span><span class="token punctuation">(</span>ext <span class="token operator">==</span> <span class="token string">'ru'</span> <span class="token keyword">or</span> ext <span class="token operator">==</span> <span class="token string">'su'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        whois <span class="token operator">=</span> <span class="token string">'whois.tcinet.ru'</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        whois <span class="token operator">=</span> <span class="token string">'whois.iana.org'</span> <span class="token comment"># сообщение для иных доменных зон</span>
+
+    <span class="token comment"># получить ответ от регистратора</span>
+    <span class="token comment"># (whois-server, имя домена)</span>
+    msg <span class="token operator">=</span> run_whois<span class="token punctuation">(</span>whois<span class="token punctuation">,</span> domain<span class="token punctuation">)</span>
+
+    lines <span class="token operator">=</span> msg<span class="token punctuation">.</span>splitlines<span class="token punctuation">(</span><span class="token punctuation">)</span>        <span class="token comment"># разбиваем текст на сроки</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> lines<span class="token punctuation">:</span>              <span class="token comment"># итерация по строкам</span>
+        <span class="token keyword">if</span> <span class="token string">':'</span> <span class="token keyword">in</span> line<span class="token punctuation">:</span>             <span class="token comment"># если есть знак :</span>
+            words <span class="token operator">=</span> line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">)</span> <span class="token comment"># разделить по нему строку</span>
+    <span class="token keyword">return</span> msg
+</code></pre></div><p>И последнее: имя домена будет получено из агрумента командной строки при запуске
+программы. Оно передаётся функции <em>get_data</em>, и данные выводятся на экран.</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">try</span><span class="token punctuation">:</span>
+    domain_name <span class="token operator">=</span> sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>    <span class="token comment"># получить доменное имя из аргумента командной строки</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>get_data<span class="token punctuation">(</span>domain_name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># передать доменное имя функции get_data</span>
+<span class="token keyword">except</span> IndexError<span class="token punctuation">:</span>               <span class="token comment"># если программа запущена без аргумента</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;enter domain name as a value!&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><p>Данная программка не претендует на многое, но цели своей достигает; заодно
+знакомит потенциального читателя с частью такой огромной темы как
+работа с сетью и сокетами, а автору служит главным образом примером и
+напоминанием о различиях в обработке данных в разных версиях python'а.</p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2014</span> 
+
+  <a href="/?tag=python" data-v-1c67afbc>
+    python
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/emacs-snippets/" data-v-326f747b>
+      Сделать emacs удобнее
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/tikz/" data-v-326f747b>
+      TikZ LaTeX
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/70.11072557.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

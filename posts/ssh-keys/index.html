@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Git и SSH: несколько аккаунтов | Заметки на полях</title>
+    <meta name="description" content="Как использовать несколько ключей ssh на одной машине">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/69.b35d4c71.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Ключи от всех дверей</h1> <div class="content__default"><p>Вы пользуетесь git. У вас сгенерированы приватный и публичный ключи, связанные
+с вашим email-адресом. Один ключ и один адрес. Но что если нужно больше одного?
+Как привязать несколько аккаунтов со своими данными и автоматизировать вход?</p> <h2 id="генерация-ssh-кnючей"><a href="#генерация-ssh-кnючей" aria-hidden="true" class="header-anchor">#</a> Генерация ssh-ключей</h2> <p>При генерации ключа следует указать ему отличное от дефолтного имя. По-умолчанию
+используются имена <code>id_rsa</code> (приватный ключ) и <code>id_rsa_pub</code> (ключ публичный).
+Чтобы создать файлы с другими именами или просто не затереть уже существующие
+сгенерируем ключи с флагом <code>-f</code>. Например, сделаем автономными данные для github.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ ssh-keygen -t rsa -b <span class="token number">4096</span> -C <span class="token string">&quot;your_name@yourmail.domain&quot;</span> -f ~/.ssh/github
+</code></pre></div><p>В качестве пользователя используйте данные вашей почтовой учётной записи. В
+скрытом домашнем каталоге <code>~/.ssh</code> теперь лежат два файла с нестандартными именами:
+<code>github</code> и <code>github.pub</code>. Содержимое последнего копируется на git-сервер.</p> <p>Если ключи генерируются на сервере, перенести их на локальную машину можно так:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># на сервере, 7021 - нестандартный порт</span>
+$ <span class="token function">ssh</span> company_user@server.domain -p <span class="token number">7021</span>
+$ ssh-keygen -t rsa -b <span class="token number">4096</span> -C <span class="token string">&quot;user@server.domain&quot;</span> -f ~/.ssh/mycompany_key
+
+<span class="token comment"># локально</span>
+$ <span class="token function">scp</span> -r -P <span class="token number">7021</span> company_user@server.domain:/home/company_user/.ssh/ /home/local_user/
+</code></pre></div><p>Заходим на сервер по ssh под именем нужного пользователя, генерируем ключ.
+Затем на локальной машине через scp копируем рекурсивно каталог с ssh-ключами.
+Рекурсивно: <code>-r</code>, если используется нестандартный порт: <code>-P</code>.</p> <h2 id="как-автоматизировать-вход"><a href="#как-автоматизировать-вход" aria-hidden="true" class="header-anchor">#</a> Как автоматизировать вход</h2> <p>Допустим, у нас десятки ключей от git-серверов разных компаний. Как сказать git'у,
+под какой учётной записью работать в каждом конкретном случае? Для этого
+понадобится изменить конфигурацию. Создаём в <code>~/.ssh</code> файл <code>config</code> с подходящими настройками:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>Host github.com
+  Hostname github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/github
+
+Host mycompany.com
+  Hostname mycompany.com
+  Port <span class="token number">7021</span>
+  IdentityFile ~/.ssh/mycompany_key
+</code></pre></div><p>Теперь при работе в репозитории github или mycompany будут использованы ключи,
+соответствующие адресу домена. Что и требовалось.</p> <p>Однако, коммиты закрепляются за одним только пользователем. Как вариант решения:
+указать одного пользователя глобально, а других для каждого репозитория (без флага global):</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> config --local user.email myuser@mymail.doman
+$ <span class="token function">git</span> config --local user.name myusername
+</code></pre></div><p>Либо изменять автора на лету, при создании коммита:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> commit --author<span class="token operator">=</span>myuser <span class="token string">&quot;commit&quot;</span>
+</code></pre></div><h2 id="игнорируй-всё"><a href="#игнорируй-всё" aria-hidden="true" class="header-anchor">#</a> Игнорируй всё</h2> <p>В работе каждый подбирает для себя наиболее удобный инструмент. Кто-то пользуется
+простым текстовым редактором, кто-то предпочитает навороченные среды разработки.
+Часто инструменты оставляют после себя «мусор», который не хотелось бы
+тащить в <code>.gitignore</code> публичного проекта.</p> <p>Для того нам дан ещё один файл с настройками гита — .gitconfig. Открываем,
+вносим информацию.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># базовые настройки</span>
+<span class="token punctuation">[</span>core<span class="token punctuation">]</span>
+  autocrlf <span class="token operator">=</span> input
+  quotepath <span class="token operator">=</span> <span class="token boolean">false</span>
+  whitespace <span class="token operator">=</span> cr-at-eol,indent-with-non-tab,blank-at-eol,space-before-tab
+  excludesfile <span class="token operator">=</span> /home/local_user/.gitignore_global
+<span class="token comment"># псевдонимы для команд</span>
+<span class="token punctuation">[</span>alias<span class="token punctuation">]</span>
+  ch <span class="token operator">=</span> checkout
+  cm <span class="token operator">=</span> commit -m
+</code></pre></div><p>Всё внимание на строку <code>excludesfile = /home/user/.gitignore_global</code>. Именно эта
+волшебная настройка позволяет внести в <code>.gitignore_global</code> (или любой другой файл)
+то, что будет игнорироваться (не будет отправлено на сервер) всегда.</p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2016</span> 
+
+  <a href="/?tag=other" data-v-1c67afbc>
+    other
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/pull-request/" data-v-326f747b>
+      Работа с git
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/jekyll/" data-v-326f747b>
+      Установка и настройка Jekyll
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/69.b35d4c71.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

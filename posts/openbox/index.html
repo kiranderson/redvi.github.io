@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Настройка рабочего окружения с openbox | Заметки на полях</title>
+    <meta name="description" content="Минималистичный оконный менеджер">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/8.42c742f4.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Поваренная книга openbox</h1> <div class="content__default"><p>В мире open source имеется великое множество различных оконных менеджеров.
+Как растворяющийся в роскошном одеянии KDE, так и более скромные и лёгкие Gnome,
+XFCE. Но сегодня мы будем учиться готовить нечто ещё более легковесное.
+Тем, кто неравнодушен к openbox посвящается.</p> <p><strong>Задача:</strong> привести openbox к подобному виду:</p> <p><img src="/assets/img/openbox1.jpg" alt="openbox"></p> <p>Полный боевой комплект:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> pacman -S openbox openbox-themes conky nitrogen tint2 setxkbmap wbar gmrun xxkb
+$ yaourt -S xev xcompmgr-dana
+</code></pre></div><h2 id="сразу-займёмся-деnами-насущными"><a href="#сразу-займёмся-деnами-насущными" aria-hidden="true" class="header-anchor">#</a> Сразу займёмся делами насущными</h2> <p>А именно настроим раскладку клавиатуры и заодно пропишем всё, что должно быть
+в автозапуске  и запуск самого openbox, дабы нас не встречал голый экран.
+Копируем примеры для редактирования:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mkdir</span> -p ~/.config/openbox
+$ <span class="token function">cp</span> /etc/xdg/openbox/<span class="token punctuation">{</span>rc.xml,menu.xml,autostart,environment<span class="token punctuation">}</span> ~/.config/openbox
+</code></pre></div><p>Openbox может быть выбран в качестве сессии, если у вас уже установлен slim,
+kdm, gdm или ещё что-то. Если же нет и это вам не нужно, идём потрошить <code>.xinitrc</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># .xinitrc</span>
+<span class="token comment">#</span>
+<span class="token comment">#! /bin/bash</span>
+<span class="token builtin class-name">exec</span> openbox-session
+
+<span class="token comment"># ~/.config/openbox/autostart</span>
+conky <span class="token operator">&amp;</span>
+nitrogen --restore <span class="token operator">&amp;</span>
+tint2 <span class="token operator">&amp;</span>
+<span class="token comment"># раскладка клавиатуры</span>
+setxkbmap -layout us,ru -variant -option grp:alt_shift_toggle,terminate:ctrl_alt_bksp <span class="token operator">&amp;</span>
+wbar -above-desk -pos <span class="token function">top</span> <span class="token operator">&amp;</span>
+<span class="token comment"># композитный менеджер</span>
+xcompmgr -с -C -t5 -l8.28.2 -r8.2 -o.55 <span class="token operator">&amp;</span>
+<span class="token comment"># networkmanager applet ( при надобности )</span>
+nm-applet --sm-disable <span class="token operator">&amp;</span>
+</code></pre></div><p>Таким образом раскладка настроена на переключение по <code>Shift+Alt</code>, вверху
+запускается wbar, о котором сказано будет чуть ниже, выбранная обоина на
+рабочем столе восстанавливается при старте системы, стартует conky. Причём
+фон у conky прозрачный. Если это не так, устанавливаем композитный менеджер.
+Коротко о его свойствах ниже, он отвечает за различные графические эффекты:
+тени, прозрачность и тому подобное.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> yaourt xcompmgr-dana
+</code></pre></div><p>Чтобы на панели tint2 отображалась используемая раскладка,
+нам понадобится установить xxkb и создать его конфигурационный файл в
+домашней директории:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># ~.xxkbrc:</span>
+<span class="token comment">#</span>
+XXkb.image.path: /usr/share/xxkb/
+XXkb.mainwindow.type:  tray
+XXkb.group.base: <span class="token number">1</span>
+XXkb.group.alt: <span class="token number">2</span>
+XXkb.mainwindow.enable:  <span class="token function">yes</span>
+XXkb.mainwindow.image.1: en15.xpm
+XXkb.mainwindow.image.2: ru15.xpm
+XXkb.mainwindow.image.3:
+XXkb.mainwindow.image.4:
+XXkb.mainwindow.appicon:  <span class="token function">yes</span>
+XXkb.mainwindow.geometry:  20x20+2+2
+XXkb.mainwindow.in_tray:  GNOME2
+XXkb.button.enable:  no
+XXkb.app_list.wm_class_name.start_alt: skype
+XXkb.controls.add_when_start: <span class="token function">yes</span>
+XXkb.controls.add_when_create: <span class="token function">yes</span>
+XXkb.controls.add_when_change: no
+XXkb.controls.focusout: no
+XXkb.mainwindow.xpm.1: en15.xpm
+XXkb.mainwindow.xpm.2: ru15.xpm
+XXkb.mainwindow.label.enable: no
+</code></pre></div><h2 id="меню-и-внешний-вид-openbox"><a href="#меню-и-внешний-вид-openbox" aria-hidden="true" class="header-anchor">#</a> Меню и внешний вид openbox</h2> <p>Проверьте, что файл кофигурации располагается в домашней директории
+пользователя, дабы можно было редактировать его, не опасаясь последствий.
+Если его нет, копируем:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mkdir</span> ~/.config/openbox <span class="token operator">&amp;&amp;</span> <span class="token function">cp</span> /etc/xdg/openbox/menu.xml ~/.config/openbox/menu.xml
+</code></pre></div><p>Можно редактировать данный файл вручную, поскольку синтаксис достаточно тривиален.
+Но хочу предложить вам второй вариант — obmenu.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> pacman -S obmenu
+$ obmenu
+</code></pre></div><ul><li>Можно добавить своё меню - New Menu</li> <li>Добавить в него подпункты - New item</li> <li>После чего удалить всё ненужное.</li></ul> <p><code>Obmenu</code> требует, чтобы вы ввели название нового приложения в меню,
+действие — Execute и путь к нему.
+Так, для добавления редактора eclipse, введём его наименование и пропишем
+путь <code>/usr/bin/eclipse</code>.</p> <p>Для остальных приложений аналогично.</p> <p>Впрочем, можете воспользоваться программой menumaker, которая генерирует
+меню самостоятельно.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> pacman -S menumaker
+$ mmaker -v openbox    <span class="token comment">#  Не перезаписывать существующий файл меню.</span>
+$ mmaker -vf openbox   <span class="token comment">#  Принудительно перезаписать файл меню.</span>
+</code></pre></div><p>Теперь кликаем правой клавишей мыши по рабочему столу, выбираем из
+меню &quot;System&quot; - &quot;Openbox configuration Manager&quot;.</p> <p>Так-то лучше. И здесь нам не придётся вручную редактировать файл конфигурации.
+Настройки как правило уже русифицированы и в них нет ничего, с чем было
+бы сложно разобраться.</p> <h2 id="смена-обоев-на-рабочем-стоnе"><a href="#смена-обоев-на-рабочем-стоnе" aria-hidden="true" class="header-anchor">#</a> Смена обоев на рабочем столе</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> pacman -S nitrogen
+$ nitrogen
+</code></pre></div><p>Здесь всё просто. Укажите путь к вашим изображениям, и они
+появятся в <code>nitrogen</code> — выбирайте любое. Можно добавить nitrogen в меню
+с помощью obmenu. Подобную операцию мы уже проделывали.</p> <p><img src="/assets/img/nitrogen.png" alt="notrigen"></p> <h2 id="иконки-и-шрифты"><a href="#иконки-и-шрифты" aria-hidden="true" class="header-anchor">#</a> Иконки и шрифты</h2> <p>Кто-то предпочитает настраивать ручками, но мы опять сэкономим своё время,
+установив <code>lxappearance</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> pacman -S lxappearance
+</code></pre></div><p>Запускаем и выбираем, что больше нравится.</p> <p><img src="/assets/img/lxappearance.png" alt="lxappearance"></p> <p>Если есть желание отображать иконки на рабочем столе, idesk к вашим услугам.
+Автор сего поста не пользуется этой программой, поэтому долго не обсуждает.</p> <p>Вообще, процедура сводится к созданию файла <code>название_программы.lnk</code> в
+директории <code>.idesktop/</code> , где прописыватся примерно такое:</p> <div class="language- extra-class"><pre class="language-text"><code>table Icon
+Caption: firefox
+Command: firefox
+Icon: /home/arch/.idesktop/firefox.png
+Width: 48
+Height: 48
+X: 40
+Y: 40
+end
+</code></pre></div><p>Думаю, в объяснении не нуждается. Файл конфигурации лежит по пути <code>/usr/share/idesk/dot.ideskrc</code>. Отображать иконку уровня звука призван obmixer, который также надо просто добавить в автозагрузку.</p> <h2 id="горячие-кnавиши"><a href="#горячие-кnавиши" aria-hidden="true" class="header-anchor">#</a> Горячие клавиши</h2> <p>Сочетания горячих клавиш настраиваются в <code>~/.config/openbox/rc.xml</code>.
+Ищем эти настройки в соответствующих секциях.</p> <p>Перемещение между рабочими столами:</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token comment">&lt;!-- Keybindings for desktop switching --&gt;</span>
+</code></pre></div><p>За управление окнами отвечает секция:</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;!-- Keybindings for windows --&gt;
+</code></pre></div><p>Переключение окон:</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token comment">&lt;!-- Keybindings for window switching --&gt;</span>
+</code></pre></div><p>Запуск приложений:</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token comment">&lt;!-- Keybindings for running applications --&gt;</span>
+</code></pre></div><p>И так далее.
+Например, если нужно подцепить горячую клавишу для firefox, создаём такой блок:</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keybind</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>W-w<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Execute<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>command</span><span class="token punctuation">&gt;</span></span>firefox<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>command</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>startupnotify</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">&gt;</span></span>yes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>Minefield Web Browser<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>startupnotify</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keybind</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><ul><li>keybind key - привязка определённой клавиши</li> <li>action name - execute значит, что это приложение запуска</li> <li>command - либо вводим путь вроде <code>/usr/bin/firefox</code>, либо просто указываем, какое приложение надо запустить</li> <li>enabled - включено</li> <li>name - имя для программы</li></ul> <p>Для примера назначим горячую клавишу самому меню openbox:</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keybind</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>W-space<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ShowMenu<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span><span class="token punctuation">&gt;</span></span>root-menu<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keybind</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Теперь нажатием клавиш <code>super</code> (win) + <code>пробел</code> мы сможем вызвать главное
+меню со списком наших приложений.</p> <p>Сокращения клавиш:</p> <ul><li><code>A</code> - Alt</li> <li><code>W</code> - win</li> <li><code>C</code> - ctrl</li></ul> <p>И так далее по смыслу</p> <h3 id="настраиваем-кnавиши-дnя-перемещения-окон-с-кnавиатуры"><a href="#настраиваем-кnавиши-дnя-перемещения-окон-с-кnавиатуры" aria-hidden="true" class="header-anchor">#</a> Настраиваем клавиши для перемещения окон с клавиатуры</h3> <p>Возможные действия над окнами:</p> <ul><li><code>SendToDesktop</code> (отправить окно на указанный аргументом опции рабочий стол; опция <code>&lt;to&gt;</code>, её значение – номер стола);</li> <li><code>Focus</code> (передать окну фокус);</li> <li><code>Raise</code> (поднять окно на передний план);</li> <li><code>Lower</code> (переместить окно на задний план);</li> <li><code>Iconify</code> (свернуть окно на панель);</li> <li><code>Close</code> (закрыть окно);</li> <li><code>ToggleShade</code> (свернуть в заголовок/развернуть из заголовка);</li> <li><code>ToggleMaximize</code> (включить/отключить режим полного развёртывания);</li> <li><code>ToggleFullscreen</code> (включить/отключить полноэкранный режим);</li> <li><code>ToggleDecorations</code> (включить/отключить заголовок);</li> <li><code>Move</code> (переместить);</li> <li><code>Resize</code> (изменить размер).</li></ul> <p>Пример:</p> <p>В секции <code>&lt;!-- Keybindings for window switching with the arrow keys --&gt;</code></p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keybind</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>W-k<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ToggleShade<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keybind</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keybind</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>W-f<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ToggleFullscreen<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keybind</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keybind</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>W-Left<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Move<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keybind</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keybind</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>W-Right<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Resize<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keybind</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Так, по <code>Win+k</code> окно сворачиается, остаётся лишь заголовок</p> <ul><li><code>Win+f</code> - развернуть/свернуть</li> <li><code>Win+Left</code> - перемещение окна</li> <li><code>Win+Right</code> - изменение размера окна</li></ul> <h2 id="муnьтимедийные-кnавиши"><a href="#муnьтимедийные-кnавиши" aria-hidden="true" class="header-anchor">#</a> Мультимедийные клавиши</h2> <p>Универсальный способ. Код клавиш нужно перевести в 16-ричную систему счисления.
+Например, вы хотите прикрутить какую-то клавишу на увеличение громкости звука.
+Запустите в терминале утилиту xev, нажмите нужную клавишу и посмотрите ее keycode.</p> <p>Например:</p> <div class="language- extra-class"><pre class="language-text"><code>KeyRelease event, serial 39, synthetic NO, window 0x1e00001,
+root 0x15a, subw 0x0, time 1613305, (627,558), root:(655,831),
+state 0x0, keycode 122 (keysym 0x1008ff11, XF86AudioLowerVolume)
+</code></pre></div><p>Теперь это число (122) нужно перевести в шестнадцатеричное. Вот так:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">printf</span> <span class="token string">&quot;%X<span class="token entity" title="\n">\n</span>&quot;</span> <span class="token number">122</span>
+7A
+</code></pre></div><p>К этому числу добавить <code>&quot;0x&quot;</code>, т.е.  <code>&quot;0x7A&quot;</code>. Пример конфига, где <code>Fn-10</code>
+(0x122) увеличивает уровень звука, а <code>Fn-9</code> (0x123) уменьшает:</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keybind</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>0x7A<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Execute<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>command</span><span class="token punctuation">&gt;</span></span>amixer sset Front 1+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>command</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>startupnotify</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">&gt;</span></span>yes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>Folume +<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>startupnotify</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keybind</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>keybind</span> <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>0x7B<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Execute<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>command</span><span class="token punctuation">&gt;</span></span>amixer sset Front 1-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>command</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>startupnotify</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>enabled</span><span class="token punctuation">&gt;</span></span>yes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>enabled</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>Folume -<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>startupnotify</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>keybind</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Хотя, наилучший способ настроить мультимедийную клавиатуру - <code>xmodmap</code></p> <p>Пример: настраиваем регулировку яркости экрана</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ xmodmap -pke
+keycode <span class="token number">231</span> <span class="token operator">=</span> Cancel NoSymbol Cancel
+keycode <span class="token number">232</span> <span class="token operator">=</span> XF86MonBrightnessDown NoSymbol XF86MonBrightnessDown
+keycode <span class="token number">233</span> <span class="token operator">=</span> XF86MonBrightnessUp NoSymbol XF86MonBrightnessUp
+keycode <span class="token number">234</span> <span class="token operator">=</span> XF86AudioMedia NoSymbol XF86AudioMedia и прочее<span class="token punctuation">..</span>.
+
+$ <span class="token function">vim</span> .xmodmaprc
+keycode <span class="token number">232</span> <span class="token operator">=</span> XF86MonBrightnessDown keycode <span class="token number">233</span> <span class="token operator">=</span> XF86MonBrightnessUp
+</code></pre></div><p>После чего следует добавить в файл автозапуска (в нашем случае <code>.config/openbox/autostart</code>):</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ xmodmap ~/.xmodmaprc
+</code></pre></div><h2 id="wbar"><a href="#wbar" aria-hidden="true" class="header-anchor">#</a> Wbar</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> pacman -S wbar
+</code></pre></div><p>Редактировать эту утилиту очень просто. И очень долго, поскольку ваши темы иконок
+кушать она не станет. К каждой иконке прописывается свой путь. Впрочем, возможно
+автор просто не знает удобных утилит для автоматизации этого процесса.</p> <p>Если хотите, чтобы кроме иконок приложений в баре отображались и открытые на данный
+момент окна, не забудьте выставить флаг <code>&quot;Enable Taskbar&quot;</code> в настройках.</p> <p><img src="/assets/img/wbar.png" alt="wbar"></p> <h2 id="xcompmgr-и-разnичные-эффекты"><a href="#xcompmgr-и-разnичные-эффекты" aria-hidden="true" class="header-anchor">#</a> Xcompmgr и различные эффекты</h2> <p>Управление xcompmgr осуществляется при помощи его запуска с разными опциями.</p> <ul><li><code>-c</code> - добавить мягкие тени к окнам</li> <li><code>-С</code> - убрать отрисовку теней у баров (wbar, например)</li> <li><code>f</code> - плавные эффекты затухания при сворачивании окон</li></ul> <p>полный перечень в <code>man xcpomgr</code></p> <p>Для просмотра полных возможностей можно обратиться к странице man'а.
+Чтобы окна были прозрачными понадобится пакет <code>transset</code>.
+Можно использовать альтернативу: <code>cairo-compmgr</code></p> <h2 id="tint2"><a href="#tint2" aria-hidden="true" class="header-anchor">#</a> Tint2</h2> <p>А вот это приберегите для бессонных ночей.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sudo</span> pacman -S tint2
+</code></pre></div><p>После запуска в директории <code>~/.config/tint2/</code> появится конфигурационный
+файл <code>tint2rc</code>, со стандартными настройками.</p> <p>Фон и рамки. При минимальном знании английского или даже интуитивно
+настраивается легко. Все опции просты и понятны. Можно, например, настроить ширину
+и цвет рамки.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#———————————————</span>
+<span class="token comment"># BACKGROUND AND BORDER</span>
+<span class="token comment">#———————————————</span>
+
+rounded -  закругление углов <span class="token punctuation">(</span>в пикселях<span class="token punctuation">)</span>
+border_width – ширина границы <span class="token punctuation">(</span>в пикселях<span class="token punctuation">)</span>
+background_color – цвет фона
+border_color – цвет границы
+</code></pre></div><p>Секция настройки панели</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#———————————————</span>
+<span class="token comment"># PANEL</span>
+<span class="token comment">#———————————————</span>
+
+
+panel_monitor <span class="token operator">=</span> определяет как отображать панель <span class="token punctuation">(</span>all – на всех мониторах, <span class="token number">1</span><span class="token punctuation">..</span><span class="token number">2</span> – на выбранных<span class="token punctuation">)</span>
+panel_position <span class="token operator">=</span> расположение панели
+panel_margin <span class="token operator">=</span> отступ от краев экрана
+panel_padding <span class="token operator">=</span> отступ индикатора окна от левого края панели,  от верхнего края панели и отступ между индикаторами соответственно
+font_shadow <span class="token operator">=</span> Тень фона
+panel_background_id <span class="token operator">=</span> фон панели и толщина границы
+wm_menu <span class="token operator">=</span> <span class="token number">0</span> или <span class="token number">1</span> – не показывать или показывать меню WM при клике на панели
+panel_dock <span class="token operator">=</span>  <span class="token number">0</span> или <span class="token number">1</span> – использовать интеграцию с WM
+panel_layer <span class="token operator">=</span> bottom,normal,top – определяет слой панели, используется для улучшения отображения прозрачности
+</code></pre></div><p>Секция Taskbar</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#———————————————</span>
+<span class="token comment"># TASKBAR</span>
+<span class="token comment">#———————————————</span>
+
+
+taskbar_mode <span class="token operator">=</span> single_desktop или multi_desktop – на каждом рабочем столе своя панель, либо одна для всех соответственно
+taskbar_paddin <span class="token operator">=</span> <span class="token number">3</span> переменные, <span class="token number">1</span>  – расстояние между значками и краем панели, расстояние между значками и вертикальными границами панели, расстояние между значками.
+taskbar_background_id <span class="token operator">=</span> фон и границы области открытого окна
+taskbar_active_background_id <span class="token operator">=</span> фон и границы области активного открытого окна
+</code></pre></div><p>Секция TASKS</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#———————————————</span>
+<span class="token comment"># TASKS</span>
+<span class="token comment">#———————————————</span>
+
+task_icon <span class="token operator">=</span> <span class="token number">1</span> или <span class="token number">0</span> – показывать иконку приложения или нет
+task_text  <span class="token operator">=</span> <span class="token number">1</span> или <span class="token number">0</span> – показывать текст на кнопке или нет
+task_maximum_size <span class="token operator">=</span> максимальный размер кнопки по горизонтали <span class="token punctuation">(</span>для вертикальной панели<span class="token punctuation">)</span> и по вертикали <span class="token punctuation">(</span>для вертикальной панели<span class="token punctuation">)</span>
+task_centered <span class="token operator">=</span> <span class="token number">1</span> или <span class="token number">0</span>  – центрировать кнопку
+task_padding <span class="token operator">=</span> расстояние текста <span class="token punctuation">(</span>иконки<span class="token punctuation">)</span> от краев кнопки <span class="token punctuation">(</span>первая цифра – по горизонтали, вторая – по вертикали<span class="token punctuation">)</span>
+task_font <span class="token operator">=</span> Шрифт
+task_font_color  <span class="token operator">=</span> Цвет шрифта
+task_background_id <span class="token operator">=</span> <span class="token number">3</span> <span class="token operator">=</span> фон и границы области кнопки панели задач
+task_icon_asb <span class="token operator">=</span> <span class="token punctuation">(</span>saturation-brightness<span class="token punctuation">)</span> настройка отображения иконки приложения
+task_active_background_id <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">=</span> настройка для активного окна
+task_active_font_color <span class="token operator">=</span> настройка шрифта для активного окна
+task_active_icon_asb <span class="token operator">=</span> настройка отображения иконки для активного окнам
+urgent_nb_of_blink <span class="token operator">=</span> количество “миганий”
+</code></pre></div><p>Секция Systraybar</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#———————————————</span>
+<span class="token comment"># SYSTRAYBAR</span>
+<span class="token comment">#———————————————</span>
+
+systray <span class="token operator">=</span> <span class="token number">1</span> или <span class="token number">0</span> – включить или отключить систем трей
+systray_padding <span class="token operator">=</span> <span class="token number">3</span> параметра – расстояние между краем панели и значком приложения, расстояние между значком и вертикальными краями панели, расстояние между значками
+systray_background_id <span class="token operator">=</span> фон и границы области панели задач
+systray_sort <span class="token operator">=</span> left2right <span class="token operator">=</span> способ расположения приложений на панели задач
+systray_icon_size <span class="token operator">=</span> размер иконки
+systray_icon_asb <span class="token operator">=</span> настройка отображения иконки приложения
+</code></pre></div><p>Секция Clock</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#———————————————</span>
+<span class="token comment"># CLOCK</span>
+<span class="token comment">#———————————————</span>
+
+time1_format <span class="token operator">=</span> %H:%M  – Формат отображения времени в первой строке
+time1_font <span class="token operator">=</span> sans <span class="token number">8</span>  – шрифт отображения времени в первой строке
+time2_format <span class="token operator">=</span> %A %d %B – формат отображения времени во второй строке <span class="token punctuation">(</span>здесь  – дата<span class="token punctuation">)</span>
+time2_font <span class="token operator">=</span> sans <span class="token number">6</span> – шрифт отображения во второй строке
+clock_font_color <span class="token operator">=</span> <span class="token comment">#ffffff 76 – цвет шрифта и прозрачность</span>
+clock_padding <span class="token operator">=</span> <span class="token number">1</span> <span class="token number">0</span> -  два параметра – расстояние между краем панели и временем, расстояние между временем и вертикальными краями панели
+clock_background_id <span class="token operator">=</span> фон и границы области панели задач
+clock_lclick_command <span class="token operator">=</span> text – запуск команды <span class="token punctuation">(</span>text<span class="token punctuation">)</span> при нажатии на часах левой кнопкой мыши
+clock_rclick_command <span class="token operator">=</span> text – запуск команды <span class="token punctuation">(</span>text<span class="token punctuation">)</span> при нажатии на часах правой кнопкой мыши
+clock_tooltip <span class="token operator">=</span> %A %d %B – формат и вывод подсказки при наведении мышки на область часов
+time1_timezone <span class="token operator">=</span> часовой пояс первой строки
+time2_timezone <span class="token operator">=</span> часовой пояс второй строки
+clock_tooltip_timezone <span class="token operator">=</span> часовой пояс подсказки при наведении мышки на область часов
+</code></pre></div><p>Секция Battery</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#———————————————</span>
+<span class="token comment"># BATTERY</span>
+<span class="token comment">#———————————————</span>
+
+battery <span class="token operator">=</span> <span class="token number">1</span> или <span class="token number">0</span> – показывать или нет заряд батареи на панели
+battery_hide <span class="token operator">=</span> <span class="token punctuation">(</span>от <span class="token number">0</span> до <span class="token number">100</span><span class="token punctuation">)</span> – показывать на панели, когда заряд батареи опуститься до заданного значения
+battery_low_status <span class="token operator">=</span> <span class="token punctuation">(</span>от <span class="token number">0</span> до <span class="token number">100</span><span class="token punctuation">)</span> – показывает низкий заряд батареи, когда он опускается до заданного значения
+battery_low_cmd <span class="token operator">=</span> <span class="token function">notify-send</span> “battery low” – что делать если заряд батареи достиг минимального значения
+bat1_font  – шрифт отображения первой строки
+bat2_font – шрифт отображения второй строки
+battery_font_color <span class="token operator">=</span> <span class="token comment">#ffffff 76 – цвет шрифта и прозрачность</span>
+battery_padding <span class="token operator">=</span> <span class="token number">1</span> <span class="token number">0</span> – два параметра – расстояние между краем панели и индикатором батареи, расстояние между индикатором и вертикальными краями панели
+battery_background_id – фон и границы области панели задач
+</code></pre></div><p>Секция Tooltip</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#———————————————</span>
+<span class="token comment"># TOOLTIP</span>
+<span class="token comment">#———————————————</span>
+
+tooltip  – <span class="token number">1</span> или <span class="token number">0</span> – показывать или нет подсказки
+tooltip_padding – размер подсказок <span class="token punctuation">(</span>по вертикали и горизонтали<span class="token punctuation">)</span>
+tooltip_show_timeout – через какое время показывать, после наведения мыши на элемент панели
+tooltip_hide_timeout – как долго отображать подсказки
+tooltip_background_id – фон и границы области подсказок
+tooltip_font_color – цвет шрифта и прозрачность
+tooltip_font – шрифт подсказок и размер
+</code></pre></div><p>Секция Mouse Action and task</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#———————————————</span>
+<span class="token comment"># MOUSE ACTION ON TASK</span>
+<span class="token comment">#———————————————</span>
+
+mouse_middle – Средняя кнопка мыши
+mouse_right – правая кнопка мыши
+mouse_scroll_up – прокрутка колесика мыши вверх
+mouse_scroll_down – прокрутка колесика мыши вниз
+</code></pre></div><p>Каждый из этих параметров может принимать следующие значения – none, close, toggle, iconify, shade, toggle_iconify, maximize_restore, desktop_left, desktop_right, next_task, prev_task.</p> <p>Если параметр задан как  <code>none</code> и <code>wm_menu = 1</code> установлен, то события возвращаются приложению отвечающему за окна (WM)</p> <p>Секция Autohide</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment">#———————————————</span>
+<span class="token comment"># AUTOHIDE OPTIONS</span>
+<span class="token comment">#———————————————</span>
+
+autohide – <span class="token number">1</span> или <span class="token number">0</span> – включить или выключить автоскрытие панели
+autohide_show_timeout – чарез какое время показывать панель, после подвода мыши к краю экрана
+autohide_hide_timeout – через какое время скрыть панель
+autohide_height – высота скрытой панели
+</code></pre></div><p>Что из этого может получиться</p> <p>Пример первый:</p> <p><img src="/assets/img/openbox2.jpg" alt="openbox white"></p> <p>Пример второй:</p> <p><img src="/assets/img/openbox3.png" alt="openbox black"></p> <p>Итак, openbox у нас настроен. Быстрый и симпатичный оконный менеджер. Если же
+по каким-то причинам он вам не подходит, а громоздкие DE вы ставить не желаете,
+обратите внимание на xmonad. Возможно, он сумеет вас порадовать.</p> <p>А в качестве легковесного файлового менеджера рекомендую <code>pcmanfm</code>.</p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2012</span> 
+
+  <a href="/?tag=linux" data-v-1c67afbc>
+    linux
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/ntpd/" data-v-326f747b>
+      Синхронизация времени в linux
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/cp1251-to-utf8/" data-v-326f747b>
+      Как перекодировать cp1251 в UTF-8
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/8.42c742f4.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Меню на чистом css | Заметки на полях</title>
+    <meta name="description" content="Один из способов создания горизонтального меню на чистом css">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/24.b74b7cb5.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Адаптивное меню на CSS</h1> <div class="content__default"><p>Возвращаясь к теме всё возрастающей значимости мобильных устройств, невозможно
+обойти стороной меню сайта. По бо́льшей части для создания адаптивных меню
+используются решения на JavaScript, но всегда ли это оправдано? Пожалуй, нет. Ведь его
+можно сделать на чистом CSS, изменяя видимость элементов при помощи чекбокса.</p> <p>Не будем долго разглагольствовать о плюсах и минусах данного подхода, а сразу
+обратимся к конкретному примеру. В данном случае это будет простое
+одноуровневное меню.</p> <p>Что делать с многоуровневыми меню? Здесь есть несколько вариантов:</p> <ul><li>начать смотреть решения на JavaScript/jQuery</li> <li>открывать второй уровень по наведению (что, надо сказать, не является хорошим решением)</li></ul> <p>Разметка будет чуть более многословной, чем нам это необходимо: здесь содержатся
+элементы, которые и вовсе могут не пригодиться. Однако, она довольно проста и
+разобраться в ней совсем несложно.</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>utf-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>initial-scale=1.0, width=device-width<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Pure CSS Menu<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>style.css<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- шапка --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>checkbox<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>menu-checkbox<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>navigation<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- навигация --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>menu-checkbox<span class="token punctuation">&quot;</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>toggle-button<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-open</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Menu<span class="token punctuation">&quot;</span></span> <span class="token attr-name">data-close</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Close<span class="token punctuation">&quot;</span></span> <span class="token attr-name">onclick</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>main-menu<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- список пунктов меню --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>about<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>contacts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>projects<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>publications<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>CSS Menu<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Just css and html<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Дальше постепенно будем разбирать каждый кусочек css-кода по принципу mobile
+first.</p> <h2 id="стиnи"><a href="#стиnи" aria-hidden="true" class="header-anchor">#</a> Стили</h2> <p>На устройствах с экраном менее 640 пикселей пункты меню скрываются и остаётся
+только стилизованный через <code>label</code> чекбокс. Если чекбокс отмечен, меню становится
+видимым. Код для реализации:</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* Menu  */</span>
+<span class="token selector">#menu-checkbox</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* чекбокс скрыт */</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.main-menu</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* пункты меню скрыты */</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.main-menu li</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* пункты меню расположены вертикально */</span>
+  <span class="token comment">/* каждый имеет ширину 100% */</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.main-menu a</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* немного стилизуем ссылки */</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> 1px solid blueviolet<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> lightslategray<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> .5em<span class="token punctuation">;</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.main-menu a:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.toggle-button</span> <span class="token punctuation">{</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token comment">/* не забываем явно указать каким должен быть курсор */</span>
+  <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> #333<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.toggle-button:after</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* получаем данные из атрибута data-open в html */</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>data-open<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 10px 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 10px 30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#menu-checkbox:checked + nav[role=&quot;navigation&quot;] .main-menu</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* когда чекбокс активен меню становится видимым */</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#menu-checkbox:checked + nav[role=&quot;navigation&quot;] .toggle-button:after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>data-close<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>С мобильными устройствами разобрались. Осталось внести изменения для тех
+устройств, экран которых &gt;= 640px. Делать это будем через медиа-запросы.</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token atrule"><span class="token rule">@media</span> screen and <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 640px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+    <span class="token selector">.toggle-button</span> <span class="token punctuation">{</span>
+      <span class="token comment">/* label скрыт */</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.main-menu</span> <span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+      <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> #333<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.main-menu li</span> <span class="token punctuation">{</span>
+      <span class="token comment">/* теги &lt;li&gt; расположены в ряд */</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span>100% / 5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+      <span class="token property">margin-right</span><span class="token punctuation">:</span> -4px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.main-menu a</span> <span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+      <span class="token property">margin-right</span><span class="token punctuation">:</span> -4px<span class="token punctuation">;</span>
+      <span class="token property">font-size</span><span class="token punctuation">:</span> .8em<span class="token punctuation">;</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> #333<span class="token punctuation">;</span>
+      <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+      <span class="token property">text-transform</span><span class="token punctuation">:</span> capitalize<span class="token punctuation">;</span>
+      <span class="token property">border-bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre></div><p>Посмотрим, что получилось:</p> <p><img src="/assets/img/css-menu.gif" alt="resonsive css menu"></p> <h2 id="стиnизация-метки"><a href="#стиnизация-метки" aria-hidden="true" class="header-anchor">#</a> Стилизация метки</h2> <p>Разумеется, вместо <code>data-open/close</code> можно использовать что угодно. Например,
+добавить иконочный шрифт.</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.toggle-button:after</span> <span class="token punctuation">{</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'fontello'</span><span class="token punctuation">;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;\e804&quot;</span><span class="token punctuation">;</span>
+    <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 15px<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.5em<span class="token punctuation">;</span>
+    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#menu-checkbox:checked + .main-menu .toggle-button:after</span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;\e804&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/fontello.png" alt="menu with fontello icon"></p> <p>Или иконку с вместе с поясняющим текстом:</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span>
+  <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>menu-checkbox<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>toggle-button<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">data-open</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>меню <span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">data-close</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>меню <span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">onclick</span>
+<span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Здесь мы получаем значение атрибутов <code>data-open/close</code>, отображаем данные
+через <code>before</code>, а саму иконку добавляем с помощью псевдоэлемента <code>after</code>.</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.toggle-button:before</span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>data-close<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.toggle-button:after</span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;\f0c9&quot;</span><span class="token punctuation">;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'FontAwesome'</span><span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#menu-checkbox:checked + nav[role=&quot;navigation&quot;] .menu</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#menu-checkbox:checked + nav[role=&quot;navigation&quot;] .toggle-button:after</span> <span class="token punctuation">{</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;\f0c9&quot;</span><span class="token punctuation">;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'FontAwesome'</span><span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#menu-checkbox:checked + nav[role=&quot;navigation&quot;] .toggle-button:before</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/assets/img/menu-icon.png" alt="menu_with_fontello_icon"></p> <p>В последних двух примерах читателю нужно будет самостоятельно поиграть с
+позиционированием иконок и расположением самого текста.</p> <p>Каких-то невероятных эффектов от подобной реализации меню ждать не приходится,
+хотя не сто́ит забывать о возможностях CSS-анимации.</p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2015</span> 
+
+  <a href="/?tag=frontend" data-v-1c67afbc>
+    frontend
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/lamp/" data-v-326f747b>
+      LAMP
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/wp-post-types/" data-v-326f747b>
+      Создание пользовательских записей в wordpress
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/24.b74b7cb5.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

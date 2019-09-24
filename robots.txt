@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /examples/
+
+Sitemap: https://www.unix-lab.org/sitemap.xml
+Host: www.unix-lab.org

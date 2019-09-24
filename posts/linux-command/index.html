@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Основные команды linux | Заметки на полях</title>
+    <meta name="description" content="Список команд и рецептов для работы с linux/unix">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/56.96ba4927.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Базовые возможности unix-like систем</h1> <div class="content__default"><p>В данной статье читателю предлагается окунуться в бескрайнее море возможностей,
+что предоставляют unix-like системы. Здесь собраны воедино многие понятия и
+команды, которые полезно было бы знать для повседневной работы с командной
+строкой. Разумеется, автор отдаёт себе отчёт в том, что охватить всё в одной
+заметке невозможно. Тем не менее, было принято решение объединить в ней наиболее
+употребительные термины и решение некоторых распространённых задач. Сделано это
+по соображениям удобства поиска, дабы материал не приходилось
+искать на разных страницах.</p> <p>Приведёные ниже команды можно вводить как раздельно, так и в одну
+строку. Во втором случае следует разделять команды знаком <code>;</code>. Каждый из
+разделов только коротко описывает назначение и употребление команд. Для
+получения более подробной информации по каждой из них предлагается
+обратиться к справочным руководствам.</p> <h2 id="содержание"><a href="#содержание" aria-hidden="true" class="header-anchor">#</a> Содержание</h2> <ul><li><a href="#base">Базовые команды</a></li> <li><a href="#search">Поиск по шаблону</a></li> <li><a href="#sort">Сортировка и замена строк</a></li> <li><a href="#compare">Сравнение файлов</a></li> <li><a href="#metasymbols">Метасимволы</a></li> <li><a href="#pipeline">Конвейеры</a></li> <li><a href="#daemons">Процессы</a></li> <li><a href="#environment">Настройка окружения</a></li> <li><a href="#rwx">Права доступа и файлы</a></li> <li><a href="#beep-disable">Отключение системного звукового сигнала</a></li> <li><a href="#archive">Работа с архивами</a></li> <li><a href="#full-backup">Полный backup и восстановление</a></li> <li><a href="#incremental-backup">Инкременальный backup</a></li> <li><a href="#download">Скачивание файлов/сайтов по сети</a></li> <li><a href="#usb">Создание загрузочного usb-flash</a></li> <li><a href="#who">Кто в системе</a></li> <li><a href="#date-and-time">Установка даты и времени</a></li></ul> <h2 id="базовые-команды"><a href="#базовые-команды" aria-hidden="true" class="header-anchor">#</a> <a id="base"></a> Базовые команды</h2> <p>Список команд для ежедневного использования.</p> <table><thead><tr><th>команда</th> <th>описание</th></tr></thead> <tbody><tr><td>mv file1 file2</td> <td>переместить/переименовать файл</td></tr> <tr><td>rm file1</td> <td>удалить файл</td></tr> <tr><td>rm -rf dir</td> <td>удалить директорию</td></tr> <tr><td>rm -rf dir/*</td> <td>удалить содержимое директории</td></tr> <tr><td>rmdir dir</td> <td>удалить пустой каталог dir</td></tr> <tr><td>touch file1 file2</td> <td>создать два файла</td></tr> <tr><td>cp file1 file2</td> <td>копировать файл</td></tr> <tr><td>pwd</td> <td>отобразить текущий каталог</td></tr> <tr><td>cd /home/user/work</td> <td>перейти в каталог work пользователя user</td></tr> <tr><td>echo &quot;hello&quot; &gt; file1</td> <td>записать &quot;hello&quot; в файл (сотрёт всё остальное)</td></tr> <tr><td>echo &quot;hello&quot; &gt;&gt; file1</td> <td>дописать &quot;hello&quot; в конец файла</td></tr> <tr><td>ctrl-s</td> <td>приостановить вывод команды</td></tr> <tr><td>ctrl-q</td> <td>возобновить вывод команды</td></tr> <tr><td>ctrl-d</td> <td>выйти из оболочки</td></tr> <tr><td>ctrl-c</td> <td>прервать выполнение</td></tr> <tr><td>ls -lt ~/work</td> <td>сортировать вывод по дате последнего изменения</td></tr> <tr><td>ls -lu</td> <td>по времени последнего использования</td></tr> <tr><td>cat hello.c</td> <td>вывести на экран содержимое файла hello.c</td></tr> <tr><td>wc hello.c</td> <td>подсчитать строки(-l), слова(-w), символы(-m) в файле hello.c</td></tr> <tr><td>wc -L hello.c</td> <td>узнать максимальную длину строки</td></tr> <tr><td>df -h</td> <td>информация о свободном месте на смонтированных устройствах</td></tr> <tr><td>du -h</td> <td>сколько места занимают файлы каталога и подкаталогов</td></tr> <tr><td>free -m</td> <td>использование оперативной памяти (-m мегабайт, -g гигабайт)</td></tr> <tr><td>ps -aux</td> <td>информация о запущенных процессах</td></tr> <tr><td>killall PID</td> <td>снять задачу по её PID (или по имени)</td></tr> <tr><td>sleep 1; echo &quot;hello&quot;</td> <td>вывести 'hello' через секунду</td></tr> <tr><td>whereis emacs</td> <td>найти местоположение emacs</td></tr> <tr><td>file file.pdf</td> <td>вывод информации о типе файла</td></tr></tbody></table> <h2 id="поиск-по-шабnону"><a href="#поиск-по-шабnону" aria-hidden="true" class="header-anchor">#</a> <a id="search"></a>Поиск по шаблону</h2> <p><code>Grep</code> просматривает файл в поиске строк, соответствующих шаблону. Можно указать
+несколько файлов сразу.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">grep</span> Hello hello.c  <span class="token comment"># найти слово 'Hello' в файле hello.c</span>
+  printf<span class="token punctuation">(</span><span class="token string">&quot;Hello, world!<span class="token entity" title="\n">\n</span>&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+$ <span class="token function">grep</span> Hello hello.c hello.cpp
+  hello.c:    printf<span class="token punctuation">(</span><span class="token string">&quot;Hello, world!<span class="token entity" title="\n">\n</span>&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  hello.cpp:    cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;Hello!<span class="token entity" title="\n">\n</span>&quot;</span><span class="token punctuation">;</span>
+</code></pre></div><p>При указании ключа <code>-v</code> ищет строки, <em>не соответствующие</em> шаблону, <code>-n</code> выводит
+номера строк:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">grep</span> -v Hello hello.c
+
+<span class="token comment">#include &lt;stdio.h&gt;</span>
+int <span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token builtin class-name">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Также <code>grep</code> (и <code>egrep</code>) может работать с <em>регулярными выражениями</em>. К
+сожалению, метасимволы, используемые этими программами, не всегда совпадают.</p> <table><thead><tr><th>метасимвол</th> <th>описание</th></tr></thead> <tbody><tr><td>^</td> <td>начало строки</td></tr> <tr><td>$</td> <td>конец строки</td></tr> <tr><td>.</td> <td>одиночный символ</td></tr> <tr><td>[...]</td> <td>любой из символов множества</td></tr> <tr><td>r*</td> <td>0 или больше вхождений r</td></tr> <tr><td>r+</td> <td>1 или больше вхождений r (egrep)</td></tr> <tr><td>r?</td> <td>0 или одно вхождение r (egrep)</td></tr></tbody></table> <h2 id="сортировка-и-замена-строк"><a href="#сортировка-и-замена-строк" aria-hidden="true" class="header-anchor">#</a> <a id="sort"></a>Сортировка и замена строк</h2> <p>Команда <code>sort</code> применяется для сортировки данных по алфавиту: сначала пробелы,
+затем буквы в верхнем регистре, затем буквы в нижнем регистре.</p> <p>Вывести последние 10 строк файла может команда <code>tail</code>. Если необходимо изменить
+количество выводимых строк, нужно сказать <code>tail</code> об этом. Например, затребуем
+последние 12 строк файла <code>english-alphabet.cpp</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">tail</span> -12 english-alphabet.cpp
+
+<span class="token comment">#include &lt;iostream&gt;</span>
+using namespace std<span class="token punctuation">;</span>
+
+int <span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    char letter<span class="token punctuation">;</span>
+
+    for<span class="token punctuation">(</span>letter <span class="token operator">=</span> <span class="token string">'A'</span><span class="token punctuation">;</span> letter <span class="token operator">&lt;</span><span class="token operator">=</span> <span class="token string">'Z'</span><span class="token punctuation">;</span> letter++ <span class="token punctuation">)</span>
+        cout <span class="token operator">&lt;&lt;</span> letter <span class="token operator">&lt;&lt;</span> <span class="token string">&quot; &quot;</span><span class="token punctuation">;</span>
+        cout <span class="token operator">&lt;&lt;</span> <span class="token string">&quot;<span class="token entity" title="\n">\n</span>&quot;</span><span class="token punctuation">;</span>
+
+    <span class="token builtin class-name">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Во многих случаях имеет смысл применить команду <code>sed</code>, которая построчно читает
+входной файл и поочерёдно выполняет команды над каждой его строкой.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">sed</span> -n <span class="token string">'10,50p'</span>     <span class="token comment"># вывести строки с 10 по 50</span>
+$ <span class="token function">sed</span> <span class="token string">'1,10d'</span>         <span class="token comment"># удалить строки с 1 по 10</span>
+$ <span class="token function">sed</span> <span class="token string">'<span class="token variable">$d</span>'</span>            <span class="token comment"># удалить последнюю строку</span>
+$ <span class="token function">sed</span> <span class="token string">'s/UNIX/LINUX/g'</span> unix <span class="token operator">&gt;</span> linux
+$ <span class="token function">cat</span> unix linux
+UNIX
+LINUX
+</code></pre></div><p>В последнем примере мы заменили слово <code>UNIX</code> на слово <code>LINUX</code> в одноимённом
+файле. Исходный файл остался неизменённым.</p> <p>А теперь совместим работу <code>sed</code> и <code>wc</code> для выполнения часто встречающейся
+задачи — <em>подсчёта слов без пробелов</em>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> <span class="token variable">$1</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/ //g'</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/.$//;N;s/<span class="token entity" title="\n">\n</span>/ /g'</span> <span class="token operator">|</span> <span class="token function">wc</span> -m
+</code></pre></div><p>Здесь <code>cat</code> принимает на вход пользовательский аргумент (файл), <code>sed</code> очищает
+файл от лишних для нашей задачи символов, <code>wc</code> подсчитывает количество оставшихся символов.</p> <p>Хорошую службу может сослужить <code>awk</code>. Это язык сканирования и обработки
+шаблонов. На вход принимает аргумент  вида <code>шаблон {действие}</code> и имена
+файлов. К примеру, нужно выбрать третье поле из вывода <code>df</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">df</span> -ah /home
+Файловая система Размер Использовано  Дост Использовано% Cмонтировано в
+/dev/sda6          104G          55G   45G           <span class="token number">56</span>% /home
+$ <span class="token function">df</span> -ah /home <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print <span class="token variable">$3</span>}'</span>
+Размер
+55G
+</code></pre></div><h2 id="сравнение-файnов"><a href="#сравнение-файnов" aria-hidden="true" class="header-anchor">#</a> <a id="compare"></a>Сравнение файлов</h2> <p>Иногда мы имеем несколько незначительно отличающихся файлов. Искать различия вручную,
+может быть, и увлекательно, но не тогда, когда время ограничено. На помощь может
+прийти программа <code>diff</code>.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">diff</span> english-alphabet.cpp reverse-alphabet.cpp
+7c7
+<span class="token operator">&lt;</span>     for<span class="token punctuation">(</span>letter <span class="token operator">=</span> <span class="token string">'A'</span><span class="token punctuation">;</span> letter <span class="token operator">&lt;</span><span class="token operator">=</span> <span class="token string">'Z'</span><span class="token punctuation">;</span> letter++ <span class="token punctuation">)</span>
+---
+<span class="token operator">&gt;</span>     for<span class="token punctuation">(</span>letter <span class="token operator">=</span> <span class="token string">'Z'</span><span class="token punctuation">;</span> letter <span class="token operator">&gt;</span><span class="token operator">=</span> <span class="token string">'A'</span><span class="token punctuation">;</span> letter-- <span class="token punctuation">)</span>
+</code></pre></div><p>В примере <code>diff</code> отображает имеющиеся различия между двумя файлами и указывает
+различающиеся строки. В данном примере оба файла имеют лишь одно отличие и
+находится оно на седьмой строке.</p> <h2 id="метасимвоnы"><a href="#метасимвоnы" aria-hidden="true" class="header-anchor">#</a> <a id="metasymbols"></a>Метасимволы</h2> <p>Весьма удобны в использовании шаблонные символы или метасимволы.</p> <table><thead><tr><th>символ</th> <th>описание</th></tr></thead> <tbody><tr><td>&gt;</td> <td>направить стандартный вывод в файл</td></tr> <tr><td>&gt;&gt;</td> <td>добавить вывод в конец файла</td></tr> <tr><td>&lt;</td> <td>взять стандартный вывод из файла</td></tr> <tr><td>*</td> <td>любая строка символов</td></tr> <tr><td>[...]</td> <td>любой из символов в скобках</td></tr> <tr><td>?</td> <td>любой отдельный символ</td></tr> <tr><td>;</td> <td>разделитель команд</td></tr> <tr><td>(...)</td> <td>выполнить команду в дочерней оболочке</td></tr> <tr><td>'...'</td> <td>выполнить без интерпретации метасимволов</td></tr> <tr><td>&quot;...&quot;</td> <td>интерпретировать метасимволы внутри</td></tr> <tr><td>&amp;</td> <td>выполнение последующей команды, не дожидаясь завершения предыдущей</td></tr> <tr><td>&amp;&amp;</td> <td>выполнение последующей команды только при завершении предыдущей</td></tr></tbody></table> <p>Чтобы экранировать шаблонный символ возьмите его в одинарные кавычки <code>'*'</code> или
+используйте знак экранирования <code>\</code> (обратная косая черта).</p> <h2 id="конвейеры"><a href="#конвейеры" aria-hidden="true" class="header-anchor">#</a> <a id="pipeline"></a>Конвейеры</h2> <p>Здесь следовало бы начать с определения канала как такового, что и мы и
+сделаем. <strong>Канал</strong> (pipe) — способ подключения вывода одной программы на вход
+другой без использования временных файлов.</p> <p><strong>Конвейер</strong> (pipeline) — соединение двух и более программ посредством таких
+каналов.</p> <p>Символ вертикальной черты <code>|</code> сообщит оболочке, что нужно задействовать
+конвейер. В конвейер можно включить любое количество программ и все они будут
+выполняться одновременно (ядро следит за правильностью синхронизации). Создание
+каналов лежит на плечах оболочки.</p> <p>В случае, когда имена файлов не указаны, команда читает свой стандартный ввод
+(по-умолчанию терминал), перенаправляет ответ на стандартный вывод (который
+также связан с терминалом).</p> <p>Например:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">who</span> <span class="token operator">|</span> <span class="token function">wc</span> -l <span class="token comment"># подсчитать кол-во пользователей</span>
+</code></pre></div><p>Если хочется создать конвейер, который выполнит сразу несколько команд, их надо
+разделить знаком точки с запятой и взять в круглые скобки.</p> <h2 id="процессы"><a href="#процессы" aria-hidden="true" class="header-anchor">#</a> <a id="daemons"></a>Процессы</h2> <p>Упоминая UNIX, нельзя не сказать несколько слов об управлении процессами.</p> <p><strong>Процесс</strong> — экземпляр выполняющейся программы. Важно различать программы
+и процессы: <code>wc</code> — это программа; каждый раз, когда она запускается,
+создаётс новый процесс.</p> <p>Как уже неоднократно упоминалось ранее, команды могут быть введены в одну
+строку, если они разделены между собой знаком точки с запятой.</p> <p>В случае, когда процесс занимает слишком много ресурсов, следует понизить его
+приоритет перед другими процессами, чему способствует запуск процесса,
+предваряемый командой <code>nice</code>:</p> <div class="language- extra-class"><pre class="language-text"><code># nice emerge-webrsync &amp;&amp; sudo emerge -auvDN world
+</code></pre></div><p>Если выполнение программы обещает быть очень долгим, а ждать времени нет, можно
+воспользоваться услугами программы <code>nohup</code>. Её формат <code>nohup command &amp;</code>. При этом
+есть возможность спокойно выйти из оболочки, не опасаясь того, что выполнение
+программы завершится, а вывод прочесть в специально созданном <code>nohup</code> файле
+<code>nohup.out</code>. <code>Nohup</code> использует <code>nice</code>, поэтому указывать приоритет дополнительно нет необходимости.</p> <div class="warning"><p>
+При использовании конвейера совместно со знаком амперсанда (&amp;) идентификатор
+процесса тлько один, не смотря на то, что в конвейере запущено несколько команд.
+</p></div> <p>Наконец, у вас всегда есть возможность реализовать отложенный запуск
+программ. Для этого нехитрого действа рекомендуется обратиться к таким командам
+как <code>at</code> или ранее упомянутый <code>sleep</code>. Первая из них изначально недоступна, требует
+предварительной установки из репозитория.</p> <div class="language- extra-class"><pre class="language-text"><code># emerge -av sys-process/at  # установить at в gentoo
+# atd                        # запуск демона at
+$ at 00:27                   # установить время
+$ at&gt; emerge-webrsync        # дать команду
+$ Ctrl-D                     # выйти
+$ sleep 5; echo &quot;Good bye&quot;   # запуск после пяти секунд
+</code></pre></div><h2 id="настройка-окружения"><a href="#настройка-окружения" aria-hidden="true" class="header-anchor">#</a> <a id="environment"></a>Настройка окружения</h2> <p>Если в домашнем каталоге имеется файл <code>.bash_profile</code>, <code>.zshenv</code> или
+подобный им (зависит от используемой оболочки), при входе в систему будут
+выполняться прописанные в нём команды. Например:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">DISPLAY</span></span><span class="token operator">=</span>:0.0
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;Hello, <span class="token environment constant">$USER</span>!<span class="token entity" title="\n">\n</span>Today <span class="token variable"><span class="token variable">`</span><span class="token function">date</span><span class="token variable">`</span></span>&quot;</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">EDITOR</span><span class="token operator">=</span>/usr/bin/emacs
+</code></pre></div><p>Последняя запись определяет встроенную переменную <code>$EDITOR</code>, тем самым
+устанавливая в качество текстового редактора по-умолчанию emacs. Для просмотра
+всех имеющихся переменных введите команду <code>set</code>.</p> <p>Чтобы изменения вступили в силу «перечитайте» соответствующий файл
+(в нашем случае используется Z Shell):</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">source</span> .zshenv
+</code></pre></div><p>Часто может возникнуть потребность указания <em>путей поиска</em>, которые хранятся в
+переменной <code>PATH</code>. Чтобы узнать в каких каталогах происходит поиск, нужно вывести
+значение этой переменной на экран. В случае, если этих значений недостаточно,
+добавить нужные в <code>.zshenv</code>. Пути разделены двоеточием, точка обозначает
+текущий каталог и не является обязательной:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token environment constant">$PATH</span>                           <span class="token comment"># вывести содержимое на экран</span>
+$ <span class="token function">cat</span> .zshenv
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>.:/bin:/usr/local/bin      <span class="token comment"># переопределение всех путей</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span>:/home/redvi/.rvm/bin <span class="token comment"># добавление пути к уже существующим</span>
+</code></pre></div><p>Также бывает удобно <em>создавать свои команды</em>. Самый простой пример: комбинация уже
+существующих команд в одну.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">'#!/bin/sh<span class="token entity" title="\n">\n</span>ls <span class="token variable">$1</span> &amp;&amp; cat <span class="token variable">$1</span>'</span> <span class="token operator">&gt;</span> lc
+$ <span class="token function">chmod</span> +x lc
+$ <span class="token function">sh</span> lc file.txt
+</code></pre></div><p>Здесь нужные строки записываются в файл <code>lc</code>, которому даются права на
+исполнение. Впоследующем файл запускается при помощи оболочки. Если поместить
+каталог, где находится <code>lc</code> в переменную <code>PATH</code>, можно будет опустить <code>sh</code>.</p> <p>Если подытожить: команда создаётся в пользовательском каталоге. Например,
+<code>/home/user/usr/bin/mycommand</code>. После чего в файл, который читается оболочкой,
+добавляется соответствующий путь поиска команд.</p> <p>Также нужно пояснить значение <em>позиционного параметра</em> <code>$1</code>. Он служит переменной,
+передающей первый аргумент при вызове команды <code>lc</code>. В нашем случае на это
+место ставится имя файла. Само имя программы — это <code>$0</code>.
+Если количество аргументов заранее неизвестно, подставляется шаблонное выражение
+<code>$*</code>.</p> <p>Если переменные, содержащиеся в <code>.profile</code> должны быть глобальными,
+рекомендуется задать их в <code>/etc/profile</code>.</p> <h2 id="права-доступа-и-файnы"><a href="#права-доступа-и-файnы" aria-hidden="true" class="header-anchor">#</a> <a id="rwx"></a>Права доступа и файлы</h2> <p>Запомнить обозначения прав доступа не составит большого труда. По большому счёту
+они сводятся к чтению (read), записи (write) и исполнению (execute).</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ls</span> -l sort.py
+-rwxr-xr-x <span class="token number">1</span> mark <span class="token function">users</span> <span class="token number">388</span> ноя <span class="token number">26</span>  <span class="token number">2013</span> sort.py*
+</code></pre></div><p>Из приведённой выше записи можно понять следующее:</p> <p>это файл, а не каталог (-); владельцу (пользователю mark) он доступен на
+запись, чтение и исполнение; группе владельца users и всем остальным на чтение и выполнение.</p> <p>Весьма демократично, не так ли? Для изменения прав используются две команды:
+<code>chmod</code> и <code>chown</code>, первая из которых меняет права доступа к файлу, вторая —
+меняет владельца и/или группу файла.</p> <div class="language- extra-class"><pre class="language-text"><code>$ chmod 644               # изменить права доступа
+# chown root:adm sort.py  # теперь владелец root, группа adm
+</code></pre></div><p>Как видно из примера, права можно задавать лишь числами. Но разобраться с ними
+ничуть не сложнее: их тоже три.</p> <ul><li><strong>4</strong> read</li> <li><strong>2</strong> write</li> <li><strong>1</strong> execute</li></ul> <p>Так, чтобы назначить права только на чтение и запись (read - 4, write - 2),
+нужно к 4 прибавить 2. В итоге мы получаем заветную шестёрку, которая и
+фигурирует в примере.</p> <p>Что касается <code>chmod</code>, при необходимости добавить или запретить права доступа,
+можно использовать <code>+</code> и <code>-</code> соответственно:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">chmod</span> +x sort.py  <span class="token comment"># дать всем права на выполнение</span>
+</code></pre></div><p>Помимо этого существует бит SUID, но в данной статье он не рассматривается, ибо
+применяется достаточно редко и теоретически небезопасен.</p> <div class="warning"><p>
+если для записи доступен каталог, пользователи могут удалять из него файлы
+независимо от прав доступа к этим файлам
+</p></div> <p>Дабы проиллюстрировать сказанное выше, создадим каталог и поиграем с правами
+доступа к нему:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mkdir</span> catalog <span class="token operator">&amp;&amp;</span> <span class="token function">ls</span> -ld catalog
+drwxr-xr-x <span class="token number">2</span> redvi <span class="token function">users</span>
+$ <span class="token function">chmod</span> <span class="token number">644</span> catalog <span class="token operator">&amp;&amp;</span> <span class="token function">ls</span> -ld catalog
+drw-r--r-- <span class="token number">2</span> redvi <span class="token function">users</span>
+$ <span class="token function">touch</span> catalog/sc.css
+touch: невозможно выполнить <span class="token function">touch</span> для «catalog/sc.css»: Отказано в доступе
+$ <span class="token function">chmod</span> <span class="token number">744</span> catalog
+$ <span class="token function">touch</span> catalog/sc.css
+</code></pre></div><p>Также у каждого файла имеется служебная информация (время модификации,
+последнего доступа), которая хранится <em>в индексном дескрипторе</em>
+(inode). Интересно, что сам файл скорее представляет собой ссылку —
+указание на индексный дескриптор: например, при
+удалении командой <code>rm</code> происходит удаление ссылки, и только если нигде больше не
+осталось других ссылок на файл удаляется сам индексный дескриптор, а значит и
+сам файл. Возможно, это звучит немного запутанно, но я не знаю как объяснить
+лучше.</p> <p>Создание <em>жёсткой ссылки</em> на файл возможно при использовании команды <code>ln</code>, просмотр всех
+имеющихся ссылок — <code>ls -li</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">ln</span> <span class="token function">link</span> link2
+$ <span class="token function">ls</span> -li
+<span class="token number">5519273</span> -rw-r--r-- <span class="token number">2</span> <span class="token function">link</span>
+<span class="token number">5519273</span> -rw-r--r-- <span class="token number">2</span> link2
+<span class="token number">5256834</span> -rwxr-xr-x <span class="token number">1</span> sort.py*
+</code></pre></div><p>Так, оба файла имеют один и тот же индексный дескриптор (5519273), и по выводу
+команды <code>ls</code> видно, что у него два счётчика (2). При удалении одного из них,
+индексный дескриптор (и содержимое файла) никуда не исчезнет.</p> <p>У читателя может возникнуть вопрос: чем же тогда создание жёсткой ссылки
+отличается от простого копирования файла? Всё просто: при копировании создаются
+два разных файла, если внести изменения в один, то они никак не повлияют на
+другой. Жёсткая ссылка обеспечивает полную идентичность содержимого: при
+редактировании первого файла все изменения отражаются и во втором.</p> <p>С другой стороны мы можем создать <em>символическую ссылку</em>, которая всего лишь указывает на местонахождение
+файла. Если хотите, можете сравнить это с программой и её ярлыком в OS Windows.</p> <p>При удалении или перемещении файла, символическая ссыка перестаёт работать, ибо ведёт к несуществующему файлу.</p> <h2 id="откnючение-системного-звукового-сигнаnа"><a href="#откnючение-системного-звукового-сигнаnа" aria-hidden="true" class="header-anchor">#</a> <a id="beep-disable"></a>Отключение системного звукового сигнала</h2> <p>Если вы не в силах выносить системный звуковой сигнал в linux, что с вероятностью в 100% возникает
+при неверном вводе, можно воспользоваться нижеизложенными командами.</p> <p>Консоль:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">'set bell-style none'</span> <span class="token operator">&gt;&gt;</span> .inputrc
+</code></pre></div><p>X11:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">echo</span> <span class="token string">'xset b off'</span> <span class="token operator">&gt;&gt;</span> .xinitrc
+</code></pre></div><p>Те, кто пользуется самосборным ядром, могут отключить досадную особенность в
+самом ядре:</p> <div class="language- extra-class"><pre class="language-text"><code>Device Drivers → Input device support → Miscellaneous devices → PC Speaker support
+</code></pre></div><h2 id="работа-с-архивами"><a href="#работа-с-архивами" aria-hidden="true" class="header-anchor">#</a> <a id="archive"></a> Работа с архивами</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">tar</span> -zxvf archive.gz         <span class="token comment"># распаковать .gz</span>
+$ <span class="token function">tar</span> -cf archive.tar folder/  <span class="token comment"># создать tar-архив</span>
+$ <span class="token function">unzip</span> archive.zip            <span class="token comment"># распаковать zip-архив</span>
+$ <span class="token function">zip</span> -r archive folder        <span class="token comment"># создать zip-архив из каталога folder</span>
+$ <span class="token function">unrar</span> -x                     <span class="token comment"># распаковать rar-архив</span>
+</code></pre></div><p>Возможно, соответствующие программы для работы с архивами придётся
+предварительно установить.</p> <h2 id="поnный-backup-и-восстановnение-tar"><a href="#поnный-backup-и-восстановnение-tar" aria-hidden="true" class="header-anchor">#</a> <a id="full-backup"></a>Полный backup и восстановление (tar)</h2> <p>Полная копия linux-машины, за исключением каталога <code>/backup</code> и служебных каталогов
+с сохранением прав доступа. Для создания таковой понадобится LiveCD диск,
+загрузившись с которого можно приступать к задаче.</p> <div class="language- extra-class"><pre class="language-text"><code># tar -cvpf /backup/mybackup.tar --directory=/ --exclude=proc --exclude=dev/pts --exclude=backup --exclude=dev
+</code></pre></div><p>Копия системы будет создана под именем <code>backup/mybackup.tar</code>. Для сжатия (и
+экономия места на носителе-приёмнике) к указанной команде можно добавить ключ
+<code>-z</code>.</p> <p>Восстановление копии на ту же машину (в случае использования другой машины
+следует поправить соответствующие строки в <code>/etc/fstab</code> и установить загрузчик):</p> <div class="language- extra-class"><pre class="language-text"><code># tar -xvpf /mybackup.tar
+</code></pre></div><p>В случае восстановления сжатого архива также добавляется ключ <code>-z</code>.</p> <h2 id="инкременаnьный-backup-rsync"><a href="#инкременаnьный-backup-rsync" aria-hidden="true" class="header-anchor">#</a> <a id="incremental-backup"></a>Инкременальный backup (rsync)</h2> <p>Идеально подходит для периодического создания копии домашнего каталога.</p> <div class="language- extra-class"><pre class="language-text"><code># rsync -PavHx --delete-after /home/* /mnt/backup/
+</code></pre></div><h2 id="скачивание-файnов-сайтов-по-сети"><a href="#скачивание-файnов-сайтов-по-сети" aria-hidden="true" class="header-anchor">#</a> <a id="download"></a>Скачивание файлов/сайтов по сети</h2> <p>Делается это при помощи программы <code>wget</code>, где ключ <code>-c</code> позволит докачать файл при
+обрыве соединения, а ключ <code>-r</code> используется в случае, если необходимо
+рекурсивное скачивание:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">wget</span> -c http://distfiles.gentoo.org/*/install-amd64-minimal-*.iso
+</code></pre></div><h2 id="создание-загрузочного-usb-flash"><a href="#создание-загрузочного-usb-flash" aria-hidden="true" class="header-anchor">#</a> <a id="usb"></a>Создание загрузочного usb-flash</h2> <p>Предполагается, что лучший способ для этого — использование <code>dd</code>. Если есть
+необходимость разметить usb-flash, запустите команду <code>fdisk</code>, вот её флаги:</p> <table><thead><tr><th>ключ</th> <th>описание</th></tr></thead> <tbody><tr><td>a</td> <td>установить/снять флаг загрузочного раздела</td></tr> <tr><td>c</td> <td>переключить флаг совместности с dos</td></tr> <tr><td>d</td> <td>удалить раздел</td></tr> <tr><td>l</td> <td>вывести список известных типов разделов</td></tr> <tr><td>m</td> <td>показать меню</td></tr> <tr><td>n</td> <td>добавить новый раздел</td></tr> <tr><td>o</td> <td>создать новую пустую таблицу разделов в стиле DOS</td></tr> <tr><td>p</td> <td>показать существующею таблицу разделов</td></tr> <tr><td>q</td> <td>выйти без сохранения изменений</td></tr> <tr><td>t</td> <td>изменить метку типа раздела</td></tr> <tr><td>v</td> <td>проверить таблицу разделов</td></tr> <tr><td>w</td> <td>сохранить изменения и выйти</td></tr> <tr><td>x</td> <td>дополнительные возможности (только для экспертов)</td></tr></tbody></table> <div class="language- extra-class"><pre class="language-text"><code># fdisk -l
+Устр-во   Загрузочный     Start Конец    Blocks  Id System
+/dev/sda1*            1xxx 4xxx 10xxx+ 83 Linux
+/dev/sda2             1xxx 1xxx 5xxx  82 Linux swap / Solaris
+/dev/sda5             4xxx 6xxx 11xxx+ 83 Linux
+
+Устр-во   Start   Конец   Size Тип
+/dev/sdb1  2048     15644671   7,5G Microsoft basic data
+
+# fdisk /dev/dsb
+# dd if=/home/user/ISO/linux.iso of=/dev/sdb
+</code></pre></div><h2 id="кто-в-системе"><a href="#кто-в-системе" aria-hidden="true" class="header-anchor">#</a> <a id="who"></a>Кто в системе</h2> <p>Кто сейчас находится в системе, когда и кем был выполнен последний вход и
+прочее. Для получения более подробных сведений используйте ключ <code>-a</code>.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">who</span>
+redvi ~  <span class="token function">who</span>
+root     tty3         <span class="token number">2014</span>-07-30 <span class="token number">20</span>:43
+redvi    :0.0         <span class="token number">2014</span>-07-30 <span class="token number">18</span>:22
+</code></pre></div><h2 id="установка-даты-и-времени"><a href="#установка-даты-и-времени" aria-hidden="true" class="header-anchor">#</a> <a id="date-and-time"></a>Установка даты и времени</h2> <p>Первая из приведённых ниже программ отобразит текущие дату и время. Вторая
+установит нужные параметры (формат MMDDhhmmCCYY/месяц-день-часы-минуты-год)</p> <div class="language- extra-class"><pre class="language-text"><code>$ date
+# date 073021502014
+</code></pre></div></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2014</span> 
+
+  <a href="/?tag=linux" data-v-1c67afbc>
+    linux
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/emacs-ide/" data-v-326f747b>
+      Emacs как IDE для web-разработки
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/emacs-snippets/" data-v-326f747b>
+      Сделать emacs удобнее
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/56.96ba4927.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

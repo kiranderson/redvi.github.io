@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Работа с git | Заметки на полях</title>
+    <meta name="description" content="Что такое pull request, зачем оно нужно и как его достичь">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/32.c60ace8f.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Как сделать pull request</h1> <div class="content__default"><p>В кругу моих знакомых имеются товарищи весьма и весьма далёкие от
+мира железок, интернета и open source (в общем, они пропустили всё самое интересное).
+Не далее как на прошлой неделе угораздило таки употребить при них непотребное
+словосочетание «pull request», после чего, ловя недоумённые взгляды,
+пришлось мяться и придумывать как сие получше перевести на великий и могучий.
+Увы, к взаимопониманию это не привело: попробую ответить здесь.</p> <p><strong>Pull Request</strong> — запрос на включение. На включение написанного
+вами кода в чужой репозиторий.</p> <h2 id="с-чего-начать"><a href="#с-чего-начать" aria-hidden="true" class="header-anchor">#</a> С чего начать?</h2> <p>А для начала этот самый репозиторий нужно форкнуть (fork — вилка, ответвление).
+Разберём это нехитрое действо на примере веб-сервиса для хостинга IT-проектов,
+название которому GitHub. Разумеется, кроме GitHub есть и другие: BitBucket,
+например. Выбирать по вкусу.</p> <div class="tip custom-block"><p class="custom-block-title">На заметку</p> <p>Для успешного проведения нижеизложенных операций у вас
+(что естественно) должен быть установлен git</p></div> <p>Заходим на страницу интересующего проекта, жмём кнопку <code>Fork</code>, ищем
+<em>на своей</em> странице URL для клонирования.</p> <p><img src="/assets/img/fork.png" alt="fork" title="форк репозитория на гитхаб"></p> <p>В консоли в зависимости от входных данных набираем нечто подобное:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> clone git@github.com/username/django_documentation.git
+</code></pre></div><p>Отлично. Уже можно вносить свои изменения в код проекта.</p> <p>Тот репозиторий, что теперь лежит на вашем жёстком диске, независим от
+основного. В нём отслеживаются только ваши наработки. Но как следить за
+изменениями, происходящими в первоисточнике, откуда вы «стянули»
+репозиторий? Добавить удаленный репозиторий в отслеживаемые. Например, так:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> remote -v
+origin  git@github.com:username/django_documentation.git <span class="token punctuation">(</span>fetch<span class="token punctuation">)</span>
+origin  git@github.com:username/django_documentation.git <span class="token punctuation">(</span>push<span class="token punctuation">)</span>
+
+$ <span class="token function">git</span> remote <span class="token function">add</span> upstream git@github.com:Alerion/django_documentation.git
+</code></pre></div><p>После добавления <code>upstream</code> в отслеживаемые, наберите команду <code>git remote -v</code>
+ещё раз, вы должны увидеть произошедшие изменения.</p> <p>Давайте посмотрим как сливать изменения из оригинального репозитория к себе
+в случае, если разработка в нём ушла вперёд пока вы сосредоточенно писали коммиты:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> pull upstream master
+From github.com:Alerion/django_documentation
+* branch            master     -<span class="token operator">&gt;</span> FETCH_HEAD
+Updating 66f032e<span class="token punctuation">..</span>062b294
+Fast-forward
+djbook/commands/authors.py                    <span class="token operator">|</span> <span class="token number">65</span> ++--
+djbook/deps.txt                               <span class="token operator">|</span>  <span class="token number">6</span> ++--
+djbook/templates/authors.html                 <span class="token operator">|</span> <span class="token number">14</span> ++--
+djbook/templates/base.html                    <span class="token operator">|</span>  <span class="token number">7</span> ++--
+locale/ru/LC_MESSAGES/faq/install.po          <span class="token operator">|</span> <span class="token number">94</span> +++-
+locale/ru/LC_MESSAGES/faq/usage.po            <span class="token operator">|</span> <span class="token number">49</span> +---
+locale/ru/LC_MESSAGES/howto/outputting-csv.po <span class="token operator">|</span> <span class="token number">61</span> ++--
+locale/ru/LC_MESSAGES/topics/cache.po         <span class="token operator">|</span> <span class="token number">77</span> ++--
+locale/ru/LC_MESSAGES/topics/db/multi-db.po   <span class="token operator">|</span> <span class="token number">80</span> +++-
+<span class="token number">9</span> files changed, <span class="token number">290</span> insertions<span class="token punctuation">(</span>+<span class="token punctuation">)</span>, <span class="token number">163</span> deletions<span class="token punctuation">(</span>-<span class="token punctuation">)</span>
+</code></pre></div><p>У нас есть основной репозиторий с веткой <code>master</code> и недавно добавленный нами
+— с <code>upstream</code>. Команда, данная выше, забирает всё новое из ветки <code>upstream</code>
+и сливает изменения в <code>master</code>. Так, мы всегда можем получить последние наработки.</p> <p>Вы можете также воспользоваться другой командой — <code>fetch</code>
+вместо указанной <code>pull</code>. В таком случае git заберет изменения с
+удаленного репозитория, но не будет пытаться слить их с вашей текущей веткой
+автоматически.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> fetch upstream
+$ <span class="token function">git</span> merge upstream/master
+</code></pre></div><p>Допустим, мы написали, что хотели и сделали коммит. Забираем изменения (но не сливаем их, fetch) из <code>upstream</code>.
+Затем вручную сливаем изменения из удалённой ветки <code>upstream/master</code> к себе (merge),
+разрешаем конфликты (если есть) и снова делаем коммит.</p> <div class="tip custom-block"><p class="custom-block-title">На заметку</p> <p>Если репозиторий огромен, а забирать его весь не хочется, клонируем только нужную ветку</p></div> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># клонировать только ветку real_branch:</span>
+$ <span class="token function">git</span> clone -b real_branch --single-branch git@github.com/username/django_documentation.git
+</code></pre></div><h2 id="что-такое-ветки"><a href="#что-такое-ветки" aria-hidden="true" class="header-anchor">#</a> Что такое ветки?</h2> <p>Чаще всего ветки (branch — ответвление, ветвь, филиал) бывают
+тематическими. Например, при общей разработке, когда у всех участников
+есть право записи в репозиторий. В этом случае ветки используются для
+отделения изменений, сделанных одним из разработчиков, от общего репозитория.
+Ветки могут пригодиться и в случае с созданием pull-request'а.</p> <p>Создание ветки происходит довольно просто. Находясь в каталоге с проектом,
+наберите следующие команды:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># отобразить все ветки</span>
+$ <span class="token function">git</span> branch -a
+* master
+remotes/origin/1.4
+remotes/origin/HEAD -<span class="token operator">&gt;</span> origin/master
+remotes/origin/master
+remotes/upstream/1.4
+remotes/upstream/master
+
+<span class="token comment"># создать новую ветку из master, переключиться на неё</span>
+$ <span class="token function">git</span> checkout -b new_branch
+</code></pre></div><p>Новые ветки создаются не только из master, берите любую!</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># создать новую ветку из удалённой origin/1.4</span>
+$ <span class="token function">git</span> checkout -b new_branch origin/1.4
+
+<span class="token comment"># если ветки нет в отслеживаемых, а отслеживать надо, поможет флаг t (track)</span>
+$ <span class="token function">git</span> checkout -t origin/1.4
+</code></pre></div><p>Находясь в только что созданной ветке, вы можете приступить к работе.
+Вносите в код свои изменения, а когда закончите просто переключитесь
+обратно к своей основной ветке. Вы можете отправить pull request,
+выбрав ветку <code>new_branch</code> или же прежде слить изменения из неё в
+основную ветку разработки. Рассмотрим это подробнее:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> checkout master  <span class="token comment"># вернуться к основной ветке</span>
+$ <span class="token function">git</span> merge new_branch <span class="token comment"># слить изменения из new_branch</span>
+</code></pre></div><p>Если нужно отправить в свой удалённый репозиторий вновь созданную
+ветку (не сливать её с master), делаем следующее:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> push master new_branch
+</code></pre></div><p>Не торопитесь сливать изменения. Если что-то не заладилось, созданную
+ветку можно удалить:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> branch -d new_branch            <span class="token comment"># удалить локально</span>
+$ <span class="token function">git</span> push master :new_branch         <span class="token comment"># в удалённом репозитории</span>
+
+<span class="token comment"># ещё один способ удалить ветку в удалённом репозитории</span>
+$ <span class="token function">git</span> push origin --delete new_branch
+</code></pre></div><h2 id="отправnяем-изменения"><a href="#отправnяем-изменения" aria-hidden="true" class="header-anchor">#</a> Отправляем изменения</h2> <p>Добрались таки до ответа на поставленный вопрос: что такое pull request,
+зачем оно нужно и как его достичь. Как предложить владельцу репозитория свои изменения?</p> <p>Для этого зайдите в свой аккаунт, выбирайте репозиторий владельца и ищите
+небольшую зелёную кнопку (на момент написания поста она была таковой,
+если даже что-то изменится, думаю, найти её будет несложно).</p> <p>Перед тем как сделать запрос вы имеете возможность добавить комментарий,
+просмотреть то, какие файлы будут изменены, какие коммиты добавлены.
+В верхнем углу окна добавления запроса обратите внимание откуда куда и что
+вы сливаете. Если необходимо слить основные ветки выбор падёт на репозиторий
+<code>username:master</code>, если отдельную ветку (вспоминаем branch) — так и указывайте её.</p> <p><img src="/assets/img/change-and-comment.jpg" alt="request" title="отправка MR"></p> <p>А дальше... ждать. Пока придёт владелец оригинального репозитория и
+примет/отклонит ваши изменения.</p> <p>Ну вот, мы его достигли. Просветления то есть 😃</p> <h2 id="как-отменить-изменения"><a href="#как-отменить-изменения" aria-hidden="true" class="header-anchor">#</a> Как отменить изменения</h2> <p>Если что-то пошло совсем не так как хотелось, изменения можно «откатить».
+Когда изменённый файл ещё не проиндексирован, сделать это просто:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> checkout -- myfile
+</code></pre></div><p>Когда нужно вернуть более старое состояние уже проиндексированных файлов и забыть
+о них совсем (помните, что упомянутая здесь операция отменит всю вашу работу
+до определённого коммита!):</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> log
+$ <span class="token function">git</span> reset --hard HEAD~1
+</code></pre></div><p>Cмотрим на какой коммит откатиться. В примере откатываемся назад на 1 коммит.
+Для изменения состояния в этой же ветке удалённого репозитория тоже придётся
+использовать грубую силу — флаг <code>force</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> push origin new_branch:new_branch --force
+</code></pre></div><p>Охватить все варианты невозможно, поэтому рекомендуется обратиться к
+документации и найти команду <code>git revert</code> и ключ <code>--soft</code>. Отдельно хочется отметить:
+в git ничего не пропадает бесследно. Если файлы были удалены, их можно восстановить опять.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> checkout 4b9df4bbd -- files
+</code></pre></div><p>Дословно можно понимать эту команду как «из коммита 4b9df4bbd вернуть files».
+Затем останется только зафиксировать изменения (сделать коммит).</p> <p>Кстати, git log очень полезная команда, её изучению определённо стоит уделить время.
+Например, полезно знать, что при помощи флага <code>-S</code> мы можем получить список всех
+коммитов, в которых менялась строка, а соответственно и имя автора коммита.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> log -S <span class="token string">&quot;mystring&quot;</span>
+</code></pre></div><h2 id="а-подробнее"><a href="#а-подробнее" aria-hidden="true" class="header-anchor">#</a> А подробнее?</h2> <p>Ну, что ещё? Применительно к github'у можно отметить факт наличия
+у них <strong>Issues</strong>. Это такая «примочка», благодаря которой
+можно ставить задачи для проекта, давать им описание и метку, определяющую
+к какому разряду данная задача относится (закрытие бага или написание фичи),
+а ещё назначать ответственного за выполнение определённого <strong>issue</strong>: всё как у больших.</p> <p>Итогов подводить не стану. Для заинтересованных лиц ссылочка на неофициальную документацию: <a href="http://uleming.github.io/gitbook/index.html" target="_blank" rel="noopener noreferrer">The Git Community Book<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2016</span> 
+
+  <a href="/?tag=other" data-v-1c67afbc>
+    other
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/elegant-design/" data-v-326f747b>
+      Дизайн в стиле flat
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/ssh-keys/" data-v-326f747b>
+      Git и SSH: несколько аккаунтов
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/32.c60ace8f.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

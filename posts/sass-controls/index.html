@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Условия и циклы в препроцессорах | Заметки на полях</title>
+    <meta name="description" content="Инструкции @if, @for, @each и @while в css">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/36.5ae9284d.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Управляющие конструкции SASS</h1> <div class="content__default"><p><img src="/assets/img/sass.jpg" alt="&quot;Sass, SCSS&quot;"></p> <p>Управляющие конструкции препроцессоров — основа, позволяющая сократить
+исходный код в несколько раз и сделать возможным написание собственного
+CSS-фреймворка. Данный материал тем, кто начинает работать с <em>любым</em> препроцессором: понимаешь один — понимаешь все.</p> <p>Все управляющие конструкции SASS начинаются с символа @: «коммерческое at».
+В SASS их целых четыре вида.</p> <h2 id="for"><a href="#for" aria-hidden="true" class="header-anchor">#</a> @for</h2> <p>Запись <code>@for $var from &lt;start&gt; through &lt;end&gt;</code> читается как: для каждого элемента от
+стартовой точки до конечной.</p> <p>Представьте, что у вас 100 иконок с разным значением <code>background-image</code>.
+Разумеется, базовый класс, общий для всех, тоже есть. Что делать? Итерацию с <code>@for</code>.</p> <div class="language-sass extra-class"><pre class="language-sass"><code><span class="token variable-line"><span class="token variable">$img</span><span class="token punctuation">:</span> </span><span class="token string">'assets/images'</span><span class="token selector">;  /* физическое расположение иконок */</span>
+<span class="token variable-line"><span class="token variable">$class-slug</span><span class="token punctuation">:</span> </span><span class="token string">'icon'</span><span class="token selector">;    /* базовое имя класса */</span>
+
+<span class="token comment">/* модифицировать каждую из ста иконок */</span>
+<span class="token atrule-line"><span class="token atrule">@for</span> $i from 1 through 100 {</span>
+  <span class="token selector">.#{$class-slug}__#{$i} {</span>
+<span class="token property-line">    <span class="token property">background-image</span><span class="token punctuation">:</span> </span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>&quot;#{$img}/#{$class-slug}-#{$i}.svg&quot;<span class="token punctuation">)</span></span><span class="token selector">;</span>
+  <span class="token selector">}</span>
+<span class="token selector">}</span>
+
+<span class="token comment">/* output css */</span>
+<span class="token selector">.icon__1 {</span>
+<span class="token property-line">  <span class="token property">background-image</span><span class="token punctuation">:</span> </span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>&quot;assets/images/icon-1.svg&quot;<span class="token punctuation">)</span></span><span class="token selector">; }</span>
+
+<span class="token selector">.icon__100 {</span>
+<span class="token property-line">  <span class="token property">background-image</span><span class="token punctuation">:</span> </span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>&quot;assets/images/icon-100.svg&quot;<span class="token punctuation">)</span></span><span class="token selector">; }</span>
+</code></pre></div><p>Да, называть иконки таким образом не всегда разумно, но для понимания цикла сгодится.
+Возможно, реальные примеры кода из репозитория Bootstrap понравятся вам больше.
+Рекомендую взглянуть как-нибудь на четвёртую версию фреймворка, которая написана
+на SASS.</p> <h2 id="if"><a href="#if" aria-hidden="true" class="header-anchor">#</a> @if</h2> <p>Обычное условие. Часто используется в подпрограммах.
+Код ниже описывает подпрограмму, которая принимает аргумент <code>boolean</code>. Если
+условие истинно, значение <code>display</code> элемента блочное, в противном случае —
+<code>flexbox</code>.</p> <div class="language-sass extra-class"><pre class="language-sass"><code><span class="token variable-line"><span class="token variable">$boolean</span><span class="token punctuation">:</span> true !default;</span>
+
+<span class="token comment">/* создание подпрограммы */</span>
+<span class="token atrule-line"><span class="token atrule">@mixin</span> display-type($boolean) {</span>
+<span class="token atrule-line">  <span class="token atrule">@if</span> $boolean <span class="token atrule">=</span><span class="token atrule">=</span> true {</span>
+<span class="token property-line">    <span class="token property">display</span><span class="token punctuation">:</span> block;</span>
+  <span class="token selector">}</span>
+<span class="token atrule-line">  <span class="token atrule">@else</span> {</span>
+<span class="token property-line">    <span class="token property">display</span><span class="token punctuation">:</span> flex;</span>
+  <span class="token selector">}</span>
+<span class="token selector">}</span>
+
+<span class="token comment">/* включаем наш mixin с аргументом, отличным от false,
+   в класс .block-type */</span>
+<span class="token selector">.block-type {</span>
+<span class="token atrule-line">  <span class="token atrule">@include</span> display-type(false);</span>
+<span class="token selector">}</span>
+
+<span class="token comment">/* output css */</span>
+<span class="token selector">.block-type {</span>
+<span class="token property-line">  <span class="token property">display</span><span class="token punctuation">:</span> flex; }</span>
+</code></pre></div><h2 id="each"><a href="#each" aria-hidden="true" class="header-anchor">#</a> @each</h2> <p>Выручает, когда вы имеете дело с массивом. SASS будет использовать <code>@list</code> для
+вычленения из него всех указанных элементов. В данном случае задача: менять аватары
+авторов.</p> <div class="language-sass extra-class"><pre class="language-sass"><code><span class="token variable-line"><span class="token variable">$list</span><span class="token punctuation">:</span> (adam, john, wynn, mason, ivan);</span>
+
+<span class="token selector">.author-images {</span>
+<span class="token atrule-line">  <span class="token atrule">@each</span> $author in $list {</span>
+    <span class="token selector">&amp;--#{$author} {</span>
+<span class="token property-line">      <span class="token property">background</span><span class="token punctuation">:</span> image-</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>&quot;#{$img}/#{$author}.png&quot;<span class="token punctuation">)</span></span> <span class="token selector">no-repeat;</span>
+    <span class="token selector">}</span>
+  <span class="token selector">}</span>
+<span class="token selector">}</span>
+
+<span class="token comment">/* output css */</span>
+<span class="token selector">.author-images--adam {</span>
+<span class="token property-line">  <span class="token property">background</span><span class="token punctuation">:</span> image-</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>&quot;assets/images/adam.png&quot;<span class="token punctuation">)</span></span> <span class="token selector">no-repeat; }</span>
+
+<span class="token selector">.author-images--john {</span>
+<span class="token property-line">  <span class="token property">background</span><span class="token punctuation">:</span> image-</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>&quot;assets/images/john.png&quot;<span class="token punctuation">)</span></span> <span class="token selector">no-repeat; }</span>
+</code></pre></div><p>Ещё один пример: снова иконки. На этот раз они не безымянны и не бесцветны.
+Изначально задаём нужные параметры (в примере цвет), а затем для каждой своё
+название и соответствующий <code>background</code>. Обратите внимание на то, что массив
+увеличился, теперь используются по два значения на итерацию.</p> <div class="language-sass extra-class"><pre class="language-sass"><code><span class="token comment">/* цвета удобнее задать в одном месте */</span>
+<span class="token variable-line"><span class="token variable">$twi</span><span class="token punctuation">:</span>   #41b7d8;</span>
+<span class="token variable-line"><span class="token variable">$fb</span><span class="token punctuation">:</span>    #3b5997;</span>
+<span class="token variable-line"><span class="token variable">$gplus</span><span class="token punctuation">:</span> #d64937;</span>
+
+
+<span class="token comment">/* массив $social со значениями: название и цвет */</span>
+<span class="token variable-line"><span class="token variable">$social</span><span class="token punctuation">:</span> (twitter, <span class="token variable">$twi</span>),</span>
+         <span class="token selector">(facebook, $fb)</span><span class="token selector">,</span>
+         <span class="token selector">(googleplus, $gplus);</span>
+
+
+<span class="token comment">/* перебираем */</span>
+<span class="token atrule-line"><span class="token atrule">@each</span> $socialnetwork, $color in $social {</span>
+  <span class="token selector">.social-link--#{$socialnetwork} {</span>
+<span class="token property-line">    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token variable">$color</span>;</span>
+<span class="token property-line">    <span class="token property">&amp;</span><span class="token punctuation">:</span><span class="token property">focus,</span></span>
+<span class="token property-line">    <span class="token property">&amp;</span><span class="token punctuation">:</span><span class="token property">hover</span> {</span>
+<span class="token property-line">      <span class="token property">background-color</span><span class="token punctuation">:</span> darken(<span class="token variable">$color</span>, 5<span class="token operator">%</span>);</span>
+    <span class="token selector">}</span>
+  <span class="token selector">}</span>
+<span class="token selector">}</span>
+
+<span class="token comment">/* output css */</span>
+<span class="token selector">.social-link--twitter {</span>
+<span class="token property-line">  <span class="token property">background-color</span><span class="token punctuation">:</span> #41b7d8; }</span>
+<span class="token property-line">  <span class="token property">.social-link--twitter</span><span class="token punctuation">:</span><span class="token property">focus,</span> <span class="token property">.social-link--twitter</span><span class="token punctuation">:</span><span class="token property">hover</span> {</span>
+<span class="token property-line">    <span class="token property">background-color</span><span class="token punctuation">:</span> #2cafd4; }</span>
+</code></pre></div><h2 id="while"><a href="#while" aria-hidden="true" class="header-anchor">#</a> @while</h2> <p>Для цикла <code>@while</code> нужны два параметра: переменная и шаг. Пока величина шага
+удовлетворяет условию, происходит преобразование переменной. При каждой итерации
+шаг увеличивается.</p> <div class="language-sass extra-class"><pre class="language-sass"><code><span class="token variable-line"><span class="token variable">$color</span><span class="token punctuation">:</span> #e44;</span>
+<span class="token variable-line"><span class="token variable">$step</span><span class="token punctuation">:</span> 1;</span>
+
+<span class="token atrule-line"><span class="token atrule">@while</span> $step &lt;<span class="token atrule">=</span> 5 {</span>
+  <span class="token selector">.palette-#{$step} {</span>
+<span class="token property-line">    <span class="token property">background-image</span><span class="token punctuation">:</span> linear-gradient(</span>
+      <span class="token selector">to bottom</span><span class="token selector">,</span>
+      <span class="token function">darken</span><span class="token selector">($color, ($step * 2%)) 0%</span><span class="token selector">,</span>
+      <span class="token function">darken</span><span class="token selector">($color, ($step * 10%)) 100%</span>
+    <span class="token selector">);</span>
+<span class="token variable-line">    <span class="token variable">$step</span><span class="token punctuation">:</span> <span class="token variable">$step</span> <span class="token operator">+</span> 1;</span>
+  <span class="token selector">}</span>
+<span class="token selector">}</span>
+
+<span class="token comment">/* output css */</span>
+<span class="token selector">.palette-1 {</span>
+<span class="token property-line">  <span class="token property">background-image</span><span class="token punctuation">:</span> linear-gradient(to bottom, #ed3b3b 0<span class="token operator">%</span>, #ea1515 100<span class="token operator">%</span>); }</span>
+
+<span class="token selector">.palette-2 {</span>
+<span class="token property-line">  <span class="token property">background-image</span><span class="token punctuation">:</span> linear-gradient(to bottom, #ec3131 0<span class="token operator">%</span>, #bb1111 100<span class="token operator">%</span>); }</span>
+</code></pre></div><p>Надеюсь, этот небольшой экскурс будет кому-то полезен. Для более подробного
+ознакомления с особенностями SASS следует читать официальную документацию.
+Примеры там абстрактные, но это не помешает сообразить как их применить
+на практике.</p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2016</span> 
+
+  <a href="/?tag=frontend" data-v-1c67afbc>
+    frontend
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/js-this/" data-v-326f747b>
+      Разбираемся с this в JavaScript
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/archives-in-jekyll/" data-v-326f747b>
+      Вывод всех статей jekyll
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/36.5ae9284d.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

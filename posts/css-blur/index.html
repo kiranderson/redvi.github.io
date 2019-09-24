@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Размытие фона средствами CSS | Заметки на полях</title>
+    <meta name="description" content="Эффект размытия при помощи css3 и фильтра blur">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/20.dd2ea1cb.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Blur-эффект на чистом css</h1> <div class="content__default"><p><img src="/assets/img/blur.jpeg" alt="&quot;Cover&quot;"></p> <p>В CSS3 есть множество новых свойств, которые могут значительно ускорить
+вёрстку тех или иных элементов страницы. Например, css-фильтры, об одном из
+которых сегодня предлагается поговорить.</p> <p>Каждый из нас хотя бы раз имел возможность наблюдать эффект размытия на
+странице. Зачастую для его создания используется jQuery-библиотека
+<code>bjurjs</code>. Однако, не на всех сайтах целесообразно использовать jQuery, да и
+технологии не стоят на месте: теперь мы можем воспользоваться решением на чистом CSS. Попробуем?</p> <p>Пример простейшей разметки:</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token doctype">&lt;!doctype html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Blur<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>style.css<span class="token punctuation">&quot;</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>wrapper<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>blur<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>inner-wrapper<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Welcome to our website!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Итак, задан родительский div с классом <code>wrapper</code>, служащий контейнером для двух
+вложенных div'ов: <code>inner-wrapper</code> будет содержать текст приветствия, а <code>blur</code> —
+изображение, к которому нужно применить эффект размытия.</p> <p>Обратимся к стилям.</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.inner-wrapper,
+.blur</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Как можно видеть, дочерние блоки абсолютно позиционированы и находятся на
+одном уровне. Дело в том, что эффект размытия будет применяться и к тексту
+приветствия, чего нам хотелось бы избежать. Поэтому лучше управлять положением
+блоков относительно друг друга при помощи <code>z-index</code>. Сделаем это, а также
+зададим необходимый бэкгрануд для <code>.blur</code>:</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.inner-wrapper</span> <span class="token punctuation">{</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 100<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">text-shadow</span><span class="token punctuation">:</span> 0 0 5px <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>.5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.blur</span> <span class="token punctuation">{</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 99<span class="token punctuation">;</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>image.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+    <span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>На данный момент получаем простейшую страничку с картинкой и текстом:</p> <p><img src="/assets/img/no-blur.png" alt="&quot;Без эффекта размытия&quot;"></p> <p>Настало время применить магию! Увы, firefox пока не поддерживает css-фильтры,
+поэтому в дело пойдёт небольшой трюк: нужно «скормить» ему svg-файл
+со следующим содержимым:</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token comment">&lt;!-- blur.svg --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>1.1<span class="token punctuation">&quot;</span></span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://www.w3.org/2000/svg<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>blur<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>feGaussianBlur</span> <span class="token attr-name">stdDeviation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>5<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>и указать путь к этому файлу, а также обратиться к нужному фильтру. В нашем случае фильтр
+всего один: тот, что определён под id <code>blur</code>. Вот как должен быть преобразован
+css-код для получения эффекта размытия:</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.inner-wrapper</span> <span class="token punctuation">{</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 100<span class="token punctuation">;</span> <span class="token comment">/* текст не размыт */</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">text-shadow</span><span class="token punctuation">:</span> 0 0 5px <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>.5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.blur</span> <span class="token punctuation">{</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 99<span class="token punctuation">;</span> <span class="token comment">/* изображение размыто */</span>
+    <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>image.png<span class="token punctuation">)</span></span><span class="token punctuation">;</span>
+    <span class="token property">background-size</span><span class="token punctuation">:</span> cover<span class="token punctuation">;</span>
+    <span class="token property">background-repeat</span><span class="token punctuation">:</span> no-repeat<span class="token punctuation">;</span>
+    <span class="token property">-webkit-filter</span><span class="token punctuation">:</span> <span class="token function">blur</span><span class="token punctuation">(</span>5px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">-moz-filter</span><span class="token punctuation">:</span> <span class="token function">blur</span><span class="token punctuation">(</span>5px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token function">blur</span><span class="token punctuation">(</span>5px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">filter</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>'blur.svg#blur'<span class="token punctuation">)</span></span><span class="token punctuation">;</span> <span class="token comment">/* путь к svg */</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>А вот и итоговый вариант с применением эффекта размытия:</p> <p><img src="/assets/img/blur.png" alt="&quot;Эффект blur в действии&quot;"></p> <p>Единственный недостаток: нечёткие границы размытия, которые выходят за пределы
+родительского элемента. Часто такой побочный эффект может быть
+нежелательным. Ну, что ж, можно поиграть с радиусом размытия или применить
+<code>overflow: hidden</code>.</p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2015</span> 
+
+  <a href="/?tag=frontend" data-v-1c67afbc>
+    frontend
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/install-gentoo/" data-v-326f747b>
+      Инсталляция дистрибутива Gentoo Linux
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/screencast/" data-v-326f747b>
+      Обзор программ для записи скринкастов
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/20.dd2ea1cb.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

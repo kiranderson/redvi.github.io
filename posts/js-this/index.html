@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Разбираемся с this в JavaScript | Заметки на полях</title>
+    <meta name="description" content="Магия JavaScript: секреты и подводные камни">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/55.9fe9e953.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Магический this</h1> <div class="content__default"><p>В языке JavaScript есть такая вещь как this. Часто взаимодействие с ним вызывает
+трудности у начинающих разработчиков. Надеюсь, после прочтения этой заметки вам
+никогда больше не придётся сталкиваться с неожиданным поведением ваших функций.
+Здесь рассматривается сущность this и управление его поведением в часто
+встречающихся сценариях.</p> <p>Мы используем this так же, как местоимение в языках подобных английскому или русскому.
+Не всегда называем имя или предмет, а говорим применительно к нему «этот».
+То же самое происходит при использовании ключевого слова this в языках программирования.
+This всегда является ссылкой на свойство объекта, но <em>что это за объект</em> зависит
+от контекста.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> Person <span class="token operator">=</span> <span class="token punctuation">{</span>
+  firstName<span class="token punctuation">:</span> <span class="token string">&quot;Jack&quot;</span><span class="token punctuation">,</span>
+  lastName<span class="token punctuation">:</span>  <span class="token string">&quot;Sparrow&quot;</span><span class="token punctuation">,</span>
+
+  <span class="token function-variable function">fullName</span><span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// this означает &quot;этот&quot;</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>firstName <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lastName<span class="token punctuation">;</span>
+    <span class="token comment">// аналогично такой записи:</span>
+    <span class="token keyword">return</span> Person<span class="token punctuation">.</span>firstName <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> Person<span class="token punctuation">.</span>lastName<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Person<span class="token punctuation">.</span><span class="token function">fullName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//-&gt; Jack Sparrow</span>
+</code></pre></div><h2 id="почему-this"><a href="#почему-this" aria-hidden="true" class="header-anchor">#</a> почему this</h2> <p>Если вместо this обращаться к объекту через его имя (Person), мы рискуем вызвать
+метод совсем не того объекта. Ведь код может быть написан не одним человеком.
+Вы уверены, что в скриптах, которые писали не вы, не будет глобальной переменной
+с таким же именем?</p> <p>Объекты, как и функции, имеют свойства. Когда функция выполняется, она получает
+свойство this того объекта, который её вызвал. This обычно используется внутри
+функции, но при вызове в глобальной области видимости его значение будет
+зависеть от окружения. Например, для браузера глобальным объектом будет window,
+и код <code>console.log(this.innerHeight);</code> вернёт высоту окна.</p> <p>При использовании <strong>строгого режима</strong> (strict mode) это не сработает: this не
+будет связан с глобальным объектом и код вызовет ошибку. Такое же поведение
+ожидаемо с анонимными функциями, ведь они не привязаны к конкретному объекту.</p> <p>Небольшой пример того, как работает this с jQuery:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// $(this) указывает на $('button') потому что объект $('button')</span>
+  <span class="token comment">// запускает метод click, в котором определён this</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">prop</span><span class="token punctuation">(</span><span class="token string">'name'</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="когда-что-то-может-пойти-не-так"><a href="#когда-что-то-может-пойти-не-так" aria-hidden="true" class="header-anchor">#</a> Когда что-то может пойти не так</h2> <p>Кажется, что всё просто как дважды два. Тогда почему this вызывает столько
+вопросов и ведёт себя не так, как мы ожидаем?</p> <h3 id="метод-как-функция-обратного-вызова"><a href="#метод-как-функция-обратного-вызова" aria-hidden="true" class="header-anchor">#</a> Метод как функция обратного вызова</h3> <p>Объект <code>Boxer</code> содержит некие данные и метод <code>clickHandler</code>. Мы ищем объект-DOM
+с классом <code>.boxer</code>. Добавляем обработчик события и в качестве функции пытаемся
+передать ему <code>clickHandler</code>, который будет рандомно отображать в консоли имя
+одного из боксёров.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> Boxer <span class="token operator">=</span> <span class="token punctuation">{</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'M.Tyson'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">49</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'M.Ali'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">74</span><span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">clickHandler</span><span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> randomNum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">[</span>randomNum<span class="token punctuation">]</span><span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">' '</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">[</span>randomNum<span class="token punctuation">]</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.boxer'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> Boxer<span class="token punctuation">.</span>clickHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// -&gt; Cannot read property '1' of undefined</span>
+</code></pre></div><p>Ничего не вышло. Всё дело в том, что функцию в данном контексте вызывает
+DOM-объект <code>.boxer</code>. Наш <code>Boxer.clickHandler</code> пытается быть выполненным в контексте
+<code>.boxer</code>.</p> <p><strong>Решение:</strong> явно привязать функцию обратного вызова к объекту через метод <code>bind()</code>.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// передаём нужный объект методу bind()</span>
+document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.boxer'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+  <span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> Boxer<span class="token punctuation">.</span><span class="token function">clickHandler</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>Boxer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Теперь всё в порядке.</p> <h3 id="this-внутри-замыкания"><a href="#this-внутри-замыкания" aria-hidden="true" class="header-anchor">#</a> this внутри замыкания</h3> <p>Другой случай, когда поведение this может поставить в тупик: если он находится
+внутри замыкания. Тогда мы не можем получить доступ к this внешней функции.
+Перепишем код примера выше так, чтобы он удовлетворял новому условию.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> Boxer <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">'type of sport'</span><span class="token punctuation">:</span> <span class="token string">'boxing'</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'M.Tyson'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">49</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'M.Ali'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">74</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+  <span class="token function-variable function">clickHandler</span><span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ссылается на Boxer</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">person</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// теперь мы внутри data</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name <span class="token operator">+</span>
+        <span class="token string">'. His type of sport '</span> <span class="token operator">+</span>  <span class="token keyword">this</span><span class="token punctuation">[</span><span class="token string">'type of sport'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Boxer<span class="token punctuation">.</span><span class="token function">clickHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//-&gt; M.Tyson. His type of sport undefined</span>
+</code></pre></div><p>Раз this из замыкания не имеет доступа к this внешних функций, он будет привязан
+к глобальному объекту (если не включен строгий режим).</p> <p><strong>Решение:</strong> передать значение this другой переменной перед тем как создать
+замыкание. Такую переменную принято называть that.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function-variable function">clickHandler</span><span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// передаём значение текущего this</span>
+  <span class="token keyword">var</span> that <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">person</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span>name <span class="token operator">+</span>
+      <span class="token string">'. His type of sport '</span> <span class="token operator">+</span> that<span class="token punctuation">[</span><span class="token string">'type of sport'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>that<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// M.Tyson. His type of sport boxing</span>
+<span class="token comment">// 49</span>
+</code></pre></div><p>Хорошие новости. В ES6 делать этого не нужно. Спокойно пользуйтесь стрелочными
+функциями, они не имеют своего this и просто берут тот, что снаружи.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> Boxer <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">'type of sport'</span><span class="token punctuation">:</span> <span class="token string">'boxing'</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'M.Tyson'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">49</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'M.Ali'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">74</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+  <span class="token function">clickHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">person</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
+      <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">. His sport </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">[</span><span class="token string">'type of sport'</span><span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Boxer<span class="token punctuation">.</span><span class="token function">clickHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="метод-объекта-передан-в-переменную"><a href="#метод-объекта-передан-в-переменную" aria-hidden="true" class="header-anchor">#</a> метод объекта передан в переменную</h3> <p>Вернёмся к нашим боксёрам. Добавим пару чемпионов.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Joe Louis'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Lennox Lewis'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> Boxer <span class="token operator">=</span> <span class="token punctuation">{</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Mike Tyson'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">49</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'Muhammad Ali'</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span> <span class="token number">74</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">clickHandler</span><span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> showBoxer <span class="token operator">=</span> Boxer<span class="token punctuation">.</span>clickHandler<span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//-&gt; Joe Louis</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">showBoxer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//-&gt; Joe Louis</span>
+</code></pre></div><p>Вызов <code>data</code> из глобальной области видимости и вызов <code>showBoxer</code> оказался
+одинаковым. Когда <code>showBoxer</code> срабатывает, вызывается анонимная функция:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Всё верно, этот кусок кода был «заморожен» в <code>clickHandler</code>. Однако,
+сейчас он выполнился в контексте глобального объекта.</p> <p><strong>Решение:</strong> снова явно привязать метод к объекту.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> showBoxer <span class="token operator">=</span> Boxer<span class="token punctuation">.</span><span class="token function">clickHandler</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>Boxer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">showBoxer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//-&gt; Mike Tyson</span>
+</code></pre></div><h3 id="заимствованные-методы"><a href="#заимствованные-методы" aria-hidden="true" class="header-anchor">#</a> заимствованные методы</h3> <p>Четвёртый и последний случай: имеем два объекта, у одного из них хотим вызвать
+метод другого. Допустим, рассчитать среднее количество очков на раунд игры.</p> <p>Ниже используется метод <code>reduce</code>. Он принимает значения:</p> <ul><li>последний (он же промежуточный) результат (prev)</li> <li>текущий элемент массива (cur)</li> <li>номер текущего элемента (index)</li> <li>передаваемый массив (array)</li></ul> <p>В <code>getTotal</code> передаём переменной сумму всех очков, затем делим их на количество
+раундов.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// первая игра</span>
+<span class="token keyword">var</span> angryBirds <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// количество очков, 4 раунда</span>
+  scores<span class="token punctuation">:</span>   <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment">// среднее значение ещё не рассчитано</span>
+  average<span class="token punctuation">:</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// вторая игра</span>
+<span class="token keyword">var</span> angryCats <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// количество очков, 5 раундов</span>
+  scores<span class="token punctuation">:</span>   <span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span> <span class="token number">43</span><span class="token punctuation">,</span> <span class="token number">56</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  average<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+
+  <span class="token function-variable function">getTotal</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> sumOfScores <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>scores<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">prev<span class="token punctuation">,</span> cur<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> prev <span class="token operator">+</span> cur<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>average <span class="token operator">=</span> sumOfScores <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>scores<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+angryBirds<span class="token punctuation">.</span>average <span class="token operator">=</span> angryCats<span class="token punctuation">.</span><span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>angryBirds<span class="token punctuation">.</span>average<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Но такой фокус не пройдёт. Метод <code>getTotal</code> вызвается объектом angryCats.</p> <p><strong>Решение:</strong> <code>apply</code> позволяет вызывать метод одного объекта в контексте другого.</p> <div class="language-js extra-class"><pre class="language-js"><code>angryCats<span class="token punctuation">.</span><span class="token function">getTotal</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>angryBirds<span class="token punctuation">,</span> angryBirds<span class="token punctuation">.</span>scores<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>angryBirds<span class="token punctuation">.</span>average<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Объект angryBirds «одолжил» метод <code>getTotal</code> у angryCats. This передана
+angryBirds, потому что он указан первым параметром метода <code>apply</code>.</p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2016</span> 
+
+  <a href="/?tag=frontend" data-v-1c67afbc>
+    frontend
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/npm-build/" data-v-326f747b>
+      Публикация пакетов JavaScript
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/sass-controls/" data-v-326f747b>
+      Условия и циклы в препроцессорах
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/55.9fe9e953.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

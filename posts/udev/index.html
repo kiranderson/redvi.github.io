@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Udisks, udev и все-все-все | Заметки на полях</title>
+    <meta name="description" content="Монтирование файловых систем">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/37.3bd95024.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Udisks, udev и все-все-все</h1> <div class="content__default"><p>На кону тема монтирования файловых систем: локальных и сетевых. В процессе
+рассуждения будут затронуты общие положения, вспомогательные программы (21 век
+на дворе, не ручками же монтировать), ну и, собственно, настройки оных. Сразу
+надо оговориться, что пост вряд ли будет интересен с практической точки зрения
+линуксоидам, сидящим под Ubuntu или Fedora. В user-friendly дистрибутивах это
+работает «из коробки». Пользователи gentoo или arch linux вполне могут потратить
+несколько минут на чтение, чтобы настроить то, что ещё не настроено или
+поправить то, что работает не так, как хочется.</p> <p>Перво-наперво, хотелось бы, чтобы читатель убедился в наличии dbus (с флагом X
+для домашнего пользования) и в том, что демон этот запускается при старте
+системы. Если это условие не выполняется, установите dbus и добавьте его в
+автозапуск:</p> <div class="language- extra-class"><pre class="language-text"><code># emerge -apv dbus
+# rc-update add dbus default
+</code></pre></div><h2 id="конфигурация-ядра"><a href="#конфигурация-ядра" aria-hidden="true" class="header-anchor">#</a> Конфигурация ядра</h2> <p>Некоторые из утилит, которые будут настраиваться, потребуют включения в
+ядре особенных опций. В частности udisks2 желает, чтобы был включен
+swap-раздел, активирована <code>FUSE</code> и <code>USB autosuspend</code>.</p> <div class="language- extra-class"><pre class="language-text"><code>General setup  ---&gt;
+    [*]Support for paging of anonymous memory (swap)
+File systems
+    &lt;*&gt;FUSE (Filesystem in Userspace) support
+
+Device Drivers  ---&gt;
+    [*] USB support  ---&gt;
+    &lt;*&gt;Support for Host-side USB
+    [*]USB runtime power management (autosuspend) and wakeup
+
+File Systems --&gt;
+    Pseudo filesystems  ---&gt;
+        -*- Tmpfs virtual memory file system support (former shm fs)
+        [*]Tmpfs POSIX Access Control Lists
+    Native Language Support --&gt;
+        &lt;*&gt; NLS UTF8
+</code></pre></div><p>Проверить наличие или отсутствие опций можно при помощи команды <code>zcat</code>, вот так:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ zcat /proc/config.gz <span class="token operator">|</span> <span class="token function">grep</span> что_изволите
+</code></pre></div><p>Убедившись, что нужные опции присутствуют или же собрав ядро с ними, можно приступать к следующему пункту: установке приложений.</p> <h2 id="установка-приnожений"><a href="#установка-приnожений" aria-hidden="true" class="header-anchor">#</a> Установка приложений</h2> <p>Прежде всего стоило бы установить <code>udev</code> или его аналог <code>eudev</code> (только для gentoo). Udev — менеджер устройств для новых версий ядра Linux, являющийся преемником devfs, hotplug и HAL. Его основная задача — обслуживание файлов устройств  в каталоге <code>/dev</code> и обработка всех действий, выполняемых в пространстве пользователя при добавлении/отключении внешних устройств, включая загрузку firmware;</p> <p>Далее <code>fuse</code>  —   позволяет пользователям без привилегий создавать их собственные файловые системы без необходимости переписывать код ядра;</p> <p><code>udisks2</code>  — D-Bus-интерфейс и соответствующий демон для управления накопителями, как съемными, так и, например, жесткими дисками;</p> <p><code>curlftpfs</code>  —  позволяет монтировать каталоги с ftp-серверов;</p> <p><code>sshfs-fuse</code>  —  позволяет управлять файлами с SFTP;</p> <p><code>util-linux</code> — просто в обязательном порядке, утилиты, отвечающие за возможность монтирования в принципе;</p> <p><code>udevil</code> — позволит монтировать каталоги с ftp-серверов при помощи графических приложений. Иными словами: открыли файловый менеджер, вписали адрес сервера, получили список каталогов, которые он содержит.</p> <p>Такая возможность поддерживается не всеми файловыми менеджерами.</p> <p>Теперь неплохо было бы сразу рассмотреть возможные опции  монтирования, дабы знать, когда и что именно нам может пригодиться.</p> <p><strong>-t</strong>  —  указание на тип файловой системы</p> <p><strong>-o</strong>  —  указание на специальную опцию монтирования</p> <p><strong>-a</strong>  —  смонтировать все файловые системы, прописанные в <code>/etc/fstab</code></p> <table><tr><td>defaults</td> <td>использование опций монтирования по-умолчанию:rw, suid, dev, exec, auto, nouser, async</td></tr> <tr><td>auto</td> <td>автоматически монтировать файловую систему при загрузке</td></tr> <tr><td>noauto</td> <td>не монтировать файловую систему автоматически</td></tr> <tr><td>ro</td> <td>монтировать только для чтения</td></tr> <tr><td>rw</td> <td>монтировать для чтения и записи</td></tr> <tr><td>sw</td> <td>монтировать раздел подкачки</td></tr> <tr><td>atime</td> <td>изменять параметр «время доступа при обращении к файлам (по умолчанию)»</td></tr> <tr><td>relatime</td> <td>изменять параметр «время доступа» только для записи для улучшения производительности</td></tr> <tr><td>noatime</td> <td>никогда не изменять «время доступа» для наилучшей производительности</td></tr> <tr><td>sync</td> <td>весь ввод-вывод осуществляется синхронно</td></tr> <tr><td>async</td> <td>весь ввод-вывод осуществляется асинхронно</td></tr> <tr><td>exec</td> <td>система может содержать исполняемые файлы</td></tr> <tr><td>noexec</td> <td>запретить исполняемые файлы</td></tr> <tr><td>suid</td> <td>разрешить интерпритацию битов SUID и SGID</td></tr> <tr><td>nosuid</td> <td>не разрешать интерпретацию битов SUID и SGID</td></tr> <tr><td>user</td> <td>разрешить обычному пользователь (не обладающему правами root) монтировать и размонтировать данную файловую систему</td></tr> <tr><td>users</td> <td>разрешить каждому пользователю монтировать данную ФС</td></tr> <tr><td>nouser</td> <td>монтирование разрешено только пользователю root</td></tr></table> <p>----- Немного примеров -----</p> <p>Монтирование iso-образа (образ диска):</p> <div class="language- extra-class"><pre class="language-text"><code># mkdir /mnt/iso
+# mount -t iso9660 image.iso /mnt/iso
+</code></pre></div><p>В примере сначала был создан каталог для монтирования, затем подмонтирован образ диска с указанием его файловой системы (<code>iso9660</code>), именем (<code>image.iso</code>), точкой монирования (<code>/mnt/iso</code>). Впрочем, сейчас в большинстве случаев файловая система устройства распознаётся автоматически.</p> <p>Если один и тот же накопитель должен быть смонтирован и доступен всегда, можно внести соответствующую запись в <code>/etc/fstab</code>:</p> <div class="language- extra-class"><pre class="language-text"><code># /etc/fstab
+UUID=&quot;339df6e7-91a8-4cf9-a43f-7f7b3db533c6&quot;   /   ext4   defaults   0   1
+/dev/sda1  /mnt/ntfs  ntfs  ro,auto,utf8  0 0
+</code></pre></div><p>Монтировать можно как по UUID, так и с обычным указанием раздела, или даже назначить разделу метку и монтировать по ней.  В первом примере — с UUID — файловая система подмонтирована в корневой раздел, тип файловой системы etx4. Во втором примере подмонтирован раздел с ntfs в режиме только для чтения, с монтированием в каталог <code>/mnt/ntfs</code> при загрузке системы, указанием кодировки для корректного отображения имён файлов и каталогов. Но к ntfs мы ещё вернёмся чуть позже.</p> <p>Чтобы узнать UUID раздела используйте команду <code>blkid</code>:</p> <div class="language- extra-class"><pre class="language-text"><code># blkid
+/dev/sda1: UUID=&quot;C474B30B74B2FEEC&quot; TYPE=&quot;ntfs&quot;
+/dev/sda2: UUID=&quot;723c0ce1-d6f2-4272-a6fb-0c83b307d5b3&quot; TYPE=&quot;ext2&quot;
+/dev/sda3: UUID=&quot;1cd73487-d108-46d5-85a1-9e1be4731d08&quot; TYPE=&quot;ext4&quot;
+/dev/sda5: UUID=&quot;665079e7-1e34-41b5-b66b-93c480bb8c93&quot; TYPE=&quot;ext4&quot;
+</code></pre></div><h2 id="добавnение-поnьзоватеnя-в-нужную-группу"><a href="#добавnение-поnьзоватеnя-в-нужную-группу" aria-hidden="true" class="header-anchor">#</a> Добавление пользователя в нужную группу</h2> <p>Группы в различных дистрибутивах linux могут отличаться своим наименованием. Если вы не нашли указанную здесь группу, ищите подобную ей. Список всех групп можно увидеть, открыв файл <code>/etc/group</code>:</p> <div class="language- extra-class"><pre class="language-text"><code># cat /etc/group
+disk:x:6:root,adm
+lp:x:7:lp
+mem:x:8:
+wheel:x:10:root,newbie
+floppy:x:11:root
+audio:x:18:newbie
+cdrom:x:19:newbie
+video:x:27:root,newbie
+</code></pre></div><p>Чтобы добавить пользователя в нужную группу, скомандуйте:</p> <div class="language- extra-class"><pre class="language-text"><code># gpasswd -a &lt;username&gt; &lt;group&gt;
+</code></pre></div><p>где username  —  имя вашего пользователя</p> <p><code>group</code>  —  наименование группы, в которой должен состоять пользователь</p> <p>Например:</p> <div class="language- extra-class"><pre class="language-text"><code># gpasswd -a newbie wheel,storage,users
+</code></pre></div><p><code>wheel</code>  —  группа администраторов (ей мы будем давать права на монтирование)</p> <p><code>storage</code> — доступ к съёмным накопителям. Эта группа есть в archlinux, в gentoo таковой не имеется, зато есть группа plugdev.</p> <p><code>users</code>  —  обычный пользователь</p> <p>Таким образом, можно разрешить монтирование либо пользователям с административными привилегиями, либо только пользователям, входящим в группу storage (директору и бухгалтеру можно, остальным как всегда), либо всем пользователям со стандартным набором прав.</p> <h2 id="монтирование-nокаnьных-дисков"><a href="#монтирование-nокаnьных-дисков" aria-hidden="true" class="header-anchor">#</a> Монтирование локальных дисков</h2> <p>Предположим, что мы не с гор спустились и используем для повседневных задач графический интерфейс — GUI. Открываем файловый менеджер, подключаем съёмное устройство, будь то флешка, внешний жёсткий диск или телефон. Кликаем мышью на указанное устройство, долго-долго томимся в ожидании чуда и — наконец! — получаем ответ: <code>Not authorized</code>. После чего приходит понимание, что комфорт нам только снится. Что делать? У нас есть несколько путей.</p> <p><strong>/etc/fstab</strong></p> <p>Классика жанра: монтирование разделов посредством правки <code>/etc/fstab</code>. Пример:</p> <div class="language- extra-class"><pre class="language-text"><code>/dev/cdrom    /mnt/cdrom      iso9660  noauto,user,mode=0444   0 0
+/dev/sdb1     /mnt/usbflash   vfat     fmask=113,noauto,user,utf8=1
+</code></pre></div><p>В данном примере предполагается использование файловой системы <code>iso9669</code> для дисковода, <code>vfat</code> (FAT32) для съёмного накопителя. Команду и опции монтирования в случае с файловым менеджером spacefm можно легко настроить.</p> <p><strong>Правила монтирования</strong></p> <p>Ниже приводится два независимых правила, использование которых по прямому назначению должно быть разграничено. То есть либо первое правило, либо второе. Первый пример отлично работает у вашей покорной слуги: монтирует внешние накопители, логические диски и корректно опознает когда к нему подключен телефон (что само собой разумеется, ибо подключение также производится в режиме внешнего накопителя).
+Итак, раз и навсегда настроим права для монтирования, написав правило для <code>polkit</code>.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># /etc/polkit-1/rules.d/10-udisks2.rules</span>
+
+polkit.addRule<span class="token punctuation">(</span>function<span class="token punctuation">(</span>action, subject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token variable"><span class="token punctuation">((</span>action.id <span class="token operator">==</span> &quot;org.freedesktop.udisks2.filesystem<span class="token operator">-</span>mount<span class="token operator">-</span>system&quot; <span class="token operator">||</span>
+        action.id <span class="token operator">==</span> &quot;org.freedesktop.udisks2.filesystem<span class="token operator">-</span>mount&quot;<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> subject.isInGroup<span class="token punctuation">(</span>&quot;wheel&quot;<span class="token punctuation">))</span></span> <span class="token punctuation">{</span>
+        <span class="token builtin class-name">return</span> polkit.Result.YES<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+polkit.addRule<span class="token punctuation">(</span>function<span class="token punctuation">(</span>action, subject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token variable"><span class="token punctuation">((</span>action.id <span class="token operator">==</span> &quot;org.freedesktop.udisks.filesystem<span class="token operator">-</span>mount&quot; <span class="token operator">||</span>
+
+    action.id <span class="token operator">==</span> &quot;org.freedesktop.udisks.filesystem<span class="token operator">-</span>mount<span class="token operator">-</span>system<span class="token operator">-</span>internal&quot;<span class="token punctuation">)</span>
+    <span class="token operator">&amp;&amp;</span> subject.isInGroup<span class="token punctuation">(</span>&quot;wheel&quot;<span class="token punctuation">))</span></span> <span class="token punctuation">{</span>
+        <span class="token builtin class-name">return</span> polkit.Result.YES<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>Данное выше, вполне себе рабочее правило, по утверждению линуксоида-старожила <code>@zagrei</code> должно быть заменено на иное. За работу последнего не ручаюсь, но, доверяя товарищу по ОС, который дурного не посоветует, привожу здесь. Выглядит оно куда более изящно (надо полагать ввиду отсутствия xml):</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># /etc/polkit-1/localauthority/50-local.d/10-local-udisks.pkla</span>
+
+<span class="token punctuation">[</span>Mount Permissions <span class="token keyword">for</span> users<span class="token punctuation">]</span>
+<span class="token assign-left variable">Identity</span><span class="token operator">=</span>unix-group:users
+<span class="token assign-left variable">Action</span><span class="token operator">=</span>org.freedesktop.udisks.filesystem-mount
+<span class="token assign-left variable">ResultAny</span><span class="token operator">=</span>auth_self
+
+<span class="token punctuation">[</span>Eject Permissions <span class="token keyword">for</span> users<span class="token punctuation">]</span>
+<span class="token assign-left variable">Identity</span><span class="token operator">=</span>unix-group:users
+<span class="token assign-left variable">Action</span><span class="token operator">=</span>org.freedesktop.udisks.drive-eject
+<span class="token assign-left variable">ResultAny</span><span class="token operator">=</span>auth_self
+</code></pre></div><p>Если вопреки ожиданиям не всё пошло гладко и монтирование требует прав рута,
+можно пойти на изменение политики udisks. Для этого нужно внести некоторые
+изменения в указанном ниже файле:</p> <div class="language-xml extra-class"><pre class="language-xml"><code># /usr/share/polkit-1/actions/org.freedesktop.udisks2.policy
+# заменить строку auth_admin на yes в <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>allow_any</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>org.freedesktop.udisks2.filesystem-mount<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>allow_any</span><span class="token punctuation">&gt;</span></span>yes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>allow_any</span><span class="token punctuation">&gt;</span></span>
+...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><strong>UAM+PMOUNT</strong></p> <p>Другой способ заключается в использовании <code>uam</code> + <code>pmount</code>. Желающие пойти по этому пути должны установить указанные пакеты и добавить пользователя в соответствующую группу:</p> <div class="language- extra-class"><pre class="language-text"><code># emerge -av uam
+# gpasswd -a newbie plugdev
+# emerge -av pmount
+</code></pre></div><p>Дабы корректно отображалась кириллица при монтировании NTFS-разделов, нужно немного видоизменить настройки в файле <code>/etc/udev/uam.conf</code>:</p> <div class="language- extra-class"><pre class="language-text"><code>MOUNT_OPTS='noatime,utf8'
+</code></pre></div><h2 id="монтирование-сетевых-дисков"><a href="#монтирование-сетевых-дисков" aria-hidden="true" class="header-anchor">#</a> Монтирование сетевых дисков</h2> <p>Для монтирования каталогов с ftp-сервера потребуется установить уже упомянутую curlftpfs, после чего монтирование в консоли сводится к нехитрым телодвижениям:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ curlftpfs ftp://mirror.yandex.ru/gentoo-distfiles/ public_html
+</code></pre></div><p>где public_html — каталог в домашней директории пользователя, а по совместительству точка монтирования</p> <p>Отмонтировать:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ fusermount -u public_html
+</code></pre></div><p><img src="/assets/img/curlftp.png" alt="curlftp"></p> <p>Для монтирования каталогов удалённого хоста через SSH:</p> <div class="language- extra-class"><pre class="language-text"><code># sshfs [user@]host:[dir] mountpoint
+</code></pre></div><p>Чтобы смонтировать от непривилегированного пользователя:</p> <div class="language- extra-class"><pre class="language-text"><code># sshfs [user@]host:[dir] mountpoint -o allow_other
+</code></pre></div><p>Разумеется, мы и файловый менеджер можем научить монтировать удалённые каталоги. Хотя по сравнению с консолью быстротой своих действий он похвастаться не сможет. Напоминается, что для этого нужен установленный <code>udevil</code>, настройки которого мы и пойдём править в <code>/etc/udevil/udevil.conf</code>. Перед правкой рекомендуется сохранить данный файл с другим именем на случай, если что-то пойдёт не так, как нами запланировано. Сделаем это:</p> <div class="language- extra-class"><pre class="language-text"><code># cp /etc/udevil/udevil.conf /etc/udevil/udevil-newbie.conf
+# vim /etc/udev/udevil.conf:
+allowed_types = curlftpfs, ftpfs  # разрешённые файловые системы
+allowed_media_dirs = /media, /run/media/$USER # куда монтировать
+allowed_users = *                 # разрешение для отдельных пользователей - нет
+allowed_groups = *                # разрешение на монтирование для отдельных групп — нет
+</code></pre></div><p>В такой конфигурации пользователь должен быть добавлен в группу <code>storage</code> или <code>plugdev</code>. При необходимости можно указать любую из возможных файловых систем: cifs, smbfs, nfs, curlftpfs, ftpfs, sshfs, tmpfs, ramfs.</p> <h2 id="что-деnать-с-ntfs"><a href="#что-деnать-с-ntfs" aria-hidden="true" class="header-anchor">#</a> Что делать с NTFS?</h2> <p>Здесь есть два варианта: включить поддержку ntfs в ядре или поставить пакет <code>ntfs3g</code>. Для первого случая конфигурация будет такой:</p> <div class="language- extra-class"><pre class="language-text"><code>File Systems ---&gt;
+    DOS/FAT/NT Filesystems  ---&gt;
+    &lt;M&gt; MSDOS fs support
+    &lt;M&gt; VFAT (Windows-95) fs support
+    &lt;M&gt; NTFS file system support
+</code></pre></div><p>Во втором (рекомендуемом) случае достаточно поставить указанный выше пакет и дать пользователю права на монтирование. Если есть надобность, смонтировать вручную:</p> <div class="language- extra-class"><pre class="language-text"><code># mkdir /mnt/hdd
+# mount -t ntfs /dev/sda1 /mnt/hdd
+</code></pre></div><p><em>Примечание:</em> flash-накопители, используемые для хранения данных, можно отформатировать в exFAT. Windows, начиная с Win Seven, будет понимать и радостно принимать проприетарную файловую систему от разработчиков из Редмонда. Для корректной работы в UNIX-системах следует установить пакет <code>fuse-exfat</code>. ФС будет доступна как для чтения, так и для записи.</p> <p>Для разделов, отформатированных в FAT32 указать тип <code>vfat</code>:</p> <div class="language- extra-class"><pre class="language-text"><code># mount -t vfat /dev/sda1 /mnt/hdd
+</code></pre></div><p>Для MS-DOS аналогично:</p> <div class="language- extra-class"><pre class="language-text"><code># mount -t msdos /dev/sda1 /mnt/hdd
+</code></pre></div><p>Если в <code>rules.d</code> заданы права на монтирование, можно будет открывать и диски с
+ntfs в файловом менеджере.</p> <h2 id="монтирование-android-устройств"><a href="#монтирование-android-устройств" aria-hidden="true" class="header-anchor">#</a> Монтирование android-устройств</h2> <p>А здесь нам умудрились, как бы это помягче выразиться, подпортить
+погоду. Цитирую причину:</p> <blockquote><p>Начиная с третьей ветки в платформе Android изменился метод организации
+внешнего доступа к накопителю мобильного устройства. Если раньше устройство
+маскировалось под USB-накопитель, который воспринимался внешними системами
+как обычный USB Flash, то начиная с выпуска Android 3 для доступа к данным
+предлагается использовать разработанный компанией Microsoft протокол MTP.</p></blockquote> <p>Бинарный блоб, да ещё от Microsoft, есть безусловное зло. Но сегодня не об
+этом. Давайте решим проблему установкой <strong>jmtpfs</strong>.</p> <p><em>Коротко об установке.</em> В случае с gentoo нужная утилита на момент написания поста
+располагается в стороннем оверлее <code>poly-c</code>:</p> <div class="language- extra-class"><pre class="language-text"><code># layman --add poly-c
+# eix-update
+# emerge -av jmtpfs
+</code></pre></div><p>После инсталляции оной следует удостовериться, что пользователь добавлен в группу
+<code>plugdev</code> и расскомментировать одну строку в <code>/etc/fuse.conf</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># /etc/fuse.conf</span>
+user_allow_other
+</code></pre></div><p>Отлично. Теперь приступим к монтированию. Создадим каталог для монтирования,
+смонтируем и размонтируем устройство, введя соответствующие команды:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mkdir</span> ~/android
+$ jmtpfs -o allow_other ~/android
+$ fusermount -u ~/android
+</code></pre></div><p>Что же, теперь брат меньший (android-устройство) может взаимодействовать с
+братом большим (linux).</p> <h2 id="литература-дnя-nюбопытных"><a href="#литература-дnя-nюбопытных" aria-hidden="true" class="header-anchor">#</a> Литература для любопытных</h2> <ul><li><a href="http://www.freedesktop.org/software/polkit/docs/latest/index.html" target="_blank" rel="noopener noreferrer">polkit Reference Manual<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://udisks.freedesktop.org/docs/latest/" target="_blank" rel="noopener noreferrer">UDisks Reference Manual<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://igurublog.wordpress.com/downloads/script-devmon/" target="_blank" rel="noopener noreferrer">devmon<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2013</span> 
+
+  <a href="/?tag=linux" data-v-1c67afbc>
+    linux
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/sort/" data-v-326f747b>
+      Работа со строками в python
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/gentoo-update/" data-v-326f747b>
+      Руководство по обновлению Gentoo Linux
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/37.3bd95024.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

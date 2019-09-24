@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sinatra фреймворк | Заметки на полях</title>
+    <meta name="description" content="Повествование о создании простого блога на sinatra">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/67.f44e0d12.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>О чём поёт Sinatra</h1> <div class="content__default"><p>В продолжение темы о публикациях, способах их создания и размещения. На этот раз
+попробуем приготовить основу блога, базирующегося на sinatra.</p> <p></p><div class="table-of-contents"><ul><li><a href="#введение">Введение</a></li><li><a href="#первые-шаги">Первые шаги</a></li><li><a href="#миграции">Миграции</a></li><li><a href="#играем-с-tux-ом">Играем с tux'ом</a></li><li><a href="#crud">CRUD</a></li><li><a href="#ваnидация">Валидация</a></li><li><a href="#отnоженные-пубnикации">Отложенные публикации</a><ul><li><a href="#миграция">Миграция</a></li><li><a href="#вывод-пубnикаций">Вывод публикаций</a></li></ul></li><li><a href="#отображение-дат">Отображение дат</a></li><li><a href="#markdown-и-архив-пубnикаций">Markdown и архив публикаций</a></li><li><a href="#развёртывание-приnожения-на-heroku">Развёртывание приложения на Heroku</a></li><li><a href="#посnесnовие">Послесловие</a></li></ul></div><p></p> <h2 id="введение"><a href="#введение" aria-hidden="true" class="header-anchor">#</a> Введение</h2> <p><em>Sinatra</em> — DSL (Domain Specific language, предметно-специфичный язык),
+использующий интерфейс для разработки веб приложений <em>Rack</em>. Хотя в некоторых
+источниках его гордо именуют веб-фреймворком, на официальном сайте можно
+встретить следующую формулировку:</p> <blockquote><p>Sinatra is a DSL for quickly creating web applications in Ruby with minimal
+effort</p> <p>Sinatra это DSL для быстрого создания веб-приложений на Ruby с минимальными усилиями</p></blockquote> <p>В природе имеются и полноценные фреймворки, базирующиеся на sinatra. Padrino, например.</p> <p>Увы, об истории создания самого Sinatra миру неизвестно ничего, кроме того факта, что
+разработал его некий Blake Mizerany из солнечного штата Калифорния.</p> <h2 id="первые-шаги"><a href="#первые-шаги" aria-hidden="true" class="header-anchor">#</a> Первые шаги</h2> <p>Для начала установим необходимый минимум зависимостей и поприветствуем мир. Для
+сего несложного действа нам потребуется создать несколько файлов. Вот они:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mkdir</span> sinatra <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> sinatra
+$ <span class="token function">touch</span> main.rb config.ru Gemfile
+</code></pre></div><p>При помощи <code>main.rb</code> мы будем взывать к самому sinatra, <code>config.ru</code> понадобится
+нам для запуска нашего минималистичного веб-сервера, а в <code>Gemfile</code> будут
+сосредоточены те джемы, которые потребуются для запуска всего этого хозяйства.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># main.rb</span>
+
+<span class="token keyword">require</span> <span class="token string">'sinatra'</span> <span class="token comment"># подгрузить sinatra</span>
+<span class="token comment"># sinatra имеет модульную структуру</span>
+<span class="token comment"># что позволяет включать лишь необходимое:</span>
+<span class="token comment"># require 'sinatra/base'</span>
+<span class="token comment"># вывести на главной странице приветствие</span>
+get <span class="token string">'/'</span> <span class="token keyword">do</span>
+  <span class="token string">&quot;&lt;h2&gt;Hello!&lt;/h2&gt;&quot;</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Дальше заглянем в файл с нашими джемами:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># Gemfile</span>
+
+source <span class="token string">'https://rubygems.org'</span> <span class="token comment"># откуда брать gem'ы</span>
+ruby <span class="token string">'2.1.0'</span> <span class="token comment"># версия руби</span>
+
+gem <span class="token string">'sinatra'</span>
+gem <span class="token string">'rake'</span>
+</code></pre></div><p>Можно установить эти джемы вручную или же при помощи <code>bundle</code>, ежели таковой у
+вас уже имеется:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ gem <span class="token function">install</span> my_gem <span class="token comment"># ручная установка джемов</span>
+$ bundle <span class="token function">install</span> <span class="token comment"># рекомендуемый способ, bundle будет читать ваш Gemfile</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">На заметку</p> <p>чтобы при установке пакетов не ставить документацию к ним можно создать в домашнем каталоге файл <code>~/.gemrc</code> с таким содержанием:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># ~/.gemrc</span>
+gem: --no-rdoc --no-ri
+</code></pre></div></div> <p>Осталось главное: запустить наше приветствие. Сделаем это, обратившись к
+<code>config.ru</code>:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment">#\ -w -p 4000 # указать желаемый порт</span>
+
+<span class="token keyword">require</span> <span class="token string">'./main.rb'</span> <span class="token comment"># подгрузить main.rb</span>
+run <span class="token constant">Sinatra</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Application</span> <span class="token comment"># запустить приложение</span>
+</code></pre></div><p>Отныне по адресу <a href="http://localhost:4000" target="_blank" rel="noopener noreferrer">http://localhost:4000<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> доступна наша первая страничка. Введите
+в консоли команду <code>rackup</code>, чтобы запустить сервер разработки WEBrick и
+убедиться в этом.</p> <h2 id="миграции"><a href="#миграции" aria-hidden="true" class="header-anchor">#</a> Миграции</h2> <p>Для удобства вынесем некоторые элементы из корня в другие каталоги, после чего
+структура приложения будет выглядеть следующим образом:</p> <div class="language- extra-class"><pre class="language-text"><code>sinatra
+├── app
+│   ├── helpers.rb
+│   ├── models.rb
+│   └── routes.rb
+├── config
+│   ├── constants.rb
+│   └── environments.rb
+├── config.ru
+├── Gemfile
+├── main.rb
+├── public
+│   ├── favicon.ico
+│   ├── images
+│   │   ├── logo.png
+│   └── style.css
+├── Rakefile
+└── views
+    ├── index.erb
+    └── layout.erb
+</code></pre></div><p>Подключим наши новообразованные файлы:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># main.rb</span>
+<span class="token comment"># -*- coding: utf-8 -*-</span>
+
+<span class="token keyword">require</span> <span class="token string">'sinatra'</span>
+<span class="token keyword">require</span> <span class="token string">'sinatra/activerecord'</span>
+<span class="token keyword">require</span> <span class="token string">'redcarpet'</span>
+
+<span class="token variable">$LOAD_PATH</span><span class="token punctuation">.</span>unshift<span class="token punctuation">(</span><span class="token builtin">File</span><span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__FILE__<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'/app'</span><span class="token punctuation">)</span>
+<span class="token keyword">require</span> <span class="token string">'models'</span>  <span class="token comment"># здесь живут модели</span>
+<span class="token keyword">require</span> <span class="token string">'routes'</span>  <span class="token comment"># маршруты</span>
+<span class="token keyword">require</span> <span class="token string">'helpers'</span> <span class="token comment"># и хелперы</span>
+
+<span class="token variable">$LOAD_PATH</span><span class="token punctuation">.</span>unshift<span class="token punctuation">(</span><span class="token builtin">File</span><span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>__FILE__<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'/config'</span><span class="token punctuation">)</span>
+<span class="token keyword">require</span> <span class="token string">'environments'</span> <span class="token comment"># настройки конфигурации</span>
+<span class="token keyword">require</span> <span class="token string">'constants'</span>    <span class="token comment"># константы</span>
+
+<span class="token comment"># или короче</span>
+<span class="token comment"># Dir.glob('./{app,config}/*.rb').each {|file| require file}</span>
+</code></pre></div><p>Теперь все пути станем прописывать в файле <code>routes.rb</code></p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># -*- coding: utf-8 -*-</span>
+<span class="token comment"># app/routes.rb</span>
+
+get <span class="token string">'/'</span> <span class="token keyword">do</span>
+  <span class="token variable">@title</span> <span class="token operator">=</span> <span class="token string">'Заголовок индексной страницы'</span>
+  erb <span class="token symbol">:index</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>В отдельном файле хранятся такие вещи как заголовок и url сайта:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># config/constants.rb</span>
+<span class="token comment"># -*- coding: utf-8 -*-</span>
+
+<span class="token constant">SITE_NAME</span> <span class="token operator">=</span> <span class="token string">'Mysite'</span>
+<span class="token constant">SITE_URL</span> <span class="token operator">=</span> <span class="token string">'http://0.0.0.0:4000'</span>
+<span class="token constant">SITE_SUBTITLE</span> <span class="token operator">=</span> <span class="token string">'IT Blog'</span>
+</code></pre></div><p>Для того, чтобы убедиться в работоспособности приложения изменим
+«вьюху»:</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># /views/layout.erb </span><span class="token delimiter punctuation">%&gt;</span></span>
+
+<span class="token doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>utf-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">if</span> <span class="token variable">@title</span>  <span class="token delimiter punctuation">%&gt;</span></span>
+    <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># /вывести заголовок страницы и имя сайта </span><span class="token delimiter punctuation">%&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@title</span> <span class="token operator">+</span> <span class="token string">&quot; | <span class="token interpolation"><span class="token comment">#{SITE_NAME}</span></span>&quot;</span> <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">else</span> <span class="token delimiter punctuation">%&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span><span class="token string">&quot;<span class="token interpolation"><span class="token comment">#{SITE_NAME}</span></span>&quot;</span> <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">end</span> <span class="token delimiter punctuation">%&gt;</span></span>
+
+  <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">if</span> <span class="token variable">@summary</span> <span class="token delimiter punctuation">%&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>description<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@summary</span> <span class="token operator">||</span> <span class="token variable">@post</span><span class="token punctuation">.</span>summary <span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">end</span> <span class="token delimiter punctuation">%&gt;</span></span>
+
+  <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># путь к иконке из public </span><span class="token delimiter punctuation">%&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/favicon.ico<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>image/x-icon<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>shortcut icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/favicon.ico<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>image/x-icon<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># путь к css из public </span><span class="token delimiter punctuation">%&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/style.css<span class="token punctuation">&quot;</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>stylesheet<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text/css<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">&gt;</span></span>
+        <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token keyword">yield</span> <span class="token delimiter punctuation">%&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">На заметку</p> <p>Sinatra поддерживает встроенные шаблоны. Так, вы можете разбить
+главный шаблон на более мелкие и подключать их отдельно</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> erb <span class="token punctuation">:</span><span class="token string">'includes/footer'</span><span class="token punctuation">,</span> <span class="token symbol">:layout</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">false</span> <span class="token delimiter punctuation">%&gt;</span></span>
+</code></pre></div></div> <p>Как мы увидим впоследствии, при открытии страницы <code>index</code> заголовки должны
+измениться на указанные нами.</p> <p>Но что же с моделью? Все наши записи мы будем хранить в базе данных,
+осуществлять же доступ к оной нам поможет
+<a href="http://rusrails.ru/active-record-query-interface" target="_blank" rel="noopener noreferrer">ActiveRecord<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <p>Для начала убедимся, что с базой данных не возникнет проблем. Изменим настройки
+нескольких файлов:</p> <p>Установка связи с ActiveRecord:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># config/environments.rb</span>
+<span class="token comment"># настройки при разработке приложения</span>
+
+configure <span class="token symbol">:development</span> <span class="token keyword">do</span>
+ set <span class="token symbol">:database</span><span class="token punctuation">,</span> <span class="token string">'sqlite3:///dev.db'</span>
+ set <span class="token symbol">:show_exceptions</span><span class="token punctuation">,</span> <span class="token keyword">true</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># настройки для production-окружения</span>
+configure <span class="token symbol">:production</span> <span class="token keyword">do</span>
+ db <span class="token operator">=</span> <span class="token constant">URI</span><span class="token punctuation">.</span>parse<span class="token punctuation">(</span><span class="token constant">ENV</span><span class="token punctuation">[</span><span class="token string">'DATABASE_URL'</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token string">'postgres:///localhost/mydb'</span><span class="token punctuation">)</span>
+
+ <span class="token constant">ActiveRecord</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Base</span><span class="token punctuation">.</span>establish_connection<span class="token punctuation">(</span>
+   <span class="token symbol">:adapter</span>  <span class="token operator">=</span><span class="token operator">&gt;</span> db<span class="token punctuation">.</span>scheme <span class="token operator">==</span> <span class="token string">'postgres'</span> <span class="token operator">?</span> <span class="token string">'postgresql'</span> <span class="token punctuation">:</span> db<span class="token punctuation">.</span>scheme<span class="token punctuation">,</span>
+   <span class="token symbol">:host</span>     <span class="token operator">=</span><span class="token operator">&gt;</span> db<span class="token punctuation">.</span>host<span class="token punctuation">,</span>
+   <span class="token symbol">:username</span> <span class="token operator">=</span><span class="token operator">&gt;</span> db<span class="token punctuation">.</span>user<span class="token punctuation">,</span>
+   <span class="token symbol">:password</span> <span class="token operator">=</span><span class="token operator">&gt;</span> db<span class="token punctuation">.</span>password<span class="token punctuation">,</span>
+   <span class="token symbol">:database</span> <span class="token operator">=</span><span class="token operator">&gt;</span> db<span class="token punctuation">.</span>path<span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+   <span class="token symbol">:encoding</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">'utf8'</span>
+ <span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Таким образом в разных окружениях (development &amp; production) будут
+использоваться разные базы данных. Также вносятся поправки в другие файлы:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># Rakefile</span>
+<span class="token keyword">require</span> <span class="token string">'./main'</span>
+<span class="token keyword">require</span> <span class="token string">'sinatra/activerecord/rake'</span>
+
+<span class="token comment"># app/models.rb</span>
+<span class="token keyword">class</span> <span class="token class-name">Post</span> <span class="token operator">&lt;</span> <span class="token constant">ActiveRecord</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Base</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Ниже приводится полное содержимое джемфайла.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># -*- coding: utf-8 -*-</span>
+<span class="token comment"># Gemfile</span>
+
+source <span class="token string">'https://rubygems.org'</span>
+ruby <span class="token string">'2.1.0'</span>
+
+gem <span class="token string">'sinatra'</span>
+gem <span class="token string">'redcarpet'</span>
+gem <span class="token string">'pygments.rb'</span>
+gem <span class="token string">'activerecord'</span>
+gem <span class="token string">'sinatra-activerecord'</span>
+
+group <span class="token symbol">:development</span> <span class="token keyword">do</span>
+  gem <span class="token string">'shotgun'</span>
+  gem <span class="token string">'tux'</span>
+  gem <span class="token string">'sqlite3'</span>
+<span class="token keyword">end</span>
+
+group <span class="token symbol">:production</span> <span class="token keyword">do</span>
+  gem <span class="token string">'pg'</span>
+<span class="token keyword">end</span>
+
+group <span class="token symbol">:test</span> <span class="token keyword">do</span>
+  gem <span class="token string">'rspec'</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Доустановить недостающие зависимости без установки джемов для production-окружения
+можно командой</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ bundle <span class="token function">install</span> --without production
+</code></pre></div><p>Теперь создадим саму миграцию: если говорить просто, это такая штука, при помощи
+которой мы можем менять схему нашей БД. Сейчас нам важно, что миграции весьма
+удобны для тестового наполнения базы данных.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ rake -T <span class="token punctuation">(</span>отобразить справку по возможным действиям<span class="token punctuation">)</span>
+$ rake db:create_migration <span class="token assign-left variable">NAME</span><span class="token operator">=</span>create_post <span class="token punctuation">(</span>создать миграцию<span class="token punctuation">)</span>
+</code></pre></div><p>Если всё прошло успешно, в корневом каталоге проекта появится подкаталог <code>db</code>,
+содержащий миграцию вида <code>db/migrate/xxx_create_post.rb</code>. Изменим её:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># db/migrate/xxx_create_post.rb</span>
+<span class="token comment"># -*- coding: utf-8 -*-</span>
+
+<span class="token keyword">class</span> <span class="token class-name">CreatePost</span> <span class="token operator">&lt;</span> <span class="token constant">ActiveRecord</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Migration</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">up</span></span>
+    <span class="token comment"># создание таблицы с заданными полями</span>
+    create_table <span class="token symbol">:posts</span> <span class="token keyword">do</span> <span class="token operator">|</span>post<span class="token operator">|</span>
+      post<span class="token punctuation">.</span>string   <span class="token symbol">:title</span>
+      post<span class="token punctuation">.</span>text     <span class="token symbol">:content</span>
+      post<span class="token punctuation">.</span>timestamps
+    <span class="token keyword">end</span>
+
+    <span class="token comment"># тестовые записи</span>
+    <span class="token constant">Post</span><span class="token punctuation">.</span>create<span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token string">&quot;Example Post&quot;</span><span class="token punctuation">,</span>
+                content<span class="token punctuation">:</span> <span class="token string">&quot;Content of my first post&quot;</span><span class="token punctuation">)</span>
+    <span class="token constant">Post</span><span class="token punctuation">.</span>create<span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token string">&quot;Second Post&quot;</span><span class="token punctuation">,</span>
+                content<span class="token punctuation">:</span> <span class="token string">&quot;Content of my second post&quot;</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">down</span></span>
+    <span class="token comment"># откатить миграцию (rake:db rollback)</span>
+    drop_table <span class="token symbol">:posts</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Осталось лишь запустить миграцию, после чего в каталоге <code>db</code> автоматически
+появится файл <code>schema.rb</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ rake db:migrate
+</code></pre></div><p>А в корневом каталоге должен появиться файл <code>dev.db</code>, представляющий собой базу
+с созданной в ней (указанной в миграции) таблицей.</p> <h2 id="играем-с-tux-ом"><a href="#играем-с-tux-ом" aria-hidden="true" class="header-anchor">#</a> Играем с tux'ом</h2> <p>Внимательный читатель наверняка заметил, что мы установили несколько новых
+джемов: tux, shotgun. Второй из них теперь можно запускать вместо команды
+<code>rackup</code> — при внесении любых изменений вам не потребуется перезапускать
+сервер, shotgun сделает всю рутинную работу за вас.</p> <p>Первый из упомянутых джем окажет посильную помощь при разработке приложений на
+sinatra. Это консольная программа, являющаяся связующим звеном между
+разработчиком и sinatra-приложением. Давайте поиграем с ней.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ tux
+Loading development environment <span class="token punctuation">(</span>Rack <span class="token number">1.2</span><span class="token punctuation">)</span>
+<span class="token operator">&gt;&gt;</span> a <span class="token operator">=</span> Post.all <span class="token punctuation">(</span>получить все посты<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>DEBUG -- <span class="token builtin class-name">:</span> Post Load <span class="token punctuation">(</span><span class="token number">2</span>.0ms<span class="token punctuation">)</span>  SELECT <span class="token string">&quot;posts&quot;</span>.* FROM <span class="token string">&quot;posts&quot;</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token comment">#&lt;ActiveRecord::Relation</span>
+<span class="token punctuation">[</span><span class="token comment">#&lt;Post id: 1, title: &quot;What is sinatra?&quot;]&gt;</span>
+<span class="token punctuation">..</span>. вывод сокращён <span class="token punctuation">..</span>.
+<span class="token operator">&gt;&gt;</span> a.count <span class="token punctuation">(</span>количество постов<span class="token punctuation">)</span>
+DEBUG -- <span class="token builtin class-name">:</span> <span class="token punctuation">(</span><span class="token number">0</span>.4ms<span class="token punctuation">)</span>  SELECT COUNT<span class="token punctuation">(</span>*<span class="token punctuation">)</span> FROM <span class="token string">&quot;posts&quot;</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">4</span>
+<span class="token operator">&gt;&gt;</span> a.first <span class="token punctuation">(</span>получить данные первого поста<span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token comment">#&lt;Post id: 1, title: &quot;What is sinatra?&quot; content: &quot;Sinatra is...&quot;&gt;</span>
+<span class="token operator">&gt;&gt;</span> a.first.title <span class="token punctuation">(</span>заголовок первого поста<span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;What is sinatra?&quot;</span>
+<span class="token operator">&gt;&gt;</span> a.first.id <span class="token punctuation">(</span>его идентификатор<span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span>
+<span class="token operator">&gt;&gt;</span> a.last.content<span class="token punctuation">(</span>тело последнего поста<span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;Oh, my last post!&quot;</span>
+</code></pre></div><p>Надеюсь, читатель убедился в небесполезности tux'а: прежде, чем писать новую
+функциональность можно немного потестировать её в консоли.</p> <h2 id="crud"><a href="#crud" aria-hidden="true" class="header-anchor">#</a> CRUD</h2> <p>Дабы наконец развлечься каким-то практическим эффектом от содеянного
+ранее, займёмся написанием маршрутов и шаблонов: нужно ведь отобразить ту
+информацию, которую мы имеем. А заодно узнаем, что скрывается под аббревиатурой
+CRUD.</p> <p>CRUD — так именуются четыре базовые функции для работы с данными и Sinatra
+вполне поддерживает их все.</p> <table><thead><tr><th>сокращение</th> <th>значение</th> <th>sinatra</th></tr></thead> <tbody><tr><td><strong>C</strong></td> <td>create</td> <td>put</td></tr> <tr><td><strong>R</strong></td> <td>read</td> <td>get</td></tr> <tr><td><strong>U</strong></td> <td>update</td> <td>post</td></tr> <tr><td><strong>D</strong></td> <td>destroy</td> <td>delete</td></tr></tbody></table> <p>Ниже приводится пример создаваемых маршрутов сразу с комментариями.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># -*- coding: utf-8 -*-</span>
+<span class="token comment"># app/routes.rb</span>
+
+<span class="token comment"># получить главную страницу</span>
+<span class="token comment"># отобрать последние 10 постов</span>
+get <span class="token string">'/'</span> <span class="token keyword">do</span>
+  <span class="token comment"># сортировка и указание лимита</span>
+  <span class="token variable">@posts</span> <span class="token operator">=</span> <span class="token constant">Post</span><span class="token punctuation">.</span>order<span class="token punctuation">(</span><span class="token string">&quot;created_at DESC&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>limit<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+  <span class="token comment"># для отображения взять /views/index.erb</span>
+  erb <span class="token symbol">:index</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># получить отдельный пост по его ID</span>
+get <span class="token string">'/posts/:id/'</span> <span class="token keyword">do</span>
+  <span class="token comment"># найти пост</span>
+  <span class="token variable">@post</span> <span class="token operator">=</span> <span class="token constant">Post</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span>params<span class="token punctuation">[</span><span class="token symbol">:id</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token variable">@title</span> <span class="token operator">=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>title
+  <span class="token variable">@content</span> <span class="token operator">=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>content
+  erb <span class="token punctuation">:</span><span class="token string">'posts/show'</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># отобразить форму для создания нового поста</span>
+get <span class="token string">'/posts/new'</span> <span class="token keyword">do</span>
+  <span class="token variable">@title</span> <span class="token operator">=</span> <span class="token string">'Create new post'</span>
+  erb <span class="token punctuation">:</span><span class="token string">'posts/create'</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># взять параметры из формы и сохранить пост</span>
+post <span class="token string">'/posts/new'</span> <span class="token keyword">do</span>
+  params<span class="token punctuation">.</span>delete <span class="token string">'submit'</span>
+  <span class="token variable">@post</span> <span class="token operator">=</span> <span class="token constant">Post</span><span class="token punctuation">.</span>create<span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+
+  <span class="token keyword">if</span> <span class="token variable">@post</span><span class="token punctuation">.</span>save
+    redirect to <span class="token string">'/'</span>
+  <span class="token keyword">else</span>
+    <span class="token string">'Post was not save'</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># страница about</span>
+<span class="token comment"># запись вида ('/about/?') позволит</span>
+<span class="token comment"># обращаться как к странице /about</span>
+<span class="token comment"># так и к странице /about/</span>
+get <span class="token punctuation">(</span><span class="token string">'/about/?'</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+  <span class="token variable">@title</span> <span class="token operator">=</span> <span class="token string">'About me'</span>
+  erb <span class="token symbol">:about</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># если страница не найдена</span>
+not_found <span class="token keyword">do</span>
+  <span class="token variable">@title</span> <span class="token operator">=</span> <span class="token string">'Page not found'</span>
+  <span class="token comment"># создайте для неё шаблон 404.erb</span>
+  erb <span class="token punctuation">:</span><span class="token string">'404'</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># обработка ошибки сервера</span>
+error <span class="token keyword">do</span>
+  <span class="token variable">@error</span> <span class="token operator">=</span> request<span class="token punctuation">.</span>env<span class="token punctuation">[</span><span class="token string">'sinatra_error'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name
+  erb <span class="token punctuation">:</span><span class="token string">'500'</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Надеюсь, комментарии смогли дать какое-то представление о маршрутизации в
+sinatra. Дальше напишем шаблоны страниц, содержимое которых будет динамическим.</p> <p>На главной странице отобразим список последних десяти публикаций, снабдим каждую
+запись ссылкой на её полную версию.</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># views/index.erb </span><span class="token delimiter punctuation">%&gt;</span></span>
+
+<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token variable">@posts</span><span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>post<span class="token operator">|</span> <span class="token delimiter punctuation">%&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/posts/<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> post<span class="token punctuation">.</span>id <span class="token delimiter punctuation">%&gt;</span></span>/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> post<span class="token punctuation">.</span>title <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">end</span> <span class="token delimiter punctuation">%&gt;</span></span>
+</code></pre></div><p>Страница отдельного поста будет отображать его заголовок и тело.</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># views/posts/show.erb </span><span class="token delimiter punctuation">%&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>title <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>created_at <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>content <span class="token delimiter punctuation">%&gt;</span></span>
+</code></pre></div><p>Для ручного добавления новых статей нам понадобится форма.</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># views/posts/create.erb </span><span class="token delimiter punctuation">%&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post<span class="token punctuation">&quot;</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/posts/new<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>title<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>Post title:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>title<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>title<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span> 250px<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>content<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Post content:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>content<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>content<span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span> 250px<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>submit<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Create post<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Теперь можно запустить shotgun, проверить как отображаются
+«мигрированные» публикации, а также, добавив к адресу главной
+страницы <code>posts/new</code>, создать новый пост вручную.</p> <p>После того, как читатель получил удовлетворение от первых успехов своих,
+переведя дух, предлагается ему дальнейшее следование CDRU: научимся изменять и
+удалять данные.</p> <p><em>Изменение/Обновление</em></p> <p>Для изменения уже существующих публикаций заведём соответствующие этим
+намерениям маршруты и страницу.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># app/routes.rb</span>
+<span class="token comment"># получаем страницу с формой редактирования</span>
+get <span class="token string">'/posts/:id/edit/'</span> <span class="token keyword">do</span>
+  <span class="token variable">@title</span> <span class="token operator">=</span> <span class="token string">'Update post'</span>
+  <span class="token variable">@post</span> <span class="token operator">=</span> <span class="token constant">Post</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span>params<span class="token punctuation">[</span><span class="token symbol">:id</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  erb <span class="token punctuation">:</span><span class="token string">'posts/edit'</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># обновляем данные</span>
+put <span class="token string">'/posts/:id/edit/'</span> <span class="token keyword">do</span>
+  <span class="token variable">@post</span> <span class="token operator">=</span> <span class="token constant">Post</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span>params<span class="token punctuation">[</span><span class="token symbol">:id</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token variable">@post</span><span class="token punctuation">.</span>update_attributes<span class="token punctuation">(</span>params<span class="token punctuation">[</span><span class="token symbol">:post</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    redirect to <span class="token string">'/'</span>
+  <span class="token keyword">else</span>
+    erb <span class="token punctuation">:</span><span class="token string">'posts/edit'</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Вот как может выглядеть сама формочка:</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># views/posts/edit.erb </span><span class="token delimiter punctuation">%&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span>Edit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/posts/<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>id <span class="token delimiter punctuation">%&gt;</span></span>/delete/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>delete this post<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/posts/<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>id <span class="token delimiter punctuation">%&gt;</span></span>/edit/<span class="token punctuation">&quot;</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>_method<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>hidden<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>put<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>title<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Title:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>text<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post[title]<span class="token punctuation">&quot;</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>title<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>title <span class="token delimiter punctuation">%&gt;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>content<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>Post content:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>content<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post[content]<span class="token punctuation">&quot;</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">=&quot;</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span> 250px<span class="token punctuation">;</span></span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>content <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">itype</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>submit<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Save<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Теперь попробуйте обновить какую-либо статью и приступайте к последнему таинству
+— удалению.</p> <p><strong>Удаление</strong></p> <p>Дальнейшее повествование описывает создание маршрутов и страницы, на которую станем
+перенаправлять пользователя, дабы убедиться действительно ли жаждет он
+расстаться со своими материалами. Поехали.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># app/routes.rb</span>
+<span class="token comment"># получить страницу</span>
+get <span class="token string">'/posts/:id/delete/'</span> <span class="token keyword">do</span>
+  <span class="token variable">@title</span> <span class="token operator">=</span> <span class="token string">'Confirm deletion of article #<span class="token interpolation"><span class="token delimiter tag">#{</span>params<span class="token punctuation">[</span><span class="token symbol">:id</span><span class="token punctuation">]</span><span class="token delimiter tag">}</span></span>'</span>
+  <span class="token variable">@post</span> <span class="token operator">=</span> <span class="token constant">Post</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span>params<span class="token punctuation">[</span><span class="token symbol">:id</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  erb <span class="token punctuation">:</span><span class="token string">'posts/delete'</span>
+<span class="token keyword">end</span>
+
+<span class="token comment"># удалить публикацию</span>
+delete <span class="token string">'/posts/:id/'</span> <span class="token keyword">do</span>
+  <span class="token constant">Post</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span>params<span class="token punctuation">[</span><span class="token symbol">:id</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>destroy
+  redirect to <span class="token string">'/'</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Ни в каких формах мы более не нуждаемся, хотя неплохо было бы уточнить
+действительно ли пост должен быть удалён:</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># views/posts/delete.erb </span><span class="token delimiter punctuation">%&gt;</span></span>
+
+<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">if</span> <span class="token variable">@post</span> <span class="token delimiter punctuation">%&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Are you sure?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/posts/<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>id <span class="token delimiter punctuation">%&gt;</span></span>/<span class="token punctuation">&quot;</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>post<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>hidden<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>_method<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>delete<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>submit<span class="token punctuation">&quot;</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>Yes, Delete It!<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span><span class="token string">&quot;<span class="token interpolation"><span class="token comment">#{SITE_URL}</span></span>&quot;</span><span class="token delimiter punctuation">%&gt;</span></span>/posts/<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>id <span class="token delimiter punctuation">%&gt;</span></span>/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Cancel<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">else</span> <span class="token delimiter punctuation">%&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Post not found.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">end</span> <span class="token delimiter punctuation">%&gt;</span></span>
+</code></pre></div><p>Прежде, чем двинуться дальше, рекомендуется ещё немного поэкспериментировать с
+этим.</p> <h2 id="ваnидация"><a href="#ваnидация" aria-hidden="true" class="header-anchor">#</a> Валидация</h2> <p>Пришло время существенно улучшить наше приложение и воспользоваться ещё одной
+особенностью, данной нам ActiveRecord: валидацией данных. Иметь валидные данные
+— значит иметь проверенные данные. Например, очень важно, чтобы при
+создании новой публикации она не осталась безымянной. Статья просто обязана
+иметь заголовок!</p> <p>Что же, сделаем так, чтобы невозможно было этот самый заголовок пропустить (в
+противном случае данные не будут сохранены в базе). Обратимся к уже подзабытому
+файлу с моделью.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># app/models.rb</span>
+<span class="token keyword">class</span> <span class="token class-name">Post</span> <span class="token operator">&lt;</span> <span class="token constant">ActiveRecord</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Base</span>
+  <span class="token comment"># заголовок с максимальной длиной в 100 символов!</span>
+  validates <span class="token symbol">:title</span><span class="token punctuation">,</span> presence<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> length<span class="token punctuation">:</span> <span class="token punctuation">{</span>maximum<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">}</span>
+  validates <span class="token symbol">:content</span><span class="token punctuation">,</span> presence<span class="token punctuation">:</span> <span class="token keyword">true</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Сейчас попробуйте сохранить новый пост без указания заголовка или с длиной,
+превышающей сотню символов. При попытке сохранения вы должны получить ошибку, а
+объект не будет сохранён в БД.</p> <h2 id="отnоженные-пубnикации"><a href="#отnоженные-пубnикации" aria-hidden="true" class="header-anchor">#</a> Отложенные публикации</h2> <p>С основополагающими принципами немного разобрались. Следующим шагом будет
+простенькое добавление отложенных публикаций. Для этого прежде всего следует
+изменить миграцию.</p> <h3 id="миграция"><a href="#миграция" aria-hidden="true" class="header-anchor">#</a> Миграция</h3> <p>Добавление всего одного параметра даты, который при написании статьи вводится вручную и
+призван обозначать время публикации этой самой статьи:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># db/migrate/xxx_create_post.rb</span>
+<span class="token keyword">class</span> <span class="token class-name">CreatePost</span> <span class="token operator">&lt;</span> <span class="token constant">ActiveRecord</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Migration</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token keyword">self</span><span class="token punctuation">.</span><span class="token function">up</span></span>
+    create_table <span class="token symbol">:posts</span> <span class="token keyword">do</span> <span class="token operator">|</span>t<span class="token operator">|</span>
+      t<span class="token punctuation">.</span>date     <span class="token symbol">:published_at</span>
+    <span class="token keyword">end</span>
+    <span class="token constant">Post</span><span class="token punctuation">.</span>create<span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token string">&quot;Who I am?&quot;</span><span class="token punctuation">,</span>
+                published_at<span class="token punctuation">:</span> <span class="token string">&quot;2086-03-05&quot;</span><span class="token punctuation">,</span>
+                content<span class="token punctuation">:</span> <span class="token string">&quot;You don't show me!&quot;</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>После этого необходимо прогуляться в сторону модели:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># app/models.rb</span>
+<span class="token keyword">class</span> <span class="token class-name">Post</span> <span class="token operator">&lt;</span> <span class="token constant">ActiveRecord</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Base</span>
+  scope <span class="token symbol">:published_at</span><span class="token punctuation">,</span> lambda <span class="token punctuation">{</span> where<span class="token punctuation">(</span><span class="token string">&quot;published_at &lt;= ?&quot;</span><span class="token punctuation">,</span> <span class="token builtin">Time</span><span class="token punctuation">.</span>now<span class="token punctuation">)</span> <span class="token punctuation">}</span>
+  validates <span class="token symbol">:published_at</span><span class="token punctuation">,</span> presence<span class="token punctuation">:</span> <span class="token keyword">true</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Поскольку данные пока не представляют собой никакой ценности (их попросту нет),
+для вступления в силу принятых изменений можно сделать ход конём:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ rake db:rollback
+$ rake db:migrate
+</code></pre></div><p>Это откат прошлой миграции и создание новой. Все созданные вручную записи будут потеряны.</p> <h3 id="вывод-пубnикаций"><a href="#вывод-пубnикаций" aria-hidden="true" class="header-anchor">#</a> Вывод публикаций</h3> <p>Что же, настало время обратиться к маршрутам и там, где это нужно, указать новую
+выборку. Например, при выводе публикаций на главной странице:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># app/routes.rb</span>
+get <span class="token string">'/'</span> <span class="token keyword">do</span>
+  <span class="token variable">@summary</span> <span class="token operator">=</span> <span class="token string">'Blog description'</span>
+  <span class="token comment"># отображать только опубликованные статьи</span>
+  <span class="token variable">@posts</span> <span class="token operator">=</span> <span class="token constant">Post</span><span class="token punctuation">.</span>published_at<span class="token punctuation">.</span>limit<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+  erb <span class="token symbol">:index</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Это не единственный (и, возможно, не самый лучший) способ создать отложенные
+публикации, но первый, что пришёл в голову.</p> <h2 id="отображение-дат"><a href="#отображение-дат" aria-hidden="true" class="header-anchor">#</a> Отображение дат</h2> <p>Если читатель проделал на практике все шаги вплоть до этого момента, он мог
+заметить, что формат даты нельзя назвать «человекопонятным». Пришло
+время узнать зачем в sinatra используются хелперы.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># app/helpers.rb</span>
+
+helpers <span class="token keyword">do</span>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">pretty_date</span></span><span class="token punctuation">(</span>time<span class="token punctuation">)</span>
+    <span class="token comment"># форматируем дату</span>
+    time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">&quot;%d %b %Y&quot;</span><span class="token punctuation">)</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Теперь там, где это представляется необходимым, следует использовать подобную
+конструкцию для вывода симпатичных дат:</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># views/posts/show.erb </span><span class="token delimiter punctuation">%&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>title <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> pretty_date<span class="token punctuation">(</span><span class="token variable">@post</span><span class="token punctuation">.</span>published_at<span class="token punctuation">)</span> <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="markdown-и-архив-пубnикаций"><a href="#markdown-и-архив-пубnикаций" aria-hidden="true" class="header-anchor">#</a> Markdown и архив публикаций</h2> <p>На самом деле, эти вещи уже были описаны ранее.</p> <p>Для того, чтобы получить возможность писать статью при помощи markdown-разметки,
+а сохранять и отображать её в виде html, достаточно взять блок кода из второго
+примера, где используется <a href="/posts/rails-markdown/">before_save</a>. Код этот
+помещается в <code>app/models.rb</code>, в шаблоне вывода публикации ничего править не
+нужно.</p> <p>То же самое с созданием архива. Один из способов описан в публикации об
+<a href="/posts/rails-archive/">упорядочивании записей в rails</a>. С
+нашей организацией проекта это будет выглядеть не совсем так:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># app/routes.rb</span>
+<span class="token comment"># Archive</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'/archive/?'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'/posts/?'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>route<span class="token operator">|</span>
+  get route <span class="token keyword">do</span>
+    <span class="token variable">@posts</span> <span class="token operator">=</span> <span class="token constant">Post</span><span class="token punctuation">.</span>published_at
+    <span class="token variable">@posts_by_year</span> <span class="token operator">=</span> <span class="token constant">Post</span><span class="token punctuation">.</span>published_at<span class="token punctuation">.</span>order<span class="token punctuation">(</span><span class="token string">&quot;published_at ASC&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>limit<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group_by <span class="token punctuation">{</span> <span class="token operator">|</span>post<span class="token operator">|</span> post<span class="token punctuation">.</span>published_at<span class="token punctuation">.</span>beginning_of_year <span class="token punctuation">}</span>
+    <span class="token variable">@title</span> <span class="token operator">=</span> <span class="token string">'Archive'</span>
+    erb <span class="token symbol">:archive</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Вывод страниц:</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@title</span> <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token variable">@posts_by_year</span><span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>year<span class="token punctuation">,</span> posts<span class="token operator">|</span> <span class="token delimiter punctuation">%&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token string">&quot;<span class="token interpolation"><span class="token comment">#{year.strftime('%Y')}</span></span>&quot;</span> <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dl</span><span class="token punctuation">&gt;</span></span>
+    <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">for</span> post <span class="token keyword">in</span> posts <span class="token delimiter punctuation">%&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dd</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/posts/<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> post<span class="token punctuation">.</span>id <span class="token delimiter punctuation">%&gt;</span></span>/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> post<span class="token punctuation">.</span>title <span class="token delimiter punctuation">%&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+       <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> pretty_date<span class="token punctuation">(</span>post<span class="token punctuation">.</span>published_at<span class="token punctuation">)</span> <span class="token delimiter punctuation">%&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dd</span><span class="token punctuation">&gt;</span></span>
+    <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">end</span> <span class="token delimiter punctuation">%&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dl</span><span class="token punctuation">&gt;</span></span>
+<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span> <span class="token keyword">end</span> <span class="token delimiter punctuation">%&gt;</span></span>
+</code></pre></div><p>Эффект обеспечен тот же самый.</p> <h2 id="развёртывание-приnожения-на-heroku"><a href="#развёртывание-приnожения-на-heroku" aria-hidden="true" class="header-anchor">#</a> Развёртывание приложения на Heroku</h2> <p>Прежде всего следует удостовериться, что файлы <code>Gemfile</code> и <code>config.ru</code> расположены в
+корне проекта, который вы собираетесь развёртывать. Затем создать аккаунт на
+<code>heroku.com</code> и установить <a href="https://toolbelt.heroku.com/" target="_blank" rel="noopener noreferrer">Heroku Toolbelt<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">wget</span> -qO- https://toolbelt.heroku.com/install.sh <span class="token operator">|</span> <span class="token function">sh</span>
+$ <span class="token builtin class-name">echo</span> <span class="token string">'PATH=&quot;/usr/local/heroku/bin:<span class="token environment constant">$PATH</span>&quot;'</span> <span class="token operator">&gt;&gt;</span> ~/.profile
+$ heroku login
+</code></pre></div><p>После чего сделать из нашего каталога git-репозиторий:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> init
+$ <span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+$ <span class="token function">git</span> commit -am <span class="token string">'initial commit'</span>
+$ heroku create
+$ <span class="token function">git</span> push heroku master
+$ heroku run rake --trace db:migrate
+</code></pre></div><blockquote><p>Чтобы указать какую-то определённую миграцию используйте db:migrate
+VERSION=xxx</p></blockquote> <blockquote><p>Если что-то пошло не так, посмотрите логи командой heroku logs</p></blockquote> <p>Надо также заметить, что строка, указывающая порт в <code>config.ru</code> должна быть в
+обязательном порядке удалена перед деплоем на heroku.</p> <h2 id="посnесnовие"><a href="#посnесnовие" aria-hidden="true" class="header-anchor">#</a> Послесловие</h2> <p>Сегодня было раскрыто многое из того, что можно сделать с помощью sinatra, но
+ещё больше осталось за кадром. Как кэшировать страницы, как защитить админку,
+что можно использовать кроме ActiveRecord, какой может быть архитектура
+приложения (а она имеет полное право разительно отличаться от того, что было представлено в заметке),
+как генерировать rss-ленту, как тестировать приложение. Ответы на эти и другие вопросы следует искать прежде всего в
+следующих источниках:</p> <ul><li><a href="http://www.sinatrarb.com/" target="_blank" rel="noopener noreferrer">http://www.sinatrarb.com/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://recipes.sinatrarb.com/" target="_blank" rel="noopener noreferrer">http://recipes.sinatrarb.com/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="http://rspec.info/" target="_blank" rel="noopener noreferrer">http://rspec.info/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2014</span> 
+
+  <a href="/?tag=ruby" data-v-1c67afbc>
+    ruby
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/tikz/" data-v-326f747b>
+      TikZ LaTeX
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/ebup-latex/" data-v-326f747b>
+      Конвертируем ePub из LaTeX
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/67.f44e0d12.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

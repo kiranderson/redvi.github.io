@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Markdown и подсветка синтаксиса в Ruby On Rails | Заметки на полях</title>
+    <meta name="description" content="О том, как заставить rails понимать markdown разметку и подсветку синтаксиса">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/62.f563cd8e.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Markdown и подсветка синтаксиса в Ruby On Rails</h1> <div class="content__default"><p>При написании статей уже давно не принято использовать простую HTML-разметку.
+Набирать каждый раз HTML-теги вручную — не самое приятное времяпрепровождение. Зачастую для этих целей используются user-friendly редакторы а-ля TinyMCE. И выглядят неплохо, и справиться с ними в силах любой необременённый излишками знания пользователь. Минус один: html-разметка, получаемая на выходе, может совсем не радовать глаз автора и мохнатые лапки поисковых «пауков».</p> <p>По другую сторону сто́ят облегчённые языки разметки, самым популярным из которых является markdown. Вот его-то мы и будем подключать к Rails-проекту.</p> <p>Для начала установим необходимые гемы. Для этого их следует прописать в Gemfile:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># Gemfile</span>
+gem <span class="token string">'redcarpet'</span><span class="token punctuation">,</span> <span class="token string">'~&gt; 3.0.0'</span>
+gem <span class="token string">'pygments.rb'</span>
+</code></pre></div><p>И дать команду:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ bundle <span class="token function">install</span>
+</code></pre></div><p>После чего обратимся к созданию helper'а, призванного сгенерировать html из
+файла с разметкой markdown. За генерацию страниц в html из markdown в
+ответе <code>redcarpet</code>. К тому же благодаря <code>pygments.rb</code> у нас появляется
+возможность подсветки синтаксиса в коде.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># helpers/application_helper.rb</span>
+
+<span class="token keyword">module</span> <span class="token constant">ApplicationHelper</span>
+
+  <span class="token keyword">class</span> <span class="token class-name">HTMLwithPygments</span> <span class="token operator">&lt;</span> <span class="token constant">Redcarpet</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Render</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">HTML</span>
+    <span class="token keyword">require</span> <span class="token string">'pygments.rb'</span>
+
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">block_code</span></span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> language<span class="token punctuation">)</span>
+      <span class="token constant">Pygments</span><span class="token punctuation">.</span>highlight<span class="token punctuation">(</span>code<span class="token punctuation">,</span> <span class="token symbol">:lexer</span> <span class="token operator">=</span><span class="token operator">&gt;</span> language<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">markdown</span></span><span class="token punctuation">(</span>text<span class="token punctuation">,</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    renderer <span class="token operator">=</span> <span class="token constant">HTMLwithPygments</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>hard_wrap<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">)</span>
+    options<span class="token operator">=</span><span class="token punctuation">{</span>
+      autolink<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+      no_intra_emphasis<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+      fenced_code_blocks<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+      lax_html_blocks<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+      strikethrough<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+      superscript<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+      space_after_headers<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+      underline<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+      highlight<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+      quote<span class="token punctuation">:</span> <span class="token keyword">true</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token constant">Redcarpet</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Markdown</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>renderer<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">.</span>render<span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">.</span>html_safe
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Для подсветки синтаксиса нужно написать блок кода и указать необходимый ЯП, вот так:</p> <div class="language- extra-class"><pre class="language-text"><code>~~~ruby
+puts &quot;Hello!&quot;
+~~~
+</code></pre></div><p>Функция <code>markdown</code> принимает на вход текст с указанными опциями и генерирует html-страницу. Подробно об имеющихся опциях и их значении можно прочесть на <a href="https://github.com/vmg/redcarpet" target="_blank" rel="noopener noreferrer">странице проекта<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <p>Осталось лишь вывести наш текст на обозрение массам:</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># posts/show.html.erb </span><span class="token delimiter punctuation">%&gt;</span></span>
+
+<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> link_to <span class="token variable">@post</span><span class="token punctuation">.</span>title<span class="token punctuation">,</span> post_path<span class="token punctuation">(</span><span class="token variable">@post</span><span class="token punctuation">)</span> <span class="token delimiter punctuation">%&gt;</span></span>
+  <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> markdown <span class="token variable">@post</span><span class="token punctuation">.</span>content <span class="token delimiter punctuation">%&gt;</span></span>
+</code></pre></div><p>С этим способом в базе данных текст хранится в формате markdown, а перед тем,
+как страница будет отображена, <code>redcarpet</code> переводит её в html-формат.
+С точки зрения производительности не самый лучший вариант.</p> <p>Но есть и другой способ: сгенерировать html перед тем, как сохранять файл
+в базу данных при помощи <code>before_save</code>.</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># post.rb</span>
+<span class="token comment">#</span>
+<span class="token comment"># Table name: posts</span>
+<span class="token comment">#</span>
+<span class="token comment">#  id         :integer     not null, primary key</span>
+<span class="token comment">#  title      :string(255)</span>
+<span class="token comment">#  content    :text</span>
+<span class="token comment">#  slug       :string(255)</span>
+<span class="token comment">#  summary    :string(255)</span>
+<span class="token comment">#  created_at :datetime</span>
+<span class="token comment">#  updated_at :datetime</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Post</span> <span class="token operator">&lt;</span> <span class="token constant">ActiveRecord</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Base</span>
+  before_save <span class="token symbol">:render_content</span>
+
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">render_content</span></span>
+    <span class="token keyword">require</span> <span class="token string">'redcarpet'</span>
+    renderer <span class="token operator">=</span> <span class="token constant">HTMLwithPygments</span>
+    extensions <span class="token operator">=</span> <span class="token punctuation">{</span>fenced_code_blocks<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span>
+    redcarpet <span class="token operator">=</span> <span class="token constant">Redcarpet</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Markdown</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>renderer<span class="token punctuation">,</span> extensions<span class="token punctuation">)</span>
+    <span class="token keyword">self</span><span class="token punctuation">.</span>content <span class="token operator">=</span> redcarpet<span class="token punctuation">.</span>render <span class="token keyword">self</span><span class="token punctuation">.</span>content
+  <span class="token keyword">end</span>
+
+  <span class="token keyword">class</span> <span class="token class-name">HTMLwithPygments</span> <span class="token operator">&lt;</span> <span class="token constant">Redcarpet</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Render</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">HTML</span>
+    <span class="token keyword">require</span> <span class="token string">'pygments.rb'</span>
+    <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">block_code</span></span><span class="token punctuation">(</span>code<span class="token punctuation">,</span> language<span class="token punctuation">)</span>
+      <span class="token constant">Pygments</span><span class="token punctuation">.</span>highlight<span class="token punctuation">(</span>code<span class="token punctuation">,</span> <span class="token symbol">:lexer</span> <span class="token operator">=</span><span class="token operator">&gt;</span> language<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Если ресурс не относится к техническим и статья не предназначена для
+вывода блоков кода можно обойтись без <code>pygments</code>:</p> <div class="language-ruby extra-class"><pre class="language-ruby"><code><span class="token comment"># post.rb</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Post</span> <span class="token operator">&lt;</span> <span class="token constant">ActiveRecord</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Base</span>
+  before_save <span class="token symbol">:render_content</span>
+
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">render_content</span></span>
+    <span class="token keyword">require</span> <span class="token string">'redcarpet'</span>
+    renderer <span class="token operator">=</span> <span class="token constant">Redcarpet</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Render</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">HTML</span><span class="token punctuation">.</span><span class="token keyword">new</span>
+    <span class="token class-name">extensions</span> <span class="token operator">=</span> <span class="token punctuation">{</span>fenced_code_blocks<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">}</span>
+    redcarpet <span class="token operator">=</span> <span class="token constant">Redcarpet</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token constant">Markdown</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span>renderer<span class="token punctuation">,</span> extensions<span class="token punctuation">)</span>
+    <span class="token keyword">self</span><span class="token punctuation">.</span>content <span class="token operator">=</span> redcarpet<span class="token punctuation">.</span>render <span class="token keyword">self</span><span class="token punctuation">.</span>content
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+</code></pre></div><p>Теперь в базе будет лежать готовая html-страница.</p> <p>Для корректного вывода такой странички нам нужно использовать
+стандартный фильтр <code>html_safe</code>:</p> <div class="language-erb extra-class"><pre class="language-erb"><code><span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%</span><span class="token comment"># posts/show.html.erb </span><span class="token delimiter punctuation">%&gt;</span></span>
+
+<span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> link_to <span class="token variable">@post</span><span class="token punctuation">.</span>title<span class="token punctuation">,</span> post_path<span class="token punctuation">(</span><span class="token variable">@post</span><span class="token punctuation">)</span> <span class="token delimiter punctuation">%&gt;</span></span>
+  <span class="token erb language-erb"><span class="token delimiter punctuation">&lt;%=</span> <span class="token variable">@post</span><span class="token punctuation">.</span>content<span class="token punctuation">.</span>html_safe <span class="token delimiter punctuation">%&gt;</span></span>
+</code></pre></div><p>Ещё раз: в первом примере (при генерации «на лету») страница
+сохраняется в формате markdown, каждый раз перед тем как вывести её
+содержимое <code>redcarpet</code> генерирует текст из markdown в html.</p> <p>Во втором примере отображается предварительно сгенерированный html-код.
+Так что вы вольны выбирать, какой из вариантов удобнее в каждом конкретном случае.</p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2013</span> 
+
+  <a href="/?tag=ruby" data-v-1c67afbc>
+    ruby
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/mplayer/" data-v-326f747b>
+      Mplayer
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/rails-slug-url/" data-v-326f747b>
+      Создание уникальных URL в Ruby On Rails
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/62.f563cd8e.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

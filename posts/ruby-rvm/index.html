@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Комфортное управление пакетами в Ruby | Заметки на полях</title>
+    <meta name="description" content="Настройка RVM для гибкого управления пакетами в ruby">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/65.13f19506.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/11.7e9fc27e.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Комфортное управление пакетами в Ruby</h1> <div class="content__default"><p>RVM — Ruby Version Manager (менеджер управления пакетами в ruby)
+сослужит хорошую службу в тех частых ситуациях, когда вам может потребоваться
+запуск нескольких версий ruby на одной машине или же нескольких проектов с разными
+наборами gem'ов для них. Чем-то напоминает virtualenv, если сравнивать с аналогичным приложением для python.</p> <p>Данный пост предположительно рассчитан на новоиспечённых рубистов и предназначен
+для облегчения и в какой-то мере даже автоматизации их труда.</p> <p><strong>Что такое gem?</strong></p> <p>Gem (драгоценный камень, жемчужина) — пакет ruby, предоставляющий
+какую-то функциональность. Например, библиотека <code>redcarpet</code>, доступная в
+виде gem'а, обеспечивает поддержку markdown.</p> <p><strong>Что такое gemset?</strong></p> <p>Gemset (set: набор, комплект) — набор gem'ов.</p> <h2 id="установка-rvm"><a href="#установка-rvm" aria-hidden="true" class="header-anchor">#</a> Установка RVM</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token punctuation">\</span>curl -L https://get.rvm.io <span class="token operator">|</span> <span class="token function">bash</span>
+Downloading RVM branch master
+% Total    % Received % Xferd  Average Speed
+                              Dload  Upload
+<span class="token number">100</span>   <span class="token number">124</span>  <span class="token number">100</span>   <span class="token number">124</span>    <span class="token number">0</span>     <span class="token number">0</span>    <span class="token number">107</span>
+<span class="token number">100</span> 1084k  <span class="token number">100</span> 1084k    <span class="token number">0</span>     <span class="token number">0</span>   234k
+* To start using RVM you need to run
+<span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">source</span> /home/user/.rvm/scripts/rvm<span class="token variable">`</span></span>
+</code></pre></div><p>Перезапускаем консоль и убеждаемся в том, что <code>rvm</code> был успешно установлен:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ rvm -v
+rvm <span class="token number">1.23</span>.13
+
+$ rvm get stable --auto-dotfiles
+</code></pre></div><p>Дополним переменную PATH, дабы указать путь к директории rvm. Запись нужно
+сделать в <code>.bashrc</code> или <code>.zshenv</code>.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># .bashrc</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">&quot;<span class="token environment constant">$PATH</span>:<span class="token environment constant">$HOME</span>/.rvm/bin&quot;</span>
+</code></pre></div><p>Дальше любопытно было бы просмотреть список доступных для установки и уже установленных пакетов ruby.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ rvm list known <span class="token comment"># просмотреть все доступные для установки версии Ruby</span>
+$ rvm list       <span class="token comment"># все установленные версии Ruby</span>
+<span class="token operator">=</span>* ruby-1.9.3-p448 <span class="token punctuation">[</span> x86_64 <span class="token punctuation">]</span>
+<span class="token comment"># =&gt; - current - текущая версия</span>
+<span class="token comment"># =* - current &amp;&amp; default - текущая и спользуется по-умолчанию</span>
+<span class="token comment">#  * - default - используемая по-умолчанию версия</span>
+</code></pre></div><h2 id="испоnьзование-разных-версий-ruby-и-gemset-ы"><a href="#испоnьзование-разных-версий-ruby-и-gemset-ы" aria-hidden="true" class="header-anchor">#</a> Использование разных версий ruby и gemset'ы</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">source</span> ~/.rvm/scripts/rvm <span class="token comment"># активировать rvm</span>
+$ rvm <span class="token function">install</span> <span class="token number">1.9</span>.3 <span class="token comment"># установить несколько версий ruby</span>
+$ rvm <span class="token function">install</span> <span class="token number">2.0</span>.0
+$ rvm use ruby-2.0.0-p247 --default <span class="token comment"># переключиться на ruby 2 и использовать v2 по-умолчанию</span>
+$ rvm list
+   ruby-1.9.3-p448 <span class="token punctuation">[</span> x86_64 <span class="token punctuation">]</span>
+<span class="token operator">=</span>* ruby-2.0.0-p247 <span class="token punctuation">[</span> x86_64 <span class="token punctuation">]</span>
+
+<span class="token comment"># =&gt; - current</span>
+<span class="token comment"># =* - current &amp;&amp; default</span>
+<span class="token comment">#  * - default</span>
+</code></pre></div><p>Для примера создадим gemset <code>jekyll</code>, где будут собраны все нужные одноимённому генератору статических страниц gem'ы.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">source</span> ~/.rvm/scripts/rvm <span class="token comment"># «включаем» rvm</span>
+$ rvm use <span class="token number">1.9</span>.3@jekyll --create <span class="token comment"># создать gemset</span>
+$ rvm use <span class="token number">1.9</span>.3@jekyll --default <span class="token comment"># выбирать его по-умолчанию</span>
+$ gem <span class="token function">install</span> jekyll jekyll-tagging i18n <span class="token comment"># установка gem'ов</span>
+$ gem list <span class="token comment"># просмотр установленных в выбранном gemset'е gem'ов</span>
+i18n <span class="token punctuation">(</span><span class="token number">0.6</span>.5<span class="token punctuation">)</span>
+jekyll <span class="token punctuation">(</span><span class="token number">1.2</span>.1<span class="token punctuation">)</span>
+jekyll-tagging <span class="token punctuation">(</span><span class="token number">0.5</span>.0<span class="token punctuation">)</span>
+liquid <span class="token punctuation">(</span><span class="token number">2.5</span>.3<span class="token punctuation">)</span>
+maruku <span class="token punctuation">(</span><span class="token number">0.7</span>.0<span class="token punctuation">)</span>
+</code></pre></div><p>Gemset'ы создаются для определённой версии ruby. Так, при переключении с одной версии на другую вы будете всегда видеть разный набор gemset'ов: отображаются они также лишь для своей версии.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ rvm gemset list <span class="token comment"># набор gemset'ов для ruby2</span>
+
+gemsets <span class="token keyword">for</span> ruby-2.0.0-p247
+   <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> example
+   global
+
+$ <span class="token builtin class-name">cd</span> workspace/jekyll <span class="token comment"># переход в директорию проекта, где используется ruby1.9</span>
+$ rvm gemset list     <span class="token comment"># набор gemset'ов для ruby1.9</span>
+
+gemsets <span class="token keyword">for</span> ruby-1.9.3-p448
+   <span class="token punctuation">(</span>default<span class="token punctuation">)</span>
+   global
+<span class="token operator">=</span><span class="token operator">&gt;</span> jekyll
+</code></pre></div><p>Но здесь мы забежали чуть вперёд. Дело в том, что при переходе в директорию проекта, автоматически меняется версия ruby и набор gemset'ов, о чём речь пойдёт чуть ниже.</p> <p>Gemset'ы можно удалять(delete), очищать(), экспортировать(export) и импортировать(import) gem'ы из одного в gemset'a в другой. Наиболее часто используемые действия отражены в данной ниже таблице.</p> <table><thead><tr><th>команда</th> <th>описание</th></tr></thead> <tbody><tr><td>rvm gemset create</td> <td>создать новый gemset</td></tr> <tr><td>rvm gemset export new.gems</td> <td>экспорт списка gem'ов в файл new.gems</td></tr> <tr><td>rvm gemset import new.gems</td> <td>импорт в текущий gemset списка gem'ов из файла new.gems</td></tr> <tr><td>rvm gemset delete</td> <td>удалить gemset</td></tr> <tr><td>rvm gemset empty</td> <td>очистить gemset</td></tr> <tr><td>rvm gemset delete example --force</td> <td>полностью удалить gemset example</td></tr> <tr><td>rvmreset</td> <td>перезагрузка RVM</td></tr> <tr><td>rvm uninstall</td> <td>удалить версию Ruby, оставить исходники</td></tr> <tr><td>rvm implode</td> <td>полностью удалить RVM!</td></tr> <tr><td>rvm list known</td> <td>получить список всех версий ruby доступных для установки</td></tr> <tr><td>rvm list</td> <td>отобразить список установленных версий ruby</td></tr> <tr><td>rvm gemset list</td> <td>просмотреть список gemset'ов в выбранной версии ruby</td></tr> <tr><td>rvm install 1.9.3</td> <td>установить ruby версии 1.9.3</td></tr> <tr><td>rvm remove 1.9.3</td> <td>удалить ruby версии 1.9.3</td></tr> <tr><td>rvm use 1.9.3</td> <td>переключиться на ruby версии 1.9.3</td></tr> <tr><td>rvm use 1.9.3@jekyll --default</td> <td>использовать версию ruby 1.9.3 c gemset jekyll по умолчанию</td></tr> <tr><td>rvm use system</td> <td>использовать системную версию ruby</td></tr></tbody></table> <h2 id="создание-отдеnьного-окружения-дnя-проекта"><a href="#создание-отдеnьного-окружения-дnя-проекта" aria-hidden="true" class="header-anchor">#</a> Создание отдельного окружения для проекта</h2> <p>Бывают случаи, когда необходимо не просто использовать разные версии ruby, но и разные версии gemset'ов для разных проектов. В этом посильную помощь может оказать создание своего окружения для каждого из проектов.</p> <p>В примере выше мы создали gemset <code>jekyll</code>, который использует версию ruby 1.9.3 и собственный набор gem'ов. Теперь у нас имеется два пути для работы с ним.</p> <p><strong>Переключение между gemset'ами</strong></p> <p>Во-первых, можно переключаться между gemsets при необходимости.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ rvm gemset use global
+$ rvm gemset use jekyll
+</code></pre></div><p><strong>Окружение?</strong></p> <p>Но зачастую быстрее один раз внести необходимые настройки. Для этого следует создать два файла в каталоге с проектом: <code>.ruby-gemset</code> и <code>.ruby-version</code>, куда и поместить информацию об используемом в проекте gemset'е и версии ruby соответственно.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">cat</span> ~/workspace/jekyll/.ruby-gemset
+jekyll
+
+$ <span class="token function">cat</span> ~/workspace/jekyll/.ruby-version
+ruby-1.9.3-p448
+</code></pre></div><p>Теперь достаточно просто зайти в директорию проекта, и нужные нам параметры будут установлены автоматически.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token builtin class-name">cd</span> workspace/jekyll
+$ rvm list
+
+<span class="token operator">=</span><span class="token operator">&gt;</span> ruby-1.9.3-p448 <span class="token punctuation">[</span> x86_64 <span class="token punctuation">]</span>
+ * ruby-2.0.0-p247 <span class="token punctuation">[</span> x86_64 <span class="token punctuation">]</span>
+
+<span class="token comment"># =&gt; - current</span>
+<span class="token comment"># =* - current &amp;&amp; default</span>
+<span class="token comment">#  * - default</span>
+</code></pre></div><p>То есть, если вы использовали версию ruby 2, после перехода в каталог с проектом, она автоматически изменится на версию, указанную в <code>.ruby-version</code>, что достаточно удобно.</p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2016</span> 
+
+  <a href="/?tag=ruby" data-v-1c67afbc>
+    ruby
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/jekyll/" data-v-326f747b>
+      Установка и настройка Jekyll
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/npm-build/" data-v-326f747b>
+      Публикация пакетов JavaScript
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/65.13f19506.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>

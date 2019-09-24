@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>TikZ LaTeX | Заметки на полях</title>
+    <meta name="description" content="Способы структурирования информации при помощи пакета TikZ">
+    <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#46bd87">
+    
+    <link rel="preload" href="/assets/css/0.styles.4993531b.css" as="style"><link rel="preload" href="/assets/js/app.6e4996bc.js" as="script"><link rel="preload" href="/assets/js/4.11d3a3db.js" as="script"><link rel="preload" href="/assets/js/11.7e9fc27e.js" as="script"><link rel="preload" href="/assets/js/28.785693ad.js" as="script"><link rel="prefetch" href="/assets/js/10.23d584b0.js"><link rel="prefetch" href="/assets/js/12.778cebda.js"><link rel="prefetch" href="/assets/js/13.f9a0865b.js"><link rel="prefetch" href="/assets/js/14.7e9142f5.js"><link rel="prefetch" href="/assets/js/15.81a256d2.js"><link rel="prefetch" href="/assets/js/16.49af5ffe.js"><link rel="prefetch" href="/assets/js/17.b44ee3ae.js"><link rel="prefetch" href="/assets/js/18.5aee35b6.js"><link rel="prefetch" href="/assets/js/19.0db9aae5.js"><link rel="prefetch" href="/assets/js/2.35b2c6bb.js"><link rel="prefetch" href="/assets/js/20.dd2ea1cb.js"><link rel="prefetch" href="/assets/js/21.393c5d86.js"><link rel="prefetch" href="/assets/js/22.56cf0890.js"><link rel="prefetch" href="/assets/js/23.155f85b8.js"><link rel="prefetch" href="/assets/js/24.b74b7cb5.js"><link rel="prefetch" href="/assets/js/25.eae2d23b.js"><link rel="prefetch" href="/assets/js/26.036b3a68.js"><link rel="prefetch" href="/assets/js/27.375f2bdb.js"><link rel="prefetch" href="/assets/js/29.11833701.js"><link rel="prefetch" href="/assets/js/3.a76664f0.js"><link rel="prefetch" href="/assets/js/30.6ecf91ca.js"><link rel="prefetch" href="/assets/js/31.5227900f.js"><link rel="prefetch" href="/assets/js/32.c60ace8f.js"><link rel="prefetch" href="/assets/js/33.b41a62d6.js"><link rel="prefetch" href="/assets/js/34.de1eca42.js"><link rel="prefetch" href="/assets/js/35.6640f8d9.js"><link rel="prefetch" href="/assets/js/36.5ae9284d.js"><link rel="prefetch" href="/assets/js/37.3bd95024.js"><link rel="prefetch" href="/assets/js/38.b492b55b.js"><link rel="prefetch" href="/assets/js/39.217589d9.js"><link rel="prefetch" href="/assets/js/40.f390632a.js"><link rel="prefetch" href="/assets/js/41.2a87ce19.js"><link rel="prefetch" href="/assets/js/42.0078f9a2.js"><link rel="prefetch" href="/assets/js/43.305a1d21.js"><link rel="prefetch" href="/assets/js/44.d68d09d3.js"><link rel="prefetch" href="/assets/js/45.725969ad.js"><link rel="prefetch" href="/assets/js/46.5006191f.js"><link rel="prefetch" href="/assets/js/47.02f0ac47.js"><link rel="prefetch" href="/assets/js/48.a1479944.js"><link rel="prefetch" href="/assets/js/49.f202290e.js"><link rel="prefetch" href="/assets/js/5.260a7e1b.js"><link rel="prefetch" href="/assets/js/50.d4cc05c9.js"><link rel="prefetch" href="/assets/js/51.351e60fc.js"><link rel="prefetch" href="/assets/js/52.2d05f9b0.js"><link rel="prefetch" href="/assets/js/53.bff13ad2.js"><link rel="prefetch" href="/assets/js/54.25ee54c4.js"><link rel="prefetch" href="/assets/js/55.9fe9e953.js"><link rel="prefetch" href="/assets/js/56.96ba4927.js"><link rel="prefetch" href="/assets/js/57.4e35a560.js"><link rel="prefetch" href="/assets/js/58.ae2210a1.js"><link rel="prefetch" href="/assets/js/59.8a325a55.js"><link rel="prefetch" href="/assets/js/6.58fecefc.js"><link rel="prefetch" href="/assets/js/60.16b2173a.js"><link rel="prefetch" href="/assets/js/61.9d2a0001.js"><link rel="prefetch" href="/assets/js/62.f563cd8e.js"><link rel="prefetch" href="/assets/js/63.1a72cc0f.js"><link rel="prefetch" href="/assets/js/64.e88ea223.js"><link rel="prefetch" href="/assets/js/65.13f19506.js"><link rel="prefetch" href="/assets/js/66.8c2e411f.js"><link rel="prefetch" href="/assets/js/67.f44e0d12.js"><link rel="prefetch" href="/assets/js/68.ea7ddfd9.js"><link rel="prefetch" href="/assets/js/69.b35d4c71.js"><link rel="prefetch" href="/assets/js/7.28b8ec71.js"><link rel="prefetch" href="/assets/js/70.11072557.js"><link rel="prefetch" href="/assets/js/71.17ae261d.js"><link rel="prefetch" href="/assets/js/8.42c742f4.js"><link rel="prefetch" href="/assets/js/9.3db5d928.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4993531b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="common common--light"><header class="header" data-v-32223a35><a href="/" aria-label="menu" class="hamburger" data-v-7ac966a8><div class="line-h" data-v-7ac966a8></div> <div class="text-wrap" data-v-7ac966a8></div> <svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-7ac966a8><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" data-v-7ac966a8><path id="square" stroke="#000000" width="41" height="41" d="M0.5 0.5 L41.5 0.5 L41.5 41.5 L0.5 41.5 Z" class="bz" data-v-7ac966a8></path></g></svg> <div class="line-h" data-v-7ac966a8></div></a></header> <main class="page content"><article><h1>Структурирование данных с TikZ</h1> <div class="content__default"><p>В современном мире нельзя представить человека, который не работает с какими
+бы то ни было данными. Прежде всего под данными здесь будет подразумеваться
+информация. При работе с информацией зачастую встаёт сразу две проблемы:</p> <ol><li>Информации слишком много. Найти можно всё. Трудно выбрать действительно
+полезные материалы.</li> <li>Информацию приходится как-то структурировать, дабы получить не отрывочную, но
+целостную картину изучаемой области.</li></ol> <p>И если с первой проблемой справляться остаётся лишь методом перебора, то во
+втором случае можно прибегнуть к маленькой хитрости и обратиться к
+<a href="/posts/texreview/">LaTeX</a>, чем и займёмся.</p> <p>Не секрет, что для работы с графикой в LaTeX принято использовать замечательный
+пакет, имя которому <strong>TikZ</strong>. В сегодняшнем примере постараюсь коротко объяснить как
+с его помощью можно составлять такую распространённую ныне вещь как
+майнд-карта, создавать деревья и цепочки.</p> <h2 id="mind-map"><a href="#mind-map" aria-hidden="true" class="header-anchor">#</a> Mind map</h2> <p>Красивых примеров майнд-карт в сети предостаточно. Дабы не
+выдумывать свой велосипед, предлагается взять за основу отличную карту господина <a href="http://www.texample.net/tikz/examples/computer-science-mindmap/" target="_blank" rel="noopener noreferrer">Till
+Tantau<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>,
+добавить один уровень вложенности, выровнять блоки и включить информацию о временах глагола английского
+языка. Разумеется, не глаголами едиными жив человек, и читатель спокойно может
+видоизменить карту под свои нужды.</p> <p>Итоговый вариант должен быть похожим на часть изображения ниже:</p> <p><img src="/assets/img/tikz1.jpg" alt="MindMap"></p> <div class="tip custom-block"><p class="custom-block-title">На заметку</p> <p>Вместо LaTeX можно опробовать программу FreeMind, это дело вкуса.</p></div> <p>Для наглядности (дабы сразу можно было видеть результат сделанных правок) в
+Linux можно использовать услуги редактора Gummi, а пользователям Emacs
+открыть предпросмотр командой <code>C-c C-v</code>.</p> <div class="language-latex extra-class"><pre class="language-latex"><code><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>a4paper<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">article</span><span class="token punctuation">}</span> <span class="token comment">% размер, класс документа</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>russian<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">babel</span><span class="token punctuation">}</span> <span class="token comment">% поддержка кириллицы</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>utf8<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">inputenc</span><span class="token punctuation">}</span> <span class="token comment">% кодировка UTF-8</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">tikz</span><span class="token punctuation">}</span> <span class="token comment">% подключить пакет TikZ</span>
+<span class="token function selector">\usetikzlibrary</span><span class="token punctuation">{</span>mindmap,trees<span class="token punctuation">}</span> <span class="token comment">% библиотеки TikZ</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">verbatim</span><span class="token punctuation">}</span> <span class="token comment">% нужен, если включать блок comment</span>
+
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span> <span class="token comment">% начало документа</span>
+<span class="token function selector">\pagestyle</span><span class="token punctuation">{</span>empty<span class="token punctuation">}</span> <span class="token comment">% не нумеровать страницы</span>
+
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">comment</span><span class="token punctuation">}</span> <span class="token comment">% комментарий</span>
+:Title: Времена английских глаголов
+:Tags: Mindmap
+:Author: me
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">comment</span><span class="token punctuation">}</span> <span class="token comment">% конец комментария</span>
+
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span> <span class="token comment">% начало блока TikZ</span>
+  <span class="token function selector">\path</span><span class="token punctuation">[</span>mindmap,
+  <span class="token comment">% положение узлов 1 уровня относительно друг друга</span>
+  level 1 concept/.append style=<span class="token punctuation">{</span>level distance=120,sibling angle=150<span class="token punctuation">}</span>,
+  grow cyclic,
+  <span class="token comment">% цвет основного блока и текста</span>
+  concept color=black!90,text=white<span class="token punctuation">]</span>
+    node<span class="token punctuation">[</span>concept<span class="token punctuation">]</span> <span class="token punctuation">{</span>VERBS<span class="token punctuation">}</span> <span class="token comment">% первичный/корневой узел</span>
+    <span class="token comment">% 1 уровень</span>
+    child<span class="token punctuation">[</span>concept color=red!90!black<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+      node<span class="token punctuation">[</span>concept<span class="token punctuation">]</span> <span class="token punctuation">{</span>Simple<span class="token punctuation">}</span>
+      <span class="token comment">% 2 уровень</span>
+      child <span class="token punctuation">[</span>concept color=red!70!black<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        node<span class="token punctuation">[</span>concept<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        <span class="token function selector">\underline</span><span class="token punctuation">{</span>Present<span class="token punctuation">}</span> <span class="token function selector">\\</span> V/V(es)<span class="token punctuation">}</span>
+        <span class="token comment">% 3 уровень</span>
+        child <span class="token punctuation">[</span>concept<span class="token punctuation">]</span> <span class="token punctuation">{</span> node<span class="token punctuation">[</span>concept<span class="token punctuation">]</span> <span class="token punctuation">{</span>regular action<span class="token punctuation">}</span> <span class="token punctuation">}</span>
+        child <span class="token punctuation">[</span>concept<span class="token punctuation">]</span> <span class="token punctuation">{</span> node<span class="token punctuation">[</span>concept<span class="token punctuation">]</span> <span class="token punctuation">{</span>work<span class="token punctuation">}</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token comment">% 2 уровень</span>
+      child <span class="token punctuation">[</span>concept color=red!80!black<span class="token punctuation">]</span> <span class="token punctuation">{</span>
+        node<span class="token punctuation">[</span>concept<span class="token punctuation">]</span> <span class="token punctuation">{</span>Past <span class="token function selector">\\</span> V(ed)/V2<span class="token punctuation">}</span>
+        <span class="token comment">% 3 уровень</span>
+          child <span class="token punctuation">[</span>concept<span class="token punctuation">]</span><span class="token punctuation">{</span>
+            node <span class="token punctuation">[</span>concept<span class="token punctuation">]</span> <span class="token punctuation">{</span>action in the past<span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+          child <span class="token punctuation">[</span>concept<span class="token punctuation">]</span><span class="token punctuation">{</span> node <span class="token punctuation">[</span>concept<span class="token punctuation">]</span> <span class="token punctuation">{</span>workED<span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>;
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span> <span class="token comment">% конец блока TikZ</span>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span> <span class="token comment">% конец документа</span>
+</code></pre></div><p>Рекомендуется немного поэкспериментировать с уровнями вложенности, дабы понять
+их. Также отметим, что:</p> <ul><li><em>child</em> описывает характеристики узла, содержит узлы (кроме первичного)</li> <li><em>concept</em> проводит линию, соединяющую элементы</li> <li><em>node</em> представляет собой узел (элемент)</li></ul> <p>Полный вариант данной карты можно забрать
+<a href="https://gist.github.com/redVi/10005075" target="_blank" rel="noopener noreferrer">отсюда<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. Разумеется, при должном умении
+есть шанс сделать куда более красивые и функциональные карты: добавить фон, тень, заметки и прочая-прочая.</p> <h2 id="деревья"><a href="#деревья" aria-hidden="true" class="header-anchor">#</a> Деревья</h2> <p>Вряд ли такой структуре как дерево можно дать много определений. Дерево
+представляет собой иерархическую структуру связанных друг с другом элементов
+— узлов, верхний из которых является корневым. От верхнего уровня к другим
+вершинам проходят рёбра. Вершины, не имеющие рёбер, называются листьями.</p> <p>Впрочем, зачем долго описывать теорию, когда при помощи рисунка можно быстро и
+наглядно отобразить само дерево? Вот оно:</p> <p><img src="/assets/img/tikz2.jpg" alt="LaTeX Ruby Classes">]</p> <p>Начнём с построения элементов одного уровня, далее будем наблюдать как
+представленное дерево «разрастается». В то же время слишком глубоких
+уровней здесь не представлено (безусловно, таковые могут наличествовать, если они
+нужны).</p> <div class="language-latex extra-class"><pre class="language-latex"><code><span class="token function selector">\usetikzlibrary</span><span class="token punctuation">{</span>trees<span class="token punctuation">}</span> <span class="token comment">% только деревья, библиотека mindmap не требуется</span>
+<span class="token comment">% установим границы полей, дабы рисунок вместился целиком</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>left=2cm,right=2cm,
+    top=2cm,bottom=2cm,bindingoffset=0cm<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">geometry</span><span class="token punctuation">}</span>
+
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span class="token function selector">\tikz</span> <span class="token comment">% блок tikz</span>
+  <span class="token function selector">\node</span> <span class="token punctuation">{</span>Object<span class="token punctuation">}</span> <span class="token comment">% корень дерева</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Nil Class<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token comment">% первый уровень</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>True Class<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>False Class<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Numeric<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Time<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Date<span class="token punctuation">}</span><span class="token punctuation">}</span>
+;
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span> <span class="token comment">% end document</span>
+</code></pre></div><p>Если долго продолжать в том же духе, вскоре ничего нельзя будет разобрать из-за
+того, что ветки уровней смешаются между собой. Чтобы избежать такой неприятности
+зададим дистанцию для первого и второго уровня, которые будут использоваться в
+этой схеме.</p> <p>Перед началом блока <em>tikz</em> допишем:</p> <div class="language-latex extra-class"><pre class="language-latex"><code><span class="token comment">% Стили для уровней</span>
+<span class="token function selector">\tikzstyle</span><span class="token punctuation">{</span>level 1<span class="token punctuation">}</span>=<span class="token punctuation">[</span>level distance=5.5cm, sibling distance=2.5cm<span class="token punctuation">]</span>
+<span class="token function selector">\tikzstyle</span><span class="token punctuation">{</span>level 2<span class="token punctuation">}</span>=<span class="token punctuation">[</span>level distance=3.5cm, sibling distance=2cm<span class="token punctuation">]</span>
+</code></pre></div><p>Здесь <em>level distance</em> позволит регулировать длину рёбер, а <em>sibling distance</em> распределить
+ветки уровней так, чтобы они не соприкасались друг с другом. Расстояние в каждом
+случае подбирается в соответствии с вашими эстетическими предпочтениями.</p> <p>Теперь можно привести полное содержание файла:</p> <div class="language-latex extra-class"><pre class="language-latex"><code><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>a4paper, landscape<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">article</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>russian<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">babel</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>utf8<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">inputenc</span><span class="token punctuation">}</span> <span class="token comment">% UTF-8</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">tikz</span><span class="token punctuation">}</span>
+<span class="token function selector">\usetikzlibrary</span><span class="token punctuation">{</span>trees<span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">verbatim</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>left=2cm,right=2cm,
+    top=2cm,bottom=2cm,bindingoffset=0cm<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">geometry</span><span class="token punctuation">}</span>
+
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span class="token function selector">\pagestyle</span><span class="token punctuation">{</span>empty<span class="token punctuation">}</span>
+
+<span class="token comment">% Set style of the trees</span>
+<span class="token function selector">\tikzstyle</span><span class="token punctuation">{</span>level 1<span class="token punctuation">}</span>=<span class="token punctuation">[</span>level distance=5.5cm, sibling distance=2.5cm<span class="token punctuation">]</span>
+<span class="token function selector">\tikzstyle</span><span class="token punctuation">{</span>level 2<span class="token punctuation">}</span>=<span class="token punctuation">[</span>level distance=2.5cm, sibling distance=2cm<span class="token punctuation">]</span>
+
+<span class="token function selector">\tikz</span>
+  <span class="token function selector">\node</span> <span class="token punctuation">{</span>Object<span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Nil Class<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>True Class<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>False Class<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Numeric<span class="token punctuation">}</span>
+      child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Integer<span class="token punctuation">}</span>
+        child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Fixnum<span class="token punctuation">}</span><span class="token punctuation">}</span>
+        child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Bignum<span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Float<span class="token punctuation">}</span><span class="token punctuation">}</span>
+      child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Complex<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Time<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Date<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>String<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Range<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Struct<span class="token punctuation">}</span>
+      child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Struct::Tms<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Array<span class="token punctuation">}</span><span class="token punctuation">}</span>
+    child <span class="token punctuation">{</span> node <span class="token punctuation">{</span>Hash<span class="token punctuation">}</span><span class="token punctuation">}</span>
+;
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span> <span class="token comment">% end document</span>
+</code></pre></div><p>Дальше интереснее: плавно переходим к цепочкам.</p> <h2 id="цепочки"><a href="#цепочки" aria-hidden="true" class="header-anchor">#</a> Цепочки</h2> <p>Такое название дано исходя из главной особенности структуры в LaTeX — цепочка,
+chain. В реальности эта модель скорее представляет собой граф (совокупность
+вершин и рёбер, нелинейная многосвязная структура с произвольным количеством элементов).</p> <p>Хотя наш граф будет совсем не сложен, тем не менее, потребуется подключить
+множество библиотек <em>TikZ</em>, которые могут сослужить неплохую
+службу при составлении различных блоков.</p> <p>Указывать цвет также станем немного иначе: сначала зададим определённую гамму цветов в
+заголовке документа, а затем будем использовать их. Разговор о цвете однажды уже
+заходил. Подробности иметюся в заметке <a href="/posts/hyperref/">о навигации по документу</a>.</p> <div class="language-latex extra-class"><pre class="language-latex"><code><span class="token function selector">\documentclass</span><span class="token punctuation">[</span>a4paper<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">article</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>russian<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">babel</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">[</span>utf8<span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token keyword">inputenc</span><span class="token punctuation">}</span>
+<span class="token function selector">\usepackage</span><span class="token punctuation">{</span><span class="token keyword">tikz</span><span class="token punctuation">}</span>
+<span class="token comment">% библиотеки</span>
+<span class="token function selector">\usetikzlibrary</span><span class="token punctuation">{</span><span class="token comment">%</span>
+  arrows, <span class="token comment">% стрелки</span>
+  shapes.misc, <span class="token comment">% фигуры</span>
+  chains, <span class="token comment">% цепочки</span>
+  positioning, <span class="token comment">% позиционирование элементов</span>
+  scopes, <span class="token comment">% создание дополнительных веток</span>
+  shadows <span class="token comment">% тени</span>
+<span class="token punctuation">}</span>
+<span class="token comment">% указание цветов</span>
+<span class="token function selector">\definecolor</span><span class="token punctuation">{</span>Gray<span class="token punctuation">}</span><span class="token punctuation">{</span>RGB<span class="token punctuation">}</span><span class="token punctuation">{</span>102,102,102<span class="token punctuation">}</span>
+<span class="token function selector">\definecolor</span><span class="token punctuation">{</span>LightGray<span class="token punctuation">}</span><span class="token punctuation">{</span>RGB<span class="token punctuation">}</span><span class="token punctuation">{</span>178,178,178<span class="token punctuation">}</span>
+<span class="token function selector">\definecolor</span><span class="token punctuation">{</span>Red<span class="token punctuation">}</span><span class="token punctuation">{</span>RGB<span class="token punctuation">}</span><span class="token punctuation">{</span>204,0,0<span class="token punctuation">}</span>
+<span class="token function selector">\definecolor</span><span class="token punctuation">{</span>Pink<span class="token punctuation">}</span><span class="token punctuation">{</span>RGB<span class="token punctuation">}</span><span class="token punctuation">{</span>255,102,102<span class="token punctuation">}</span>
+</code></pre></div><p>Что можно разукрасить:</p> <ul><li><em>draw</em> цвет границы</li> <li><em>top color</em> верхний цвет</li> <li><em>bottom color</em> нижний цвет</li> <li><em>color</em> цвет текста</li></ul> <p>Как можно позиционировать элементы:</p> <ul><li><em>riglt/left</em> справа или слева от элемента</li> <li><em>below right/above right</em> ниже/выше справа от элемента</li> <li><em>xshift/yshift=5mm</em> сдвиг по оси X/Y</li></ul> <p>Что должно получиться в первом шаге:</p> <p><img src="/assets/img/tikz3.png" alt="Chain First Step" title="First Chain"></p> <div class="language-latex extra-class"><pre class="language-latex"><code><span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+<span class="token comment">% установки для элементов</span>
+<span class="token function selector">\tikzset</span><span class="token punctuation">{</span>
+nonterminal/.style=<span class="token punctuation">{</span>
+    rectangle, <span class="token comment">% обычный прямоугольник</span>
+    <span class="token comment">% размер блока</span>
+    minimum size=6mm,
+    very thick, <span class="token comment">% двойная линия</span>
+    draw=Gray, <span class="token comment">% указываем заданный ранее цвет</span>
+    <span class="token comment">% цвета узлов</span>
+    top color=white,
+    bottom color=LightGray,
+    <span class="token comment">% шрифт</span>
+    font=<span class="token function selector">\itshape</span>
+  <span class="token punctuation">}</span>,
+terminal/.style=<span class="token punctuation">{</span>
+    rounded rectangle, <span class="token comment">% прямоугольник со скруглёнными углами</span>
+    drop shadow=<span class="token punctuation">{</span>opacity=0.35<span class="token punctuation">}</span>, <span class="token comment">% тень от узлов</span>
+    minimum size=6mm, <span class="token comment">% размер узла</span>
+    very thick, <span class="token comment">% двойная линия</span>
+    draw=black!50, <span class="token comment">% цвет обводки</span>
+    top color=white,bottom color=black!20, <span class="token comment">% цвета градиента</span>
+    font=<span class="token function selector">\ttfamily</span><span class="token punctuation">}</span> <span class="token comment">% шрифт</span>
+<span class="token punctuation">}</span>
+<span class="token comment">% начало блока</span>
+<span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span><span class="token punctuation">[</span>node distance=5mm and 5mm<span class="token punctuation">]</span> <span class="token comment">% дистанция между узлами</span>
+  <span class="token comment">% используем позиционирование (right/left/above right/above left=of something)</span>
+  <span class="token function selector">\node</span> (dot)<span class="token punctuation">[</span>terminal<span class="token punctuation">]</span><span class="token punctuation">{</span>.<span class="token punctuation">}</span>;
+  <span class="token function selector">\node</span> (digit) <span class="token punctuation">[</span>terminal, right=of dot, yshift=5mm<span class="token punctuation">]</span> <span class="token punctuation">{</span>digit<span class="token punctuation">}</span>;
+  <span class="token function selector">\node</span> (root)<span class="token punctuation">[</span>nonterminal, bottom color=Pink, right=of digit<span class="token punctuation">]</span> <span class="token punctuation">{</span>root<span class="token punctuation">}</span>;
+  <span class="token function selector">\node</span> (name) <span class="token punctuation">[</span>terminal, below right=of dot<span class="token punctuation">]</span> <span class="token punctuation">{</span>name<span class="token punctuation">}</span>;
+  <span class="token function selector">\node</span> (name2) <span class="token punctuation">[</span>terminal, below right=of name, color=Pink<span class="token punctuation">]</span> <span class="token punctuation">{</span>name2<span class="token punctuation">}</span>;
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span> <span class="token comment">% конец блока</span>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">document</span><span class="token punctuation">}</span>
+</code></pre></div><p>Если всё получилось, можно переходить к следующему шагу: визуальному
+связыванию узлов. Свяжем их в ранее упомянутую цепочку: <em>chain</em>. Для этого
+зададим один параметр для стиля узлов и «начнём» цепочку указанием <em>start chain</em>.</p> <div class="language-latex extra-class"><pre class="language-latex"><code><span class="token comment">% ...</span>
+<span class="token function selector">\tikzset</span><span class="token punctuation">{</span>
+    every node/.style=<span class="token punctuation">{</span>on chain<span class="token punctuation">}</span>,
+<span class="token comment">% ...</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span><span class="token punctuation">[</span>start chain<span class="token punctuation">]</span>
+</code></pre></div><p>В примере ниже нужно будет вручную проводить связующие стрелки между узлами. Их
+расположение относительно друг друга гибко регулируется. На выходе получится
+следующее:</p> <p><img src="/assets/img/tikz4.png" alt="On Chain" title="On Chain"></p> <div class="language-latex extra-class"><pre class="language-latex"><code><span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span><span class="token punctuation">[</span>start chain, node distance=5mm and 5mm<span class="token punctuation">]</span> <span class="token comment">% начало цепочки</span>
+  <span class="token function selector">\node</span> (dot)<span class="token punctuation">[</span>terminal<span class="token punctuation">]</span><span class="token punctuation">{</span>.<span class="token punctuation">}</span>;
+  <span class="token function selector">\node</span> (digit) <span class="token punctuation">[</span>terminal, right=of dot, yshift=5mm<span class="token punctuation">]</span> <span class="token punctuation">{</span>digit<span class="token punctuation">}</span>;
+  <span class="token function selector">\node</span>
+  (root)<span class="token punctuation">[</span>nonterminal, minimum size=10mm, bottom color=Pink, right=of digit<span class="token punctuation">]</span> <span class="token punctuation">{</span>root<span class="token punctuation">}</span>;
+  <span class="token comment">% связь узла root к узлу name</span>
+  <span class="token function selector">\node</span> (name) <span class="token punctuation">[</span>terminal, join=with root, below right=of dot<span class="token punctuation">]</span> <span class="token punctuation">{</span>name<span class="token punctuation">}</span>;
+  <span class="token function selector">\node</span> (name2) <span class="token punctuation">[</span>terminal, below right=of name, color=Pink<span class="token punctuation">]</span> <span class="token punctuation">{</span>name2<span class="token punctuation">}</span>;
+    <span class="token comment">% ответвление от name2</span>
+    <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">scope</span><span class="token punctuation">}</span><span class="token punctuation">[</span>start branch=plus<span class="token punctuation">]</span>
+      <span class="token function selector">\node</span> (plus)<span class="token punctuation">[</span>terminal, on chain=going above right<span class="token punctuation">]</span> <span class="token punctuation">{</span>+<span class="token punctuation">}</span>;
+      <span class="token function selector">\node</span> (plus2)<span class="token punctuation">[</span>terminal, on chain=going below right<span class="token punctuation">]</span> <span class="token punctuation">{</span>++<span class="token punctuation">}</span>;
+     <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">scope</span><span class="token punctuation">}</span>
+     <span class="token comment">% ответвление от name2</span>
+     <span class="token function selector">\begin</span><span class="token punctuation">{</span><span class="token keyword">scope</span><span class="token punctuation">}</span><span class="token punctuation">[</span>start branch=minus<span class="token punctuation">]</span>
+       <span class="token function selector">\node</span> (minus) <span class="token punctuation">[</span>terminal, on chain=going below left<span class="token punctuation">]</span> <span class="token punctuation">{</span>-<span class="token punctuation">}</span>;
+       <span class="token function selector">\node</span> (minus2) <span class="token punctuation">[</span>terminal, on chain=going below right<span class="token punctuation">]</span> <span class="token punctuation">{</span>--<span class="token punctuation">}</span>;
+     <span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">scope</span><span class="token punctuation">}</span>
+<span class="token function selector">\end</span><span class="token punctuation">{</span><span class="token keyword">tikzpicture</span><span class="token punctuation">}</span>
+</code></pre></div><p>Также можно автоматически соединить все узлы от первого к
+последнему. При этом ответвления (branch) будут соединены со своим главным узлом.</p> <div class="language-latex extra-class"><pre class="language-latex"><code>every node/.style=<span class="token punctuation">{</span>on chain, join<span class="token punctuation">}</span>, <span class="token comment">% соединить все узлы</span>
+every join/.style=<span class="token punctuation">{</span>-<span class="token punctuation">}</span>, <span class="token comment">% линии без стрелок</span>
+<span class="token comment">% every join/.style={-&gt;}, % или со стрелками</span>
+</code></pre></div><p><img src="/assets/img/tikz5.png" alt="&quot;LaTeX chains&quot;" title="LaTeX chains"></p> <p>Углубляться дальше, пожалуй, не станем. С помощью описанных сегодня конструкций вполне
+неплохо можно жить. Тем, кому этих незамысловатых способов структурирования
+информации не хватает или же перед кем стоят куда более серьёзные задачи
+настоятельно рекомендуется обратиться к <a href="http://www.texample.net/tikz/builds/" target="_blank" rel="noopener noreferrer">документации по <em>TikZ</em><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>,
+где полностью разъяснены те аспекты, что были рассмотрены сегодня, и многое сверх
+того. Документация добротная, всеобъемлющая, её хватит даже самому искушённому «графоману».</p> <p>Впрочем, это не означает, что в ней охвачены все возможные примеры, поэтому в планах
+обратиться к рассмотренному ныне пакету хотя бы ещё один раз. Ближе к новому году.</p></div> <div class="tags" data-v-1c67afbc><span data-v-1c67afbc>2014</span> 
+
+  <a href="/?tag=TeX" data-v-1c67afbc>
+    TeX
+  </a></div> <div class="prev-next" data-v-326f747b><div class="prev-next__prev" data-v-326f747b><a href="/posts/whois/" data-v-326f747b>
+      Whois-Client
+    </a></div> <div class="prev-next__between" data-v-326f747b>⤧</div> <div class="prev-next__next" data-v-326f747b><a href="/posts/sinatra/" data-v-326f747b>
+      Sinatra фреймворк
+    </a></div></div> <!----></article></main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.6e4996bc.js" defer></script><script src="/assets/js/4.11d3a3db.js" defer></script><script src="/assets/js/11.7e9fc27e.js" defer></script><script src="/assets/js/28.785693ad.js" defer></script>
+  </body>
+</html>
